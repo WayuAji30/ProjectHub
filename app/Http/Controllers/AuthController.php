@@ -11,4 +11,14 @@ class AuthController extends Controller
     {
         return view('login');
     }
+
+    public function register(): View
+    {
+        return view('register');
+    }
+
+    public function verify_email(): View
+    {
+        return view('verify_email');
+    }
 }
