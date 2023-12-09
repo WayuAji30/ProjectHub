@@ -19,7 +19,7 @@
         }
 
         #img-people {
-            margin-top: 75px;
+            width: 550px;
         }
     }
     </style>
@@ -54,7 +54,7 @@
                                 untuk membantu <br> mereka menyelesaikan projeknya.
                             </p>
                             <img src="{{asset('assets/img_index/asset/loginandregister/hehe.png')}}" alt="banner"
-                                class="w-fit bottom-0 fixed select-none">
+                                class="w-fit bottom-0 fixed select-none" id="img-people">
                         </div>
                         <div class="bg-gradient-to-t from-primary-50 w-[50%] h-32 select-none z-0 bottom-0 fixed"></div>
                     </div>

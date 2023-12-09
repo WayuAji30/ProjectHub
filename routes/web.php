@@ -26,3 +26,6 @@ Route::get('/auth_register', [AuthController::class, 'auth_register']);
 
 Route::get('/verify_email', [AuthController::class, 'verify_email']);
 Route::post('/send_verify_email', [AuthController::class, 'send_verify_email']);
+
+Route::get('/changepassword', [AuthController::class, 'changepassword']);
+Route::get('/confirm_email_pw', [AuthController::class, 'confirm_email_pw']);

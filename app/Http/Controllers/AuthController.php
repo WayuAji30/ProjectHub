@@ -15,7 +15,8 @@ class AuthController extends Controller
         return view('login');
     }
 
-    public function auth(Request $request){
+    public function auth(Request $request)
+    {
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required'
@@ -47,7 +48,8 @@ class AuthController extends Controller
         return view('register');
     }
 
-    public function auth_register(Request $request){
+    public function auth_register(Request $request)
+    {
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
@@ -58,7 +60,7 @@ class AuthController extends Controller
         $password = htmlspecialchars($request->input('password'));
 
         $hash_password = Hash::make($password);
-       
+
         $user = UserModel::create([
             'id' => Str::uuid(),
             'email' => $email,
@@ -80,5 +82,15 @@ class AuthController extends Controller
 
 
         return redirect()->to();
+    }
+
+    public function changepassword()
+    {
+        return view('changepassword');
+    }
+
+    public function confirm_email_pw()
+    {
+        return view('confirm_email_pw');
     }
 }
