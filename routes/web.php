@@ -19,5 +19,10 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [AuthController::class, 'login']);
+Route::get('/auth_login', [AuthController::class, 'auth_login']);
+
 Route::get('/register', [AuthController::class, 'register']);
+Route::get('/auth_register', [AuthController::class, 'auth_register']);
+
 Route::get('/verify_email', [AuthController::class, 'verify_email']);
+Route::post('/send_verify_email', [AuthController::class, 'send_verify_email']);
