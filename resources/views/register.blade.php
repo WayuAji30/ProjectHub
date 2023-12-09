@@ -16,15 +16,8 @@
                 class="text-primary-50 font-semibold hover:text-primary-70">Masuk</a>
             Aja</p>
         <form action="/verify_email" method="post" class="lg:mt-14 mt-10 lg:ml-0 md:ml-32 mx-6">
-<<<<<<< HEAD
             <label for="email" class="font-medium text-dark-10">Email</label> <br>
             <input type="email" name="email" id="email" class="text-dark-90 py-3 px-5 border-2 border-light-50 rounded-lg w-[500px] sm:w-full mt-4 focus:outline-primary-50" required>
-=======
-            <label for="email" class="font-medium text-dark-10">Email atau No. Telepon</label> <br>
-            <input type="text" name="emailOrPhone" id="email"
-                class="text-dark-90 py-3 px-5 border-2 border-light-50 rounded-lg w-[500px] sm:w-full mt-4 focus:outline-primary-50"
-                required>
->>>>>>> ef946224ebec14b9417da62ed630e39b86c56aad
             <br><br>
             <label for="password" class="font-medium text-dark-10 mt-5">Buat Password</label> <br>
             <div class="relative inline-block sm:block">
@@ -61,7 +54,6 @@
                             fill="#020179" />
                     </svg></button>
             </div>
-<<<<<<< HEAD
             <div class="inline-flex items-start mt-8 -ml-3 sm:mx-4">
                 <label class="relative flex items-start p-3 rounded-full cursor-pointer" htmlFor="check">
                     <input type="checkbox" class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-primary-50 checked:bg-primary-50 checked:before:bg-primary-50 hover:before:opacity-10" id="check" />
@@ -78,21 +70,13 @@
                 </label>
             </div>
             <button type="submit" name="submit" class="button-submit text-white bg-primary-50 py-3 w-[500px] sm:w-full mt-12 text-[18px] rounded-lg font-semibold hover:bg-primary-70 transition-all duration-200 ease-linear">
-=======
-            <button type="submit" name="submit"
-                class="button-submit text-white bg-primary-50 py-3 w-[500px] sm:w-full mt-12 text-[18px] rounded-lg font-semibold hover:bg-primary-70 transition-all duration-200 ease-linear">
->>>>>>> ef946224ebec14b9417da62ed630e39b86c56aad
                 Daftar
             </button>
             <div class="divider w-[500px] text-light-50 sm:w-full mt-7">Atau</div>
         </form>
         <form action="" class="lg:ml-0 ml-32 sm:mx-6">
-<<<<<<< HEAD
-            <button type="submit" class="button-submit flex justify-center items-center gap-3 text-white bg-dark-70 py-3 w-[500px] sm:w-full mt-7 mb-16 text-[18px] rounded-lg font-semibold hover:bg-primary-90 transition-all duration-200 ease-linear">
-=======
             <button type="submit"
                 class="button-submit flex justify-center items-center gap-3 text-white bg-dark-70 py-3 w-[500px] sm:w-full mt-7 text-[18px] rounded-lg font-semibold hover:bg-primary-90 transition-all duration-200 ease-linear">
->>>>>>> ef946224ebec14b9417da62ed630e39b86c56aad
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                     <path
                         d="M27.2569 12.5519H26.25V12.5H15V17.5H22.0644C21.0338 20.4106 18.2644 22.5 15 22.5C10.8581 22.5 7.5 19.1419 7.5 15C7.5 10.8581 10.8581 7.5 15 7.5C16.9119 7.5 18.6513 8.22125 19.9756 9.39937L23.5112 5.86375C21.2787 3.78312 18.2925 2.5 15 2.5C8.09688 2.5 2.5 8.09688 2.5 15C2.5 21.9031 8.09688 27.5 15 27.5C21.9031 27.5 27.5 21.9031 27.5 15C27.5 14.1619 27.4137 13.3438 27.2569 12.5519Z"
@@ -109,8 +93,6 @@
                 </svg>Daftar Dengan Google
             </button>
         </form>
-<<<<<<< HEAD
-=======
         <div class="inline-flex items-start mt-8 mb-16 -ml-3 md:mx-[120px] sm:mx-4">
             <label class="relative flex items-start p-3 rounded-full cursor-pointer" htmlFor="check">
                 <input type="checkbox"
@@ -133,7 +115,6 @@
                 yang dikeluarkan oleh ProjectHub.
             </label>
         </div>
->>>>>>> ef946224ebec14b9417da62ed630e39b86c56aad
     </div>
 </div>
 
