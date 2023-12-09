@@ -10,8 +10,8 @@
         <p class="text-light-90 mt-3 text-start md:text-center sm:ml-6">Belum Punya Akun? <a href="/register" class="text-primary-50 font-semibold hover:text-primary-70">Daftar</a>
             Dulu Dong</p>
         <form action="" method="post" class="lg:mt-14 mt-10 lg:ml-0 md:ml-32 mx-6">
-            <label for="email" class="font-medium text-dark-10">Email atau No. Telepon</label> <br>
-            <input type="text" name="emailOrPhone" id="email" required class="text-dark-90 py-3 px-5 border-2 border-light-50 rounded-lg w-[500px] sm:w-full mt-4 focus:outline-primary-50">
+            <label for="email" class="font-medium text-dark-10">Email</label> <br>
+            <input type="email" name="emailOrPhone" id="email" required class="text-dark-90 py-3 px-5 border-2 border-light-50 rounded-lg w-[500px] sm:w-full mt-4 focus:outline-primary-50">
             <br><br>
             <label for="password" class="font-medium text-dark-10 mt-5">Password</label> <br>
             <div class="relative inline-block sm:block">
