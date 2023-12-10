@@ -24,30 +24,30 @@ class AuthController extends Controller
         return view('login');
     }
 
-    public function auth(Request $request){
+    public function auth_login(Request $request)
+    {
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        $email = $request->input('email');
-        $password = $request->input('password');
+        $email = htmlspecialchars($request->input('email'));
+        $password = htmlspecialchars($request->input('password'));
 
-        $idn = KonsumensModel::where('email', $email)->first();
-
-        if ($idn) {
-            if (Hash::check($password, $idn->password)) {
-                if ($idn->role == '') {
-                    $supplier = SuppliersModel::where('email', $idn->email)->orWhere('no_hp', $idn->no_hp)->first();
-                    session(['login' => true, 'id_user' => $idn->_id, 'id_supplier' => $supplier->_id, 'provinsi_id' => $idn['alamat'][0]['provinsi'], 'kota_id' => $idn['alamat'][0]['kota/kab'], 'kecamatan_id' => $idn['alamat'][0]['kecamatan']]);
+        $user = UserModel::where('email', $email)->first();
+        if ($user) {
+            if (Hash::check($password, $user->password)) { 
+                if($user->status == "inactive"){
+                    session(['id' => (string) $user->id]);
+                    return redirect()->to('/verify_email');
+                }else{
+                    return redirect()->to('/');
                 }
-                session(['login' => true, 'id_user' => $idn->_id, 'provinsi_id' => $idn['alamat'][0]['provinsi'], 'kota_id' => $idn['alamat'][0]['kota/kab'], 'kecamatan_id' => $idn['alamat'][0]['kecamatan']]);
-                return redirect()->to('/');
             } else {
-                return redirect()->to('/login')->with(['error' => 'No. Handphone/Email atau Password salah']);
+                return redirect()->to('/login')->with(['error' => 'Email atau Password salah']);
             }
         } else {
-            return redirect()->to('/login')->with(['error' => 'No. Handphone/Email atau Password']);
+            return redirect()->to('/login')->with(['error' => 'Email atau Password salah']);
         }
     }
 
@@ -56,8 +56,8 @@ class AuthController extends Controller
         return view('register');
     }
 
-    public function auth_register(Request $request){
-        // Validate the request data
+    public function auth_register(Request $request)
+    {
         $this->validate($request, [
             'email' => 'required|email|unique:tbl_user,email',
             'password' => 'required',
@@ -69,8 +69,6 @@ class AuthController extends Controller
         $password = htmlspecialchars($request->input('password'));
     
         $hash_password = Hash::make($password);
-    
-        // Create a new user
         $user = UserModel::create([
             'id' => Str::uuid(),
             'email' => $email,
@@ -88,7 +86,11 @@ class AuthController extends Controller
         $id = session('id');
         $user = UserModel::find($id);
 
-        return view('verify_email',['user' => $user]);
+        if($user->status == "active"){
+            return redirect()->to('/');
+        }else{
+            return view('verify_email',['user' => $user]);
+        }
     }
 
     public function activated_user(Request $request){
@@ -99,6 +101,50 @@ class AuthController extends Controller
             'status' => $status
         ]);
 
-        return redirect()->to('/login');
+        session()->forget('id');
+        return redirect()->to('/');
+    }
+
+    public function changepassword()
+    {
+        if(session()->has('email_user_ubah_password')){
+            return view('changepassword');
+        }else{
+            return back();
+        }
+    }
+
+    public function update_password(Request $request)
+    {
+        $this->validate($request,[
+            'password' => 'required',
+            'confirm_password' => 'required|same:password',
+        ]);
+
+        $password = htmlspecialchars($request->input('password'));
+        $new_password = Hash::make($password); 
+
+        $user = UserModel::where('email',session('email_user_ubah_password'))->first();
+        if($user){
+            if(Hash::check($password, $user->password)){
+                return back()->with(['failed' => 'The password is the same as before!']);
+            }else{
+                $user->update([
+                    'password' => $new_password
+                ]);
+                
+                session()->forget('email_user_ubah_password');
+                return redirect()->to('/login')->with(['success' => 'Password has been changed!']);
+            }
+        }else{
+            return back()->with(['failed' => 'Email not Found!']);
+        }
+    }
+
+    public function confirm_email_pw()
+    {
+        session(['status_halaman' => 'lupa_password']);
+
+        return view('confirm_email_pw');
     }
 }

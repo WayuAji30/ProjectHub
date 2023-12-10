@@ -6,14 +6,13 @@
         <a href="/index">
             <img src="{{asset('assets/img_index/asset/loginandregister/logomobile.svg')}}" alt="" class="lg:hidden block md:mx-auto sm:ml-5 sm:w-[180px]">
         </a>
-        <p class="lg:text-[35px] text-3xl lg:mt-0 mt-12 sm:ml-[22px] font-semibold text-start md:text-center">Halooo,
+        <p class="lg:text-[35px] text-3xl lg:mt-0 mt-12 sm:ml-10 font-semibold text-start md:text-center">Halooo,
             Daftar
             Dulu
             Ya!
         </p>
         <p class="text-light-90 mt-3 text-start md:text-center sm:ml-6">Sudah Punya Akun? Langsung <a href="/login" class="text-primary-50 font-semibold hover:text-primary-70">Masuk</a>
             Aja</p>
-
 
         <form action="/auth_register" method="post" class="lg:mt-14 mt-10 lg:ml-0 md:ml-32 mx-6">
             @csrf
@@ -63,8 +62,30 @@
                     <span class="text-[#D10B05]">{{$message}}</span>
                 </p>
             @enderror
-
-            <button type="submit" name="submit" class="button-submit text-white bg-primary-50 py-3 w-[500px] sm:w-full mt-12 text-[18px] rounded-lg font-semibold hover:bg-primary-70 transition-all duration-200 ease-linear">
+            <div class="inline-flex items-start mt-8 -ml-3 sm:mx-0">
+                <label class="relative flex items-start p-3 rounded-full cursor-pointer" htmlFor="check">
+                    <input type="checkbox"
+                        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-primary-50 checked:bg-primary-50 checked:before:bg-primary-50 hover:before:opacity-10"
+                        id="check" />
+                    <span
+                        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20"
+                            fill="currentColor" stroke="currentColor" stroke-width="1">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </span>
+                </label>
+                <label class="mt-2 text-light-90 select-none sm:text-sm leading-5" For="check">
+                    Saya telah membaca dan menyetujui <a href=""
+                        class="text-primary-50 font-medium hover:text-primary-70">persyaratan layanan</a>
+                    <br class="lg:block md:block hidden">
+                    yang dikeluarkan oleh ProjectHub.
+                </label>
+            </div>
+            <button type="submit" name="submit"
+                class="button-submit text-white bg-primary-50 py-3 w-[500px] sm:w-full mt-12 text-[18px] rounded-lg font-semibold hover:bg-primary-70 transition-all duration-200 ease-linear">
                 Daftar
             </button>
             <div class="divider w-[500px] sm:w-full mt-7">Atau</div>

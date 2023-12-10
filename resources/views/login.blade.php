@@ -5,20 +5,34 @@
     <div class="lg:ml-20 lg:mt-20 md:mt-20 mt-7">
         <a href="/index">
             <img src="{{asset('assets/img_index/asset/loginandregister/logomobile.svg')}}" alt=""
-                class="lg:hidden block md:mx-auto sm:ml-5 sm:w-[180px]"></a>
-        <p class="lg:text-[35px] text-3xl lg:mt-0 mt-12 font-semibold lg:text-start text-center">Selamat Datang Kembali!
+                class="lg:hidden block md:mx-auto sm:ml-10 sm:w-[180px]"></a>
+        <p class="lg:text-[35px] text-3xl lg:mt-0 mt-12 font-semibold sm:ml-10 md:text-center sm:text-[27px]">Selamat
+            Datang Kembali!
         </p>
-        <p class="text-light-90 mt-3 text-start md:text-center sm:ml-6">Belum Punya Akun? <a href="/register"
+        <p class="text-light-90 mt-3 text-start md:text-center sm:ml-10">Belum Punya Akun? <a href="/register"
                 class="text-primary-50 font-semibold hover:text-primary-70">Daftar</a>
             Dulu Dong</p>
 
-
-
+        @if (session()->has('success'))
+        <p class="mt-2 lg:ml-[0%] md:ml-[0%] sm:text-xs sm:ml-2">
+            <span class="text-[#8bff51]">*</span>
+            <span class="text-[#8bff51]">{{session('success')}}</span>
+        </p>
+        @endif
+   
         <form action="/auth_login" method="post" class="lg:mt-14 mt-10 lg:ml-0 md:ml-32 mx-6">
             @csrf
             <label for="email" class="font-medium text-dark-10">Email</label> <br>
             <input type="text" name="email" id="email" required
                 class="text-dark-90 py-3 px-5 border-2 border-light-50 rounded-lg w-[500px] sm:w-full mt-4 focus:outline-primary-50">
+            
+            @if (session()->has('error'))
+            <p class="mt-2 lg:ml-[0%] md:ml-[0%] sm:text-xs sm:ml-2">
+                <span class="text-[#D10B05]">*</span>
+                <span class="text-[#D10B05]">{{session('error')}}</span>
+            </p>
+            @endif
+            
             <br><br>
             <label for="password" class="font-medium text-dark-10 mt-5">Password</label> <br>
             <div class="relative inline-block sm:block">
@@ -37,9 +51,17 @@
                             fill="#020179" />
                     </svg></button>
             </div>
+
+            @if (session()->has('error'))
+            <p class="mt-2 lg:ml-[0%] md:ml-[0%] sm:text-xs sm:ml-2">
+                <span class="text-[#D10B05]">*</span>
+                <span class="text-[#D10B05]">{{session('error')}}</span>
+            </p>
+            @endif
+
             <br class="sm:hidden block">
             <p class="text-end lg:mx-40 md:mr-32 mr-0 mt-4 text-primary-50 hover:text-primary-70" id="lupapassword">
-                <a href="">Lupa Password</a>
+                <a href="/confirm_email_pw">Lupa Password</a>
             </p>
             <button type="submit" name="submit"
                 class="button-submit text-white bg-primary-50 py-3 w-[500px] sm:w-full mt-12 text-[18px] rounded-lg font-semibold hover:bg-primary-70 transition-all duration-200 ease-linear">
@@ -47,9 +69,6 @@
             </button>
             <div class="divider w-[500px] text-light-50 sm:w-full mt-7">Atau</div>
         </form>
-
-
-
         <form action="" class="lg:ml-0 ml-32 sm:mx-6">
             <button type="submit"
                 class="button-submit flex justify-center items-center gap-3 text-white bg-dark-70 py-3 w-[500px] sm:w-full mt-7 mb-14 text-[18px] rounded-lg font-semibold hover:bg-primary-90 transition-all duration-200 ease-linear">
