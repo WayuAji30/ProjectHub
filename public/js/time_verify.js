@@ -24,6 +24,6 @@ var countdownInterval = setInterval(function () {
     // Check if the countdown has reached zero
     if (countdownTime < 0) {
         clearInterval(countdownInterval); // Stop the countdown
-        alert("Waktu sudah habis!"); // You can replace this with any action you want
+        
     }
 }, 1000); // Update every second

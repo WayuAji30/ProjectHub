@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PHPMailerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,9 @@ Route::get('/login', [AuthController::class, 'login']);
 Route::get('/auth_login', [AuthController::class, 'auth_login']);
 
 Route::get('/register', [AuthController::class, 'register']);
-Route::get('/auth_register', [AuthController::class, 'auth_register']);
+Route::post('/auth_register', [AuthController::class, 'auth_register']);
 
 Route::get('/verify_email', [AuthController::class, 'verify_email']);
-Route::post('/send_verify_email', [AuthController::class, 'send_verify_email']);
+Route::post('/send_verify_email', [PHPMailerController::class, 'composeEmail']);
+
+Route::post('/activated_user', [AuthController::class, 'activated_user']);

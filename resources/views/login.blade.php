@@ -11,8 +11,12 @@
         <p class="text-light-90 mt-3 text-start md:text-center sm:ml-6">Belum Punya Akun? <a href="/register"
                 class="text-primary-50 font-semibold hover:text-primary-70">Daftar</a>
             Dulu Dong</p>
-        <form action="" method="post" class="lg:mt-14 mt-10 lg:ml-0 md:ml-32 mx-6">
-            <label for="email" class="font-medium text-dark-10">Email atau No. Telepon</label> <br>
+
+
+
+        <form action="/auth_login" method="post" class="lg:mt-14 mt-10 lg:ml-0 md:ml-32 mx-6">
+            @csrf
+            <label for="email" class="font-medium text-dark-10">Email</label> <br>
             <input type="text" name="email" id="email" required
                 class="text-dark-90 py-3 px-5 border-2 border-light-50 rounded-lg w-[500px] sm:w-full mt-4 focus:outline-primary-50">
             <br><br>
@@ -43,6 +47,9 @@
             </button>
             <div class="divider w-[500px] text-light-50 sm:w-full mt-7">Atau</div>
         </form>
+
+
+
         <form action="" class="lg:ml-0 ml-32 sm:mx-6">
             <button type="submit"
                 class="button-submit flex justify-center items-center gap-3 text-white bg-dark-70 py-3 w-[500px] sm:w-full mt-7 mb-14 text-[18px] rounded-lg font-semibold hover:bg-primary-90 transition-all duration-200 ease-linear">
@@ -62,6 +69,9 @@
                 </svg> Masuk Dengan Google
             </button>
         </form>
+
+
+
     </div>
 </div>
 

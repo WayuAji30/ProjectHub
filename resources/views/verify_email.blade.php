@@ -13,9 +13,12 @@
         <p class="text-[16px] text-light-90 mt-4">Kami Telah Mengirimkan Email Untuk <br
                 class="lg:hidden md:hidden block">
             Memverifikasi <br class="lg:block md:block hidden"> Akunmu ke <br class="lg:hidden md:hidden block">
-            <span class="font-medium text-primary-50 select-none">asepbensin@projecthub.com</span>
+            <span class="font-medium text-primary-50 select-none">{{$user->email}}</span>
         </p>
-        <form action="" class="flex justify-center sm:mx-6">
+        <form action="/send_verify_email" method = "post" class="flex justify-center sm:mx-6">
+            @csrf
+            <input type="hidden" name="id" id = "id" value = "{{$user->id}}">
+            <input type="hidden" name="email" id = "email" value = "{{$user->email}}">
             <button type="submit"
                 class="button-submit select-none gap-3 flex justify-center items-center text-white bg-primary-50 py-3 w-[500px] sm:w-full mt-12 text-[18px] rounded-lg font-semibold hover:bg-primary-70 transition-all duration-200 ease-linear">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
@@ -25,6 +28,8 @@
                 </svg> Buka Gmail
             </button>
         </form>
+
+        
         <p class="text-light-90 mt-5 sm:text-sm">Tidak menerima email? <a href=""
                 class="text-primary-50 font-medium select-none">Kirim
                 ulang</a>

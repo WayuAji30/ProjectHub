@@ -57,7 +57,6 @@
     </div>
 </body>
 
-<script src="{{asset('js/auth_register.js')}}"></script>
 <script src="{{asset('js/password.js')}}"></script>
 <script src="{{asset('js/time_verify.js')}}"></script>
 

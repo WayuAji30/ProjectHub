@@ -22,7 +22,7 @@ class PHPMailerController extends Controller
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
             $mail->Username = 'serviceprojecthub@gmail.com';
-            $mail->Password = 'qdyq esxm osgz tohu';
+            $mail->Password = 'qtkx xcjd lnsd irff';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port = 465;
  
@@ -43,12 +43,16 @@ class PHPMailerController extends Controller
  
             $mail->isHTML(true);
  
-            $mail->Subject = $request->emailSubject;
+            $mail->Subject = "Verifikasi Akun | projecthub.id";
             $mail->Body    = '<img src="' . asset('assets/img_index/asset/loginandregister/logomobile.svg') . '" alt="Logo" />' .
                 '<h1 class="font-semibold text-3xl mt-7">Verifikasi Alamat Email Kamu</h1>' .
                 '<p class="mt-3 font-medium text-xl">Untuk melanjutkan ke ProjectHub.id, konfirmasi bahwa ini adalah alamat<br>' .
                 'email kamu dengan menekan tombol dibawah.</p>' .
-                '<a href="' . $verificationLink . '" class="px-5 py-3 bg-primary-50 text-white rounded-lg mt-5">Verivikasi Email</a>' .
+                '<form action="http://localhost:8000/activated_user" method = "post">'.
+                '<input type="hidden" name="id" id = "id" value="'.$request->input('id').'">'.
+                '<input type="hidden" name="status_aktivasi" id = "status_aktivasi" value="active">'.
+                '<button href="" class="px-5 py-3 bg-primary-50 text-white rounded-lg mt-5">Verifikasi Email</button>' .
+                '</form>'.
                 '<p class="text-light-90 mt-5">Link yang terdapat pada tombol diatas akan expired setelah 1 jam. Jika kamu tidak merasa<br>' .
                 'melakukan request, silahkan abaikan email ini.</p>';
  
@@ -56,10 +60,8 @@ class PHPMailerController extends Controller
  
             if( !$mail->send() ) {
                 return back()->with("failed", "Email not sent.")->withErrors($mail->ErrorInfo);
-            }
-            
-            else {
-                return back()->with("success", "Email has been sent.");
+            }else {
+                return redirect()->to('https://mail.google.com/mail/u/0/#inbox');
             }
  
         } catch (Exception $e) {
