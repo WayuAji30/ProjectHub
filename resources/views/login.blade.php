@@ -27,7 +27,7 @@
                 class="text-dark-90 py-3 px-5 border-2 border-light-50 rounded-lg w-[500px] sm:w-full mt-4 focus:outline-primary-50">
             
             @if (session()->has('error'))
-            <p class="mt-2 lg:ml-[0%] md:ml-[0%] sm:text-xs sm:ml-2">
+            <p class="mt-2 lg:ml-[0%] md:ml-[0%] -mb-6 sm:text-xs sm:ml-2">
                 <span class="text-[#D10B05]">*</span>
                 <span class="text-[#D10B05]">{{session('error')}}</span>
             </p>
@@ -53,7 +53,7 @@
             </div>
 
             @if (session()->has('error'))
-            <p class="mt-2 lg:ml-[0%] md:ml-[0%] sm:text-xs sm:ml-2">
+            <p class="mt-2 lg:ml-[0%] md:ml-[0%] -mb-6 sm:text-xs sm:ml-2">
                 <span class="text-[#D10B05]">*</span>
                 <span class="text-[#D10B05]">{{session('error')}}</span>
             </p>

@@ -86,11 +86,7 @@ class AuthController extends Controller
         $id = session('id');
         $user = UserModel::find($id);
 
-        if($user->status == "active"){
-            return redirect()->to('/');
-        }else{
-            return view('verify_email',['user' => $user]);
-        }
+        return view('verify_email',['user' => $user]);
     }
 
     public function activated_user(Request $request){

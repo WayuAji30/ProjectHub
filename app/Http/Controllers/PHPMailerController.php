@@ -52,13 +52,16 @@ class PHPMailerController extends Controller
                     session(['email_user_ubah_password' => $user->email]);
 
                     $mail->Subject = "Lupa Password | projecthub.id";
-                    $mail->Body    = '<img src="' . asset('assets/img_index/asset/loginandregister/logomobile.svg') . '" alt="Logo" />' .
-                        '<h1 class="font-semibold text-3xl mt-7">Permintaan Ubah Password</h1>' .
-                        '<p class="mt-3 font-medium text-xl">Untuk melanjutkan penggantian password kamu, tekan tombol<br>' .
-                        'dibawah untuk mengarahkan kamu ke halaman berikutnya.</p>' .
-                        '<a href="http://localhost:8000/changepassword" class="px-5 py-3 bg-primary-50 text-white rounded-lg mt-5">Ubah Password</a>' .
-                        '<p class="text-light-90 mt-5">Link yang terdapat pada tombol diatas akan expired setelah 1 jam. Jika kamu tidak merasa<br>' .
-                        'melakukan request, silahkan abaikan email ini.</p>';
+                    $mail->Body = '<img src="https://drive.google.com/file/d/1zHRt_jofN32CYAiXvG3IiShiiillc-KJ/view" alt="Logo" style="margin-top:30px;"/>' .
+    '<h1 style="font-family:sans-serif; font-weight:700; margin-top:35px;">Permintaan Ubah Password</h1>' .
+    '<p style="font-family:sans-serif; font-size:16px; color:#5e5e5e; font-weight:500;">Untuk melanjutkan penggantian password kamu, tekan tombol<br>' .
+    'dibawah untuk mengarahkan kamu ke halaman berikutnya.</p>' .
+    '<form action="http://localhost:8000/changepassword" method="get">' .
+    '<button style="padding:14px 0px; margin-top:30px; width:250px; border-radius:10px; border:none; font-size:18px; font-weight:500; color:white; background-color:#020179;">Verifikasi Email</button>' .
+    '</form>' .
+    '<p style="margin-top:20px; color:#999; margin-top:30px; font-family:sans-serif;">Link yang terdapat pada tombol diatas akan expired setelah 1 jam. Jika kamu tidak merasa<br>' .
+    'melakukan request, silahkan abaikan email ini.</p>';
+
 
                     if( !$mail->send() ) {
                         return back()->with("failed", "Email not sent.")->withErrors("Email gagal dikirim");
@@ -70,17 +73,17 @@ class PHPMailerController extends Controller
                 }
             }else{
                 $mail->Subject = "Verifikasi Akun | projecthub.id";
-                $mail->Body    = '<img src="' . asset('assets/img_index/asset/loginandregister/logomobile.svg') . '" alt="Logo" />' .
-                    '<h1 class="font-semibold text-3xl mt-7">Verifikasi Alamat Email Kamu</h1>' .
-                    '<p class="mt-3 font-medium text-xl">Untuk melanjutkan ke ProjectHub.id, konfirmasi bahwa ini adalah alamat<br>' .
-                    'email kamu dengan menekan tombol dibawah.</p>' .
-                    '<form action="http://localhost:8000/activated_user" method = "post">'.
-                    '<input type="hidden" name="id" id = "id" value="'.($request->input('id_user') != null) ? $request->input('id_user') : "".'">'.
-                    '<input type="hidden" name="status_aktivasi" id = "status_aktivasi" value="active">'.
-                    '<button class="px-5 py-3 bg-primary-50 text-white rounded-lg mt-5">Verifikasi Email</button>' .
-                    '</form>'.
-                    '<p class="text-light-90 mt-5">Link yang terdapat pada tombol diatas akan expired setelah 1 jam. Jika kamu tidak merasa<br>' .
-                    'melakukan request, silahkan abaikan email ini.</p>';
+                $mail->Body    = '<img src="https://svgshare.com/i/10az.svg" alt="Logo" style="margin-top:30px;"/>' .
+                '<h1 style="font-family:sans-serif; font-weight: 700; margin-top: 35px;">Verifikasi Alamat Email Kamu</h1>' .
+                '<p style="font-family:sans-serif; font-size: 16px; font-weight: 500;">Untuk melanjutkan ke ProjectHub.id, konfirmasi bahwa ini adalah alamat<br>' .
+                'email kamu dengan menekan tombol dibawah.</p>' .
+                '<form action="http://localhost:8000/activated_user" method = "post">'.
+                '<input type="hidden" name="id" id = "id" value="'.$request->input('id_user').'">'.
+                '<input type="hidden" name="status_aktivasi" id = "status_aktivasi" value="active">'.
+                '<button style="padding: 14px 0px; margin-top: 30px; width: 250px; border-radius: 10px; border: none; font-size: 18px; font-weight: 500; color: white; background-color: #020179; font-weight: 700;">Verifikasi Email</button>' .
+                '</form>'.
+                '<p style="margin-top: 20px; color: #999; margin-top: 30px; font-family: sans-serif;">Link yang terdapat pada tombol diatas akan expired setelah 1 jam. Jika kamu tidak merasa<br>' .
+                'melakukan request, silahkan abaikan email ini.</p>';
             
                     if( !$mail->send() ) {
                         return back()->with("failed", "Email not sent.")->withErrors("Email gagal dikirim");

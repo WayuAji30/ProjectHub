@@ -64,7 +64,7 @@
             @enderror
             <div class="inline-flex items-start mt-8 -ml-3 sm:mx-0">
                 <label class="relative flex items-start p-3 rounded-full cursor-pointer" htmlFor="check">
-                    <input type="checkbox"
+                    <input type="checkbox" required
                         class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-primary-50 checked:bg-primary-50 checked:before:bg-primary-50 hover:before:opacity-10"
                         id="check" />
                     <span
@@ -93,7 +93,7 @@
 
 
         <form action="" class="lg:ml-0 ml-32 sm:mx-6">
-            <button type="submit" class="button-submit flex justify-center items-center gap-3 text-white bg-dark-70 py-3 w-[500px] sm:w-full mt-7 text-[18px] rounded-lg font-semibold hover:bg-primary-90 transition-all duration-200 ease-linear">
+            <button type="submit" class="button-submit flex justify-center items-center gap-3 text-white bg-dark-70 py-3 w-[500px] sm:w-full mt-7 mb-16 text-[18px] rounded-lg font-semibold hover:bg-primary-90 transition-all duration-200 ease-linear">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                     <path d="M27.2569 12.5519H26.25V12.5H15V17.5H22.0644C21.0338 20.4106 18.2644 22.5 15 22.5C10.8581 22.5 7.5 19.1419 7.5 15C7.5 10.8581 10.8581 7.5 15 7.5C16.9119 7.5 18.6513 8.22125 19.9756 9.39937L23.5112 5.86375C21.2787 3.78312 18.2925 2.5 15 2.5C8.09688 2.5 2.5 8.09688 2.5 15C2.5 21.9031 8.09688 27.5 15 27.5C21.9031 27.5 27.5 21.9031 27.5 15C27.5 14.1619 27.4137 13.3438 27.2569 12.5519Z" fill="#FFC107" />
                     <path d="M3.94128 9.18187L8.04816 12.1937C9.15941 9.4425 11.8507 7.5 15 7.5C16.9119 7.5 18.6513 8.22125 19.9757 9.39937L23.5113 5.86375C21.2788 3.78312 18.2925 2.5 15 2.5C10.1988 2.5 6.03503 5.21062 3.94128 9.18187Z" fill="#FF3D00" />
@@ -102,21 +102,6 @@
                 </svg>Daftar Dengan Google
             </button>
         </form>
-        <div class="inline-flex items-start mt-8 mb-16 -ml-3 md:mx-[120px] sm:mx-4">
-            <label class="relative flex items-start p-3 rounded-full cursor-pointer" htmlFor="check">
-                <input type="checkbox" class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-primary-50 checked:bg-primary-50 checked:before:bg-primary-50 hover:before:opacity-10" id="check" />
-                <span class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                </span>
-            </label>
-            <label class="mt-2 text-light-90 select-none sm:text-sm" For="check">
-                Saya telah membaca dan menyetujui <a href="" class="text-primary-50 font-medium hover:text-primary-70">persyaratan <br class="lg:hidden md:hidden block"> layanan</a>
-                <br class="lg:block md:block hidden">
-                yang dikeluarkan oleh ProjectHub.
-            </label>
-        </div>
     </div>
 </div>
 
