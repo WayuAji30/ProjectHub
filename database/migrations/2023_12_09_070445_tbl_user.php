@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('tbl_user', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('google_id')->unique();
             $table->string('email')->unique();
             $table->string('password');
             $table->string('status');
+            $table->timestamps();
         });
     }
 

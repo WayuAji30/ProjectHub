@@ -20,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [AuthController::class, 'login']);
+Route::get('/login/google', [AuthController::class, 'login_google']);
+Route::get('/login/google/callback', [AuthController::class, 'auth_google']);
 Route::post('/auth_login', [AuthController::class, 'auth_login']);
 
 Route::get('/register', [AuthController::class, 'register']);
