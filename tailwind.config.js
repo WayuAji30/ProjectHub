@@ -44,6 +44,9 @@ export default {
                 "hero-login":
                     "url('/public/assets/img_index/asset/loginandregister/bg.png')",
             },
+            fontFamily: {
+                inter: ["Inter", "sans-serif"],
+            },
         },
     },
     plugins: [require("daisyui")],

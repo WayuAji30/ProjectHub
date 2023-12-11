@@ -19,20 +19,20 @@
             <span class="text-[#8bff51]">{{session('success')}}</span>
         </p>
         @endif
-   
-        <form action="/auth_login" method="post" class="lg:mt-14 mt-10 lg:ml-0 md:ml-32 mx-6">
+
+        <form action="/auth_login" method="post" class="lg:mt-14 mt-10 lg:ml-0 md:ml-32 mx-10">
             @csrf
             <label for="email" class="font-medium text-dark-10">Email</label> <br>
             <input type="text" name="email" id="email" required
                 class="text-dark-90 py-3 px-5 border-2 border-light-50 rounded-lg w-[500px] sm:w-full mt-4 focus:outline-primary-50">
-            
+
             @if (session()->has('error'))
-            <p class="mt-2 lg:ml-[0%] md:ml-[0%] sm:text-xs sm:ml-2">
+            <p class="mt-2 lg:ml-[0%] md:ml-[0%] -mb-6 sm:text-xs sm:ml-2">
                 <span class="text-[#D10B05]">*</span>
                 <span class="text-[#D10B05]">{{session('error')}}</span>
             </p>
             @endif
-            
+
             <br><br>
             <label for="password" class="font-medium text-dark-10 mt-5">Password</label> <br>
             <div class="relative inline-block sm:block">
@@ -53,25 +53,26 @@
             </div>
 
             @if (session()->has('error'))
-            <p class="mt-2 lg:ml-[0%] md:ml-[0%] sm:text-xs sm:ml-2">
+            <p class="mt-2 lg:ml-[0%] md:ml-[0%] -mb-6 sm:text-xs sm:ml-2">
                 <span class="text-[#D10B05]">*</span>
                 <span class="text-[#D10B05]">{{session('error')}}</span>
             </p>
             @endif
 
             <br class="sm:hidden block">
-            <p class="text-end lg:mx-40 md:mr-32 mr-0 mt-4 text-primary-50 hover:text-primary-70" id="lupapassword">
+            <p class="text-end lg:mx-[150px] md:mr-32 mr-0 mt-4 text-primary-50 hover:text-primary-70"
+                id="lupapassword">
                 <a href="/confirm_email_pw">Lupa Password</a>
             </p>
             <button type="submit" name="submit"
-                class="button-submit text-white bg-primary-50 py-3 w-[500px] sm:w-full mt-12 text-[18px] rounded-lg font-semibold hover:bg-primary-70 transition-all duration-200 ease-linear">
+                class="button-submit tracking-wide text-white bg-primary-50 py-3 w-[500px] sm:w-full mt-12 text-[18px] rounded-lg font-semibold hover:bg-primary-70 transition-all duration-200 ease-linear">
                 Masuk
             </button>
             <div class="divider w-[500px] text-light-50 sm:w-full mt-7">Atau</div>
         </form>
-        <form action="" class="lg:ml-0 ml-32 sm:mx-6">
+        <form action="" class="lg:ml-0 ml-32 sm:mx-10">
             <button type="submit"
-                class="button-submit flex justify-center items-center gap-3 text-white bg-dark-70 py-3 w-[500px] sm:w-full mt-7 mb-14 text-[18px] rounded-lg font-semibold hover:bg-primary-90 transition-all duration-200 ease-linear">
+                class="button-submit flex tracking-wide justify-center items-center gap-3 text-white bg-dark-70 py-3 w-[500px] sm:w-full mt-7 mb-14 text-[18px] rounded-lg font-semibold hover:bg-primary-90 transition-all duration-200 ease-linear">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                     <path
                         d="M27.2569 12.5519H26.25V12.5H15V17.5H22.0644C21.0338 20.4106 18.2644 22.5 15 22.5C10.8581 22.5 7.5 19.1419 7.5 15C7.5 10.8581 10.8581 7.5 15 7.5C16.9119 7.5 18.6513 8.22125 19.9756 9.39937L23.5112 5.86375C21.2787 3.78312 18.2925 2.5 15 2.5C8.09688 2.5 2.5 8.09688 2.5 15C2.5 21.9031 8.09688 27.5 15 27.5C21.9031 27.5 27.5 21.9031 27.5 15C27.5 14.1619 27.4137 13.3438 27.2569 12.5519Z"
@@ -88,9 +89,6 @@
                 </svg> Masuk Dengan Google
             </button>
         </form>
-
-
-
     </div>
 </div>
 
