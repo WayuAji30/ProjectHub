@@ -70,7 +70,7 @@
             </button>
             <div class="divider w-[500px] text-light-50 sm:w-full mt-7">Atau</div>
         </form>
-        <form action="" class="lg:ml-0 ml-32 sm:mx-10">
+        <form action="/login/google" class="lg:ml-0 ml-32 sm:mx-10">
             <button type="submit"
                 class="button-submit flex tracking-wide justify-center items-center gap-3 text-white bg-dark-70 py-3 w-[500px] sm:w-full mt-7 mb-14 text-[18px] rounded-lg font-semibold hover:bg-primary-90 transition-all duration-200 ease-linear">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">

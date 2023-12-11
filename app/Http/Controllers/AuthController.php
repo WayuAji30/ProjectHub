@@ -7,14 +7,16 @@ use App\Http\Controllers\PHPMailerController;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\Mail\VerifyEmail;
-use Illuminate\Support\Facades\Mail;
-
-use App\Models\UserModel;
-
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use Laravel\Socialite\Facades\Socialite;
+
+use App\Models\UserModel;
+use App\Mail\VerifyEmail;
+
+
 
 
 class AuthController extends Controller
@@ -22,6 +24,35 @@ class AuthController extends Controller
     public function login()
     {
         return view('login');
+    }
+
+    public function login_google()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function auth_google()
+    {
+        // Google user object dari google
+        $userFromGoogle = Socialite::driver('google')->user();
+
+        // Ambil user dari database berdasarkan google user id
+        $userFromDatabase = UserModel::where('google_id', $userFromGoogle->getId())->first();
+
+        // Jika tidak ada user, maka buat user baru
+        if (!$userFromDatabase) {
+            $newUser = UserModel::create([
+                'id' => Str::uuid(),
+                'google_id' => $userFromGoogle->getId(),
+                'email' => $userFromGoogle->getEmail(),
+                'password' => null,
+                'status' => 'active'
+            ]);
+
+            return redirect('/');
+        }
+
+        return redirect('/');
     }
 
     public function auth_login(Request $request)
@@ -142,5 +173,14 @@ class AuthController extends Controller
         session(['status_halaman' => 'lupa_password']);
 
         return view('confirm_email_pw');
+    }
+    
+    public function logout(Request $request)
+    {
+        auth('web')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }
