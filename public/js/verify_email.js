@@ -24,6 +24,5 @@ $(document).ready(function () {
 
         $("#btn-verify").removeClass("bg-[#ccc]");
         $("#btn-verify").addClass("bg-primary-50 hover:bg-primary-70");
-        $("#btn-verify").prop("disabled", false);
     });
 });

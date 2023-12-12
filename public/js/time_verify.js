@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     $('#kirim-ulang').removeClass('text-primary-50');
     $('#kirim-ulang').addClass('text-[#ccc]');
+    $('#kirim-ulang').attr("disabled", true); 
     
     // Function to update the countdown
     function updateCountdown() {
@@ -25,7 +26,7 @@ $(document).ready(function () {
             clearInterval(countdownInterval); // Stop the countdown
             $('#kirim-ulang').removeClass('text-[#ccc]');
             $('#kirim-ulang').addClass('text-primary-50');
-            $(".kirim-ulang").removeAttr("disabled");
+            $('#kirim-ulang').attr("disabled", false); 
         }
     }
 
@@ -37,14 +38,9 @@ $(document).ready(function () {
         countdownTime = 60; // Reset countdown time
         clearInterval(countdownInterval); // Stop the existing countdown
         countdownInterval = setInterval(updateCountdown, 1000); // Start a new countdown
-        
-        $('#btn-verify').removeClass('bg-[#ccc]');
-        $('#btn-verify').addClass('bg-primary-50 hover:bg-primary-70');
-        $('#btn-verify').removeAttr('disabled');
 
         $('#kirim-ulang').removeClass('text-primary-50');
         $('#kirim-ulang').addClass('text-[#ccc]');
-
         $(this).attr("disabled", true); 
 
         updateCountdown(); // Update immediately after resetting

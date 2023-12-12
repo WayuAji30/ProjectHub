@@ -29,7 +29,7 @@
             </button>
         </form>
 
-        <p class="text-light-90 mt-5 sm:text-sm">Tidak menerima email? <a href="javascript:void(0);" class="text-primary-50 font-medium select-none" id="kirim-ulang" data-id_user="{{$user->id}}" data-email="{{$user->email}}">Kirim ulang</a>
+        <p class="text-light-90 mt-5 sm:text-sm">Tidak menerima email? <button type="button" class="text-primary-50 font-medium select-none" id="kirim-ulang" data-id_user="{{$user->id}}" data-email="{{$user->email}}">Kirim ulang</button>
             dalam <span class="countdown text-primary-50 font-medium select-none">
                 <span style="--value:1;" class="select-none"></span>:
                 <span style="--value:00;" class="select-none"></span>
