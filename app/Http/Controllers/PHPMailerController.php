@@ -17,7 +17,6 @@ class PHPMailerController extends Controller
         $mail = new PHPMailer(true); 
  
         try {
- 
             // Email server settings
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
@@ -53,14 +52,14 @@ class PHPMailerController extends Controller
 
                     $mail->Subject = "Lupa Password | projecthub.id";
                     $mail->Body = '<img src="https://drive.google.com/file/d/1zHRt_jofN32CYAiXvG3IiShiiillc-KJ/view" alt="Logo" style="margin-top:30px;"/>' .
-    '<h1 style="font-family:sans-serif; font-weight:700; margin-top:35px;">Permintaan Ubah Password</h1>' .
-    '<p style="font-family:sans-serif; font-size:16px; color:#5e5e5e; font-weight:500;">Untuk melanjutkan penggantian password kamu, tekan tombol<br>' .
-    'dibawah untuk mengarahkan kamu ke halaman berikutnya.</p>' .
-    '<form action="http://localhost:8000/changepassword" method="get">' .
-    '<button style="padding:14px 0px; margin-top:30px; width:250px; border-radius:10px; border:none; font-size:18px; font-weight:500; color:white; background-color:#020179;">Verifikasi Email</button>' .
-    '</form>' .
-    '<p style="margin-top:20px; color:#999; margin-top:30px; font-family:sans-serif;">Link yang terdapat pada tombol diatas akan expired setelah 1 jam. Jika kamu tidak merasa<br>' .
-    'melakukan request, silahkan abaikan email ini.</p>';
+                    '<h1 style="font-family:sans-serif; font-weight:700; margin-top:35px;">Permintaan Ubah Password</h1>' .
+                    '<p style="font-family:sans-serif; font-size:16px; color:#5e5e5e; font-weight:500;">Untuk melanjutkan penggantian password kamu, tekan tombol<br>' .
+                    'dibawah untuk mengarahkan kamu ke halaman berikutnya.</p>' .
+                    '<form action="http://localhost:8000/changepassword" method="get">' .
+                    '<button style="padding:14px 0px; margin-top:30px; width:250px; border-radius:10px; border:none; font-size:18px; font-weight:500; color:white; background-color:#020179;">Verifikasi Email</button>' .
+                    '</form>' .
+                    '<p style="margin-top:20px; color:#999; margin-top:30px; font-family:sans-serif;">Link yang terdapat pada tombol diatas akan expired setelah 1 jam. Jika kamu tidak merasa<br>' .
+                    'melakukan request, silahkan abaikan email ini.</p>';
 
 
                     if( !$mail->send() ) {
@@ -77,7 +76,7 @@ class PHPMailerController extends Controller
                 '<h1 style="font-family:sans-serif; font-weight: 700; margin-top: 35px;">Verifikasi Alamat Email Kamu</h1>' .
                 '<p style="font-family:sans-serif; font-size: 16px; font-weight: 500;">Untuk melanjutkan ke ProjectHub.id, konfirmasi bahwa ini adalah alamat<br>' .
                 'email kamu dengan menekan tombol dibawah.</p>' .
-                '<form action="http://localhost:8000/activated_user" method = "post">'.
+                '<form action="http://localhost:8000/activated_user" method = "get">'.
                 '<input type="hidden" name="id" id = "id" value="'.$request->input('id_user').'">'.
                 '<input type="hidden" name="status_aktivasi" id = "status_aktivasi" value="active">'.
                 '<button style="padding: 14px 0px; margin-top: 30px; width: 250px; border-radius: 10px; border: none; font-size: 18px; font-weight: 500; color: white; background-color: #020179; font-weight: 700;">Verifikasi Email</button>' .

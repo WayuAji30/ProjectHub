@@ -38,7 +38,7 @@
         <!-- <form action="javascript:void(0);">
             <p class="text-light-90 mt-5 sm:text-sm">Tidak menerima email?
                 <button class="text-primary-50 font-medium select-none" id="kirim-ulang" data-id_user="{{$user->id}}"
-                    data-email="{{$user->email}}">Kirim Ulang</button>
+                    data-email="">Kirim Ulang</button>
                 dalam <span class="countdown text-primary-50 font-medium select-none">
                     <span style="--value:1;" class="select-none"></span>:
                     <span style="--value:00;" class="select-none"></span>

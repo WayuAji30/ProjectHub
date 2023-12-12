@@ -30,7 +30,7 @@ Route::post('/auth_register', [AuthController::class, 'auth_register']);
 Route::get('/verify_email', [AuthController::class, 'verify_email']);
 Route::post('/send_verify_email', [PHPMailerController::class, 'composeEmail']);
 
-Route::post('/activated_user', [AuthController::class, 'activated_user']);
+Route::get('/activated_user', [AuthController::class, 'activated_user'])->name('activated_user');
 
 Route::get('/changepassword', [AuthController::class, 'changepassword']);
 Route::get('/confirm_email_pw', [AuthController::class, 'confirm_email_pw']);
