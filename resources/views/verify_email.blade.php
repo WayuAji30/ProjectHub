@@ -1,17 +1,17 @@
 @extends('templates.login-register')
 @section('content')
 
-<div class="lg:col-span-6 col-span-12">
+<div class="lg:col-span-6 col-span-12" id="content">
     <div class="text-center lg:mt-40 md:mt-20 mt-10">
         <a href="/index">
             <img src="{{asset('assets/img_index/asset/loginandregister/logomobile.svg')}}" alt="logoProjectHub" class="lg:hidden block mx-auto sm:w-[180px]">
         </a>
         <img src="{{asset('assets/img_index/asset/loginandregister/verifikasi.svg')}}" alt="verify" class="mx-auto md:mt-20 sm:mt-16">
         <h1 class="text-dark-50 font-semibold text-3xl mt-5">Verifikasi Email Kamu</h1>
-        <p class="text-[16px] text-light-90 mt-4">Kami Telah Mengirimkan Email Untuk <br class="lg:hidden md:hidden block">
+        <h2 class="text-[16px] text-light-90 mt-4">Kami Telah Mengirimkan Email Untuk <br class="lg:hidden md:hidden block">
             Memverifikasi <br class="lg:block md:block hidden"> Akunmu ke <br class="lg:hidden md:hidden block">
             <span class="font-medium text-primary-50 select-none">{{$user->email}}</span>
-        </p>
+        </h2>
 
         @if (session()->has('failed'))
         <p class="mt-2 lg:ml-[0%] md:ml-[0%] sm:text-xs sm:ml-2">
