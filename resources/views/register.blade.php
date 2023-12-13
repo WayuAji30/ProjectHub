@@ -24,7 +24,7 @@
                 required>
 
             @error('email')
-            <p class="mt-2 lg:ml-[0%] md:ml-[0%] sm:text-xs sm:ml-2">
+            <p class="mt-2 lg:ml-[0%] md:ml-[0%] -mb-6 sm:text-xs sm:ml-2">
                 <span class="text-[#D10B05]">*</span>
                 <span class="text-[#D10B05]">{{$message}}</span>
             </p>
@@ -49,14 +49,14 @@
                     </svg></button>
             </div>
             @error('password')
-            <p class="mt-2 lg:ml-[0%] md:ml-[0%] sm:text-xs sm:ml-2">
+            <p class="mt-2 lg:ml-[0%] md:ml-[0%] -mb-6 sm:text-xs sm:ml-2">
                 <span class="text-[#D10B05]">*</span>
                 <span class="text-[#D10B05]">{{$message}}</span>
             </p>
             @enderror
 
             <br> <br class="lg:block md:block hidden">
-            <label for="konfirmasiPassword" class="font-medium text-dark-10 mt-5">Konfirmasi Password</label> <br>
+            <label for="confirm_password" class="font-medium text-dark-10 mt-5">Konfirmasi Password</label> <br>
             <div class="relative inline-block sm:block">
                 <input type="password" name="confirm_password" id="confirm_password" required
                     class="text-dark-90 py-3 pl-5 pr-12 border-2 border-light-50 rounded-lg w-[500px] sm:w-full mt-4 focus:outline-primary-50">
@@ -75,7 +75,7 @@
             </div>
 
             @error('confirm_password')
-            <p class="mt-2 lg:ml-[0%] md:ml-[0%] sm:text-xs sm:ml-2">
+            <p class="mt-2 lg:ml-[0%] md:ml-[0%] -mb-6 sm:text-xs sm:ml-2">
                 <span class="text-[#D10B05]">*</span>
                 <span class="text-[#D10B05]">{{$message}}</span>
             </p>

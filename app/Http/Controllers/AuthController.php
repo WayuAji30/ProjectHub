@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 use Laravel\Socialite\Facades\Socialite;
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;    
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 use App\Models\UserModel;
@@ -115,10 +115,9 @@ class AuthController extends Controller
 
         session(['id' => (string) $user->id]);
 
-        $mail = new PHPMailer(true); 
+        $mail = new PHPMailer(true);
 
-        try 
-        {
+        try {
             // Email server settings
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
@@ -128,36 +127,34 @@ class AuthController extends Controller
             $mail->Password = 'qtkx xcjd lnsd irff';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port = 465;
- 
+
             $mail->setFrom('serviceprojecthub@gmail.com', 'no-reply');
-            
+
             $mail->addAddress($user->email);
- 
+
             $mail->isHTML(true);
 
             $mail->Subject = "Verifikasi Akun | projecthub.id";
             $mail->Body    = '<img src="https://svgshare.com/i/10az.svg" alt="Logo" style="margin-top:30px;"/>' .
-            '<h1 style="font-family:sans-serif; font-weight: 700; margin-top: 35px;">Verifikasi Alamat Email Kamu</h1>' .
-            '<p style="font-family:sans-serif; font-size: 16px; font-weight: 500;">Untuk melanjutkan ke ProjectHub.id, konfirmasi bahwa ini adalah alamat<br>' .
-            'email kamu dengan menekan tombol dibawah.</p>' .
-            '<form action="'. route('activated_user') .'" method = "get">'.
-            '<input type="hidden" name="id" id = "id" value="'.$user->id.'">'.
-            '<input type="hidden" name="status_aktivasi" id = "status_aktivasi" value="active">'.
-            '<button style="padding: 14px 0px; margin-top: 30px; width: 250px; border-radius: 10px; border: none; font-size: 18px; font-weight: 500; color: white; background-color: #020179; font-weight: 700;">Verifikasi Email</button>' .
-            '</form>'.
-            '<p style="margin-top: 20px; color: #999; margin-top: 30px; font-family: sans-serif;">Link yang terdapat pada tombol diatas akan expired setelah 1 jam. Jika kamu tidak merasa<br>' .
-            'melakukan request, silahkan abaikan email ini.</p>';
-        
-                if( !$mail->send() ) {
-                    return back()->with("failed", "Email not sent.")->withErrors("Email gagal dikirim");
-                }else {
-                    return redirect()->to('/verify_email');
-                }
+                '<h1 style="font-family:sans-serif; font-weight: 700; margin-top: 35px;">Verifikasi Alamat Email Kamu</h1>' .
+                '<p style="font-family:sans-serif; font-size: 16px; font-weight: 500;">Untuk melanjutkan ke ProjectHub.id, konfirmasi bahwa ini adalah alamat<br>' .
+                'email kamu dengan menekan tombol dibawah.</p>' .
+                '<form action="' . route('activated_user') . '" method = "get">' .
+                '<input type="hidden" name="id" id = "id" value="' . $user->id . '">' .
+                '<input type="hidden" name="status_aktivasi" id = "status_aktivasi" value="active">' .
+                '<button style="padding: 14px 0px; margin-top: 30px; width: 250px; border-radius: 10px; border: none; font-size: 18px; font-weight: 500; color: white; background-color: #020179; font-weight: 700;">Verifikasi Email</button>' .
+                '</form>' .
+                '<p style="margin-top: 20px; color: #999; margin-top: 30px; font-family: sans-serif;">Link yang terdapat pada tombol diatas akan expired setelah 1 jam. Jika kamu tidak merasa<br>' .
+                'melakukan request, silahkan abaikan email ini.</p>';
 
+            if (!$mail->send()) {
+                return back()->with("failed", "Email not sent.")->withErrors("Email gagal dikirim");
+            } else {
+                return redirect()->to('/verify_email');
+            }
         } catch (Exception $e) {
-             return back()->with('error','Message could not be sent.');
+            return back()->with('error', 'Message could not be sent.');
         }
-
     }
 
     public function verify_email()
@@ -165,7 +162,7 @@ class AuthController extends Controller
         $id = session('id');
         $user = UserModel::find($id);
 
-        return view('verify_email',['user' => $user]);
+        return view('verify_email', ['user' => $user]);
     }
 
     public function activated_user(Request $request)
