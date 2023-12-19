@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PHPMailerController;
 
 /*
@@ -36,3 +37,4 @@ Route::get('/changepassword', [AuthController::class, 'changepassword']);
 Route::get('/confirm_email_pw', [AuthController::class, 'confirm_email_pw']);
 
 Route::post('/update_password', [AuthController::class, 'update_password']);
+Route::get('/landingPage', [HomeController::class, 'landingPage']);
