@@ -43,6 +43,12 @@ export default {
             backgroundImage: {
                 "hero-login":
                     "url('/public/assets/img_index/asset/loginandregister/bg.png')",
+                "hero-landing":
+                    "url('/public/assets/img_index/asset/landingPage/bgHiro.png')",
+                "hero-landing-md":
+                    "url('/public/assets/img_index/asset/landingPage/bgHiroMd.png')",
+                "hero-landing-sm":
+                    "url('/public/assets/img_index/asset/landingPage/bgHiroSm.png')",
             },
             fontFamily: {
                 inter: ["Inter", "sans-serif"],
