@@ -15,6 +15,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "tailgrids": "^2.1.0",
         "typeface-inter": "^3.18.1"
     }
 }

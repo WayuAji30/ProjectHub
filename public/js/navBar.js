@@ -1,14 +1,12 @@
-const heroElement = document.querySelector("section.hero");
+let startingPosition = window.scrollY;
 
-const heroObserver = new IntersectionObserver(
-    (entries) => {
-        const [entry] = entries;
+document.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    // console.log(window.scrollY);
 
-        if (entry.isIntersecting) {
-            document.querySelector("nav").classList.add("scrolled");
-        }
-    },
-    { threshold: 0.9 }
-);
-
-heroObserver.observe(heroElement);
+    if (window.scrollY) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
