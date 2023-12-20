@@ -17,7 +17,7 @@ use App\Http\Controllers\PHPMailerController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingPage');
 });
 
 Route::get('/login', [AuthController::class, 'login']);

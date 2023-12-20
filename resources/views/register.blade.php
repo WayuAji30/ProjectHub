@@ -3,7 +3,7 @@
 
 <div class="lg:col-span-6 col-span-12">
     <div class="lg:ml-20 lg:mt-20 md:mt-20 mt-7">
-        <a href="/index">
+        <a href="/">
             <img src="{{asset('assets/img_index/asset/loginandregister/logomobile.svg')}}" alt="" class="lg:hidden block md:mx-auto sm:ml-10 sm:w-[180px]">
         </a>
         <h1 class="lg:text-[35px] text-3xl lg:mt-0 mt-12 sm:ml-10 font-semibold text-start md:text-center">Halooo,
