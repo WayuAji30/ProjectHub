@@ -20,9 +20,7 @@
     <meta property="og:url" content="https://www.projecthub.id/login">
     <meta property="og:image" content="https://www.projecthub.id/images/projecthub.jpg">
     <meta property="og:site_name" content="ProjectHub">
-    <style>
-        @media (min-width: 1280px) and (max-width: 1439px) {}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <style>
@@ -48,7 +46,6 @@
             border-color: white;
         }
 
-
         @media (max-width: 767px) {
             header.scrolled {
                 color: white;
@@ -68,13 +65,12 @@
     </style>
 </head>
 
-
 <body class="font-inter">
-    <header class="absolute w-full drop-shadow-md">
+    <header class="absolute w-full drop-shadow-md z-10">
         <nav>
             <div class="w-full">
                 <div class="md:bg-white sm:bg-white lg:bg-opacity-0 scrolled">
-                    <div class="lg:mx-16 md:mx-12 mx-4 flex justify-between items-center lg:py-7 py-6">
+                    <div class="lg:mx-16 md:mx-12 mx-4 flex justify-between items-center lg:py-5 py-6">
                         <div class="flex items-center gap-3">
                             <div class="drawer w-fit lg:hidden block">
                                 <input id="my-drawer" type="checkbox" class="drawer-toggle" />
@@ -130,7 +126,7 @@
                                 <button class=" border-2  rounded-full px-8 lg:py-3 md:py-2 font-semibold md:border-primary-50 md:text-primary-50 sm:hidden">Masuk</button>
                             </form>
                             <div class="lg:block hidden">
-                                <div class="flex items-center border-2  px-5 py-3 rounded-full gap-3">
+                                <div class="flex items-center border-2 px-5 py-[11px] rounded-full gap-3">
                                     <button id="btnID" class="font-semibold flex items-center justify-center focus:outline-none active:opacity-100 outline-none opacity-30 transition-all duration-300 ease-in-out" onclick="switchLanguage('ID')">
                                         <img src="{{asset('assets/img_index/asset/landingPage/flagIND.svg')}}" alt="Flag Indonesia" class="mr-2 select-none">
                                         ID
@@ -151,5 +147,35 @@
 <script src="{{asset('js/navBar.js')}}"></script>
 <script src="{{asset('js/switchLanguage.js')}}"></script>
 <script src="{{asset('js/btnOwnerFreelance.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script>
+    var mySwiper = new Swiper('.mySwiper', {
+        autoplay: {
+            delay: 500,
+            disableOnInteraction: false,
+        },
+        allowTouchMove: false, // Disable user interaction (slide/swipe)
+        loop: true, // Enable loop mode if you want the slides to loop
+    });
+</script>
+<script>
+    // Set the initial state when the page loads
+    document.addEventListener("DOMContentLoaded", function() {
+        // Set ID as active and ENG with opacity-30
+        document.getElementById("btnID").classList.add("opacity-100");
+        document.getElementById("btnENG").classList.remove("opacity-100");
+    });
+
+    function switchLanguage(language) {
+        if (language === "ID") {
+            document.getElementById("btnID").classList.add("opacity-100");
+            document.getElementById("btnENG").classList.remove("opacity-100");
+        } else if (language === "ENG") {
+            document.getElementById("btnID").classList.remove("opacity-100");
+            document.getElementById("btnENG").classList.add("opacity-100");
+        }
+    }
+</script>
+
 
 </html>

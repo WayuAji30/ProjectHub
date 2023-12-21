@@ -4,9 +4,6 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
-        "./*.html",
-        "./ecommerce/*.html",
-        "./assets/**/*.js",
     ],
     theme: {
         extend: {
@@ -58,5 +55,5 @@ export default {
             },
         },
     },
-    plugins: [require("daisyui"), require("tailgrids/plugin")],
+    plugins: [require("daisyui")],
 };
