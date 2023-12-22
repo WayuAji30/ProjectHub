@@ -530,13 +530,14 @@
     </footer>
 </body>
 
-<script src="{{asset('js/navBar.js')}}"></script>
-<script src="{{asset('js/switchLanguage.js')}}"></script>
-<script src="{{asset('js/btnOwnerFreelance.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+<script src="{{asset('js/navBar.js')}}"></script>
+<script src="{{asset('js/switchLanguage.js')}}"></script>
+<script src="{{asset('js/btnOwnerFreelance.js')}}"></script>
+<script src="{{asset('js/tnsslider.js')}}"></script>
 <script>
     var splide = new Splide(".splide", {
         type: "loop",
@@ -550,7 +551,6 @@
 
     splide.mount();
 </script>
-<script src="{{asset('js/tnsslider.js')}}"></script>
 <script>
     // Set the initial state when the page loads
     document.addEventListener("DOMContentLoaded", function() {
