@@ -1,6 +1,6 @@
 // Set the initial state when the page loads
 document.addEventListener("DOMContentLoaded", function () {
-    // Set ID as active and ENG with opacity-30
+    // Set btnID as active and btnENG with opacity-30
     document.getElementById("btnID").classList.add("opacity-100");
     document.getElementById("btnENG").classList.remove("opacity-100");
 });

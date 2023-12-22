@@ -22,6 +22,8 @@
     <meta property="og:site_name" content="ProjectHub">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 
     <style>
         header {
@@ -42,13 +44,34 @@
             transition: background-color 0.5s;
         }
 
+        #bahasa.scroll {
+            border-color: #020179;
+        }
+
+        #btnLogin.scrollbtn {
+            border-color: #020179;
+        }
+
         .line-language {
-            border-color: white;
+            border-color: white
+        }
+
+        .splide__pagination__page.is-active {
+            background-color: #020179;
+        }
+
+        li .splide__pagination__page {
+            pointer-events: none;
         }
 
         @media (max-width: 767px) {
             header.scrolled {
                 color: white;
+            }
+
+            #articles {
+                overflow-x: scroll;
+                white-space: nowrap;
             }
         }
 
@@ -58,6 +81,11 @@
             }
 
             .scrollable-container {
+                overflow-x: scroll;
+                white-space: nowrap;
+            }
+
+            #articles {
                 overflow-x: scroll;
                 white-space: nowrap;
             }
@@ -123,15 +151,15 @@
                                 <button class=" border-2 border-primary-50 bg-primary-50 rounded-full px-8 sm:px-6 py-2 font-semibold sm:font-normal lg:hidden block">Daftar</button>
                             </form>
                             <form action="/login">
-                                <button class=" border-2  rounded-full px-8 lg:py-3 md:py-2 font-semibold md:border-primary-50 md:text-primary-50 sm:hidden">Masuk</button>
+                                <button class=" border-2 rounded-full px-8 lg:py-3 md:py-2 font-semibold md:border-primary-50 md:text-primary-50 sm:hidden" id="btnLogin">Masuk</button>
                             </form>
                             <div class="lg:block hidden">
-                                <div class="flex items-center border-2 px-5 py-[11px] rounded-full gap-3">
+                                <div class="flex items-center border-2 px-5 py-[11px] rounded-full gap-3" id="bahasa">
                                     <button id="btnID" class="font-semibold flex items-center justify-center focus:outline-none active:opacity-100 outline-none opacity-30 transition-all duration-300 ease-in-out" onclick="switchLanguage('ID')">
                                         <img src="{{asset('assets/img_index/asset/landingPage/flagIND.svg')}}" alt="Flag Indonesia" class="mr-2 select-none">
                                         ID
                                     </button>
-                                    <div class="border-[1px] h-6 line-language"></div>
+                                    <div class="border-[1px] h-6 line-language" id="bahasa"></div>
                                     <button id="btnENG" class="font-semibold focus:outline-none active:opacity-100 outline-none opacity-30 transition-all duration-300 ease-in-out" onclick="switchLanguage('ENG')">ENG</button>
                                 </div>
                             </div>
@@ -142,26 +170,391 @@
         </nav>
     </header>
     @yield('content')
+    <footer class="mt-28">
+        <div class="border-light-30 border-t-2 w-full"></div>
+        <div class="sm:mx-3 sm:block hidden sm:mt-4">
+            <div class="collapse collapse-arrow bg-white">
+                <input type="checkbox" class="peer" />
+                <div class="collapse-title font-semibold text-primary-50">
+                    Kategori Bidang
+                </div>
+                <div class="collapse-content">
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs">
+                            Web & Pemrograman
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Grafis dan Desain
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Penulisan dan Penerjemah
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Pemasaran Digital
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Video dan Animasi
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Tutor & Pengajar
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Bisnis & Akutansi
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Jasa Konsultasi
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Musik & Audio
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Data & Riset
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Editing Foto
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Pekerjaan Lainnya
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="collapse collapse-arrow bg-white">
+                <input type="checkbox" class="peer" />
+                <div class="collapse-title font-semibold text-primary-50">
+                    Layanan Pelanggan
+                </div>
+                <div class="collapse-content">
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs">
+                            Bantuan
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Kebijakan ProjectHub
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Karir
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Kerja Sama
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Syarat dan Ketentuan
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Kritik dan Saran
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="collapse collapse-arrow bg-white">
+                <input type="checkbox" class="peer" />
+                <div class="collapse-title font-semibold text-primary-50">
+                    Jelajahi ProjectHub
+                </div>
+                <div class="collapse-content">
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs">
+                            Tentang ProjectHub
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Blog
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Leaderboard
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Buat Project
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            Daftar Project
+                        </p>
+                    </a>
+                    <a href="">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                            ProjectHub Academy
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="sm:block hidden border-light-30 border-t-2 w-full mt-4"></div>
+        <div class="mx-16 sm:mx-6">
+            <div class="grid grid-cols-12 mt-16 sm:mt-12 mb-10">
+                <div class="lg:col-span-4 md:col-span-6 col-span-12">
+                    <img src="{{asset('assets/img_index/asset/landingPage/logoProjectHubBlue.svg')}}" alt="logoProjectHub" class="sm:w-40">
+                    <p class="text-lg font-medium leading-5 mt-10 sm:text-[13px] sm:mt-5">Bersama ProjectHub, raih
+                        peluang kerja
+                        <br> <span class="italic font-semibold text-primary-50">#tanpabatas</span>
+                    </p>
+                    <p class="text-light-90 mt-4 leading-5 sm:text-xs">ProjectHub merupakan sebuah situs <br class="md:block hidden"> freelance <br class="lg:block hidden"> yang <br class="sm:block hidden">
+                        menyediakan ribuan <br class="md:block hidden">
+                        projek dan <br class="lg:block hidden"> pekerjaan
+                        freelance <br class="lg:hidden block"> untuk para freelancer. <br class="lg:block hidden">
+                        Selain itu, <br class="md:block hidden"> para projek owner<br class="sm:block hidden"> juga
+                        dapat <br class="sm:hidden block"> membuat
+                        projek dan
+                        mencari <br class="md:block hidden"> freelancer<br class="sm:block hidden"> untuk <br class="lg:block hidden"> membantu
+                        mereka <br class="md:block hidden"> menyelesaikan projeknya.</p>
+                    <div class="flex items-center gap-3 mt-7">
+                        <a href="">
+                            <img src="{{asset('assets/img_index/asset/landingPage/linkedln.svg')}}" alt="linkdln">
+                        </a>
+                        <a href="">
+                            <img src="{{asset('assets/img_index/asset/landingPage/x.svg')}}" alt="x">
+                        </a>
+                        <a href="">
+                            <img src="{{asset('assets/img_index/asset/landingPage/tiktok.svg')}}" alt="tiktok">
+                        </a>
+                        <a href="">
+                            <img src="{{asset('assets/img_index/asset/landingPage/instagram.svg')}}" alt="instagram">
+                        </a>
+                    </div>
+                    <p class="font-semibold text-light-70 mt-20 md:text-xs sm:text-[10px] sm:mt-7">&copy; ProjectHub
+                        2023. Hak Cipta Dilindungi
+                    </p>
+                </div>
+                <div class="col-span-3 sm:hidden block">
+                    <h3 class="font-semibold text-base">Kategori Bidang</h3>
+                    <div class="mt-5">
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50">
+                                Web & Pemrograman
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Grafis dan Desain
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Penulisan dan Penerjemah
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Pemasaran Digital
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Video dan Animasi
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Tutor & Pengajar
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Bisnis & Akutansi
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Jasa Konsultasi
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Musik & Audio
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Data & Riset
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Editing Foto
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Pekerjaan Lainnya
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-span-3 md:ml-2 sm:hidden block">
+                    <h3 class="font-semibold text-base">Layanan Pelanggan</h3>
+                    <div class="mt-5">
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50">
+                                Bantuan
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Kebijakan ProjectHub
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Karir
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Kerja Sama
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Syarat dan Ketentuan
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                Kritik dan Saran
+                            </p>
+                        </a>
+                    </div>
+                    <div class="md:block hidden">
+                        <h3 class="font-semibold text-base mt-10">Jelajahi ProjectHub</h3>
+                        <div class="mt-5">
+                            <a href="">
+                                <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50">
+                                    Tentang ProjectHub
+                                </p>
+                            </a>
+                            <a href="">
+                                <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                    Blog
+                                </p>
+                            </a>
+                            <a href="">
+                                <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                    Leaderboard
+                                </p>
+                            </a>
+                            <a href="">
+                                <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                    Buat Project
+                                </p>
+                            </a>
+                            <a href="">
+                                <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                    Daftar Project
+                                </p>
+                            </a>
+                            <a href="">
+                                <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                    ProjectHub Academy
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2 lg:block hidden">
+                    <h3 class="font-semibold text-base">Jelajahi ProjectHub</h3>
+                    <div class="mt-5">
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50">
+                                <a href="">
+                                    Tentang ProjectHub
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2">
+                                Blog
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2">
+                                Leaderboard
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2">
+                                Buat Project
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2">
+                                Daftar Project
+                            </p>
+                        </a>
+                        <a href="">
+                            <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2">
+                                ProjectHub Academy
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 <script src="{{asset('js/navBar.js')}}"></script>
 <script src="{{asset('js/switchLanguage.js')}}"></script>
 <script src="{{asset('js/btnOwnerFreelance.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
 <script>
-    var mySwiper = new Swiper('.mySwiper', {
-        autoplay: {
-            delay: 500,
-            disableOnInteraction: false,
-        },
-        allowTouchMove: false, // Disable user interaction (slide/swipe)
-        loop: true, // Enable loop mode if you want the slides to loop
+    var splide = new Splide(".splide", {
+        type: "loop",
+        autoplay: "playing",
+        pagination: true,
+        speed: 1000,
+        arrows: false,
+        drag: false,
+        keyboard: false
     });
+
+    splide.mount();
 </script>
+<script src="{{asset('js/tnsslider.js')}}"></script>
 <script>
     // Set the initial state when the page loads
     document.addEventListener("DOMContentLoaded", function() {
-        // Set ID as active and ENG with opacity-30
+        // Set btnID as active and btnENG with opacity-30
         document.getElementById("btnID").classList.add("opacity-100");
         document.getElementById("btnENG").classList.remove("opacity-100");
     });
@@ -176,6 +569,5 @@
         }
     }
 </script>
-
 
 </html>
