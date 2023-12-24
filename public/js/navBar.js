@@ -1,19 +1,49 @@
-let startingPosition = window.scrollY;
+let lastScrollPosition = 0;
 
 document.addEventListener("scroll", () => {
     const header = document.querySelector("header");
     const bahasaElement = document.querySelector("#bahasa");
-    const btnLoginElement = document.getElementById("#btnLogin");
+    const navListWhite = document.getElementById("navlistWhite");
+    const navListBlue = document.getElementById("navlistBlue");
+    const logoWhite = document.getElementById("logoWhite");
+    const logoBlue = document.getElementById("logoBlue");
+    const btnLoginElement = document.getElementById("btnLogin");
 
-    if (window.scrollY > startingPosition) {
+    const currentScrollPosition = window.scrollY;
+
+    // Check if the screen width is larger than a certain value (adjust as needed)
+    const isLargeScreen = window.matchMedia("(min-width: 1024px)").matches;
+
+    if (currentScrollPosition > lastScrollPosition) {
+        // Scrolling down
         header.classList.add("scrolled");
         bahasaElement.classList.add("scroll");
         btnLoginElement.classList.add("scrollbtn");
+        navListBlue.style.display = "block";
+        navListWhite.style.display = "none";
+
+        // Check if it's a large screen before toggling logo display
+        if (isLargeScreen) {
+            logoBlue.style.display = "block";
+            logoWhite.style.display = "none";
+        }
     } else {
-        header.classList.remove("scrolled");
-        bahasaElement.classList.remove("scroll");
-        btnLoginElement.classList.remove("scrollbtn");
+        // Scrolling up
+        if (currentScrollPosition === 0) {
+            // The top of the page is reached
+            header.classList.remove("scrolled");
+            bahasaElement.classList.remove("scroll");
+            btnLoginElement.classList.remove("scrollbtn");
+            navListBlue.style.display = "none";
+            navListWhite.style.display = "block";
+
+            // Check if it's a large screen before toggling logo display
+            if (isLargeScreen) {
+                logoWhite.style.display = "block";
+                logoBlue.style.display = "none";
+            }
+        }
     }
 
-    startingPosition = window.scrollY;
+    lastScrollPosition = currentScrollPosition;
 });

@@ -1,16 +1,14 @@
-// Set the initial state when the page loads
-document.addEventListener("DOMContentLoaded", function () {
-    // Set btnID as active and btnENG with opacity-30
-    document.getElementById("btnID").classList.add("opacity-100");
-    document.getElementById("btnENG").classList.remove("opacity-100");
-});
-
 function switchLanguage(language) {
+    // Mengambil referensi ke elemen tombol ID dan ENG
+    var btnID = document.getElementById("btnID");
+    var btnENG = document.getElementById("btnENG");
+
+    // Mengubah kelas opacity-30 sesuai dengan tombol yang diklik
     if (language === "ID") {
-        document.getElementById("btnID").classList.add("opacity-100");
-        document.getElementById("btnENG").classList.remove("opacity-100");
+        btnID.classList.remove("opacity-30");
+        btnENG.classList.add("opacity-30");
     } else if (language === "ENG") {
-        document.getElementById("btnID").classList.remove("opacity-100");
-        document.getElementById("btnENG").classList.add("opacity-100");
+        btnID.classList.add("opacity-30");
+        btnENG.classList.remove("opacity-30");
     }
 }
