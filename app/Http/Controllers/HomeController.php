@@ -7,8 +7,5 @@ use Illuminate\View\View;
 
 class HomeController extends Controller
 {
-    public function landingPage()
-    {
-        return view('landingPage');
-    }
+   
 }

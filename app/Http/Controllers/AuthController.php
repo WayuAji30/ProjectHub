@@ -135,7 +135,7 @@ class AuthController extends Controller
             $mail->isHTML(true);
 
             $mail->Subject = "Verifikasi Akun | projecthub.id";
-            $mail->Body    = '<img src="https://svgshare.com/i/10az.svg" alt="Logo" style="margin-top:30px;"/>' .
+            $mail->Body    = '<a href = "https://mywebsite.com"><img src="https://iili.io/JRfxBYg.png" alt="Logo" style="width:200px;margin-top:30px;"/></a>' .
                 '<h1 style="font-family:sans-serif; font-weight: 700; margin-top: 35px;">Verifikasi Alamat Email Kamu</h1>' .
                 '<p style="font-family:sans-serif; font-size: 16px; font-weight: 500;">Untuk melanjutkan ke ProjectHub.id, konfirmasi bahwa ini adalah alamat<br>' .
                 'email kamu dengan menekan tombol dibawah.</p>' .

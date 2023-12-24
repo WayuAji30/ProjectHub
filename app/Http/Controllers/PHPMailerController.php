@@ -32,18 +32,7 @@ class PHPMailerController extends Controller
             $mail->setFrom('serviceprojecthub@gmail.com', 'no-reply');
 
             $mail->addAddress($request->input('email'));
-            //$mail->addCC($request->emailCc);
-            //$mail->addBCC($request->emailBcc);
-            //$mail->addReplyTo('sender@example.com', 'SenderReplyName');
-
-            /*
-            if(isset($_FILES['emailAttachments'])) {
-                for ($i=0; $i < count($_FILES['emailAttachments']['tmp_name']); $i++) {
-                    $mail->addAttachment($_FILES['emailAttachments']['tmp_name'][$i], $_FILES['emailAttachments']['name'][$i]);
-                }
-            }
-            */
-
+    
             $mail->isHTML(true);
 
             $user = UserModel::where('email', $request->input('email'))->first();
@@ -53,7 +42,7 @@ class PHPMailerController extends Controller
                     session(['email_user_ubah_password' => $user->email]);
 
                     $mail->Subject = "Lupa Password | projecthub.id";
-                    $mail->Body = '<img src="https://drive.google.com/file/d/1zHRt_jofN32CYAiXvG3IiShiiillc-KJ/view" alt="Logo" style="margin-top:30px;"/>' .
+                    $mail->Body = '<img src="https://iili.io/JRfxBYg.png" alt="Logo" style="width:200px;margin-top:30px;"/>' .
                         '<h1 style="font-family:sans-serif; font-weight:700; margin-top:35px;">Permintaan Ubah Password</h1>' .
                         '<p style="font-family:sans-serif; font-size:16px; color:#999; font-weight:500;">Untuk melanjutkan penggantian password kamu, tekan tombol<br>' .
                         'dibawah untuk mengarahkan kamu ke halaman berikutnya.</p>' .
@@ -74,7 +63,7 @@ class PHPMailerController extends Controller
                 }
             } else {
                 $mail->Subject = "Verifikasi Akun | projecthub.id";
-                $mail->Body    = '<img src="https://svgshare.com/i/10az.svg" alt="Logo" style="margin-top:30px;"/>' .
+                $mail->Body    = '<a href = "https://mywebsite.com"><img src="https://iili.io/JRfxBYg.png" alt="Logo" style="width:200px;margin-top:30px;"/></a>' .
                     '<h1 style="font-family:sans-serif; font-weight: 700; margin-top: 35px;">Verifikasi Alamat Email Kamu</h1>' .
                     '<p style="font-family:sans-serif; font-size: 16px; font-weight: 500; color: #999;">Untuk melanjutkan ke ProjectHub.id, konfirmasi bahwa ini adalah alamat<br>' .
                     'email kamu dengan menekan tombol dibawah.</p>' .
@@ -92,13 +81,7 @@ class PHPMailerController extends Controller
                     return response()->json();
                 }
             }
-
-
-
-            // $mail->AltBody = plain text version of email body;
-
-
-
+            
         } catch (Exception $e) {
             return back()->with('error', 'Message could not be sent.');
         }

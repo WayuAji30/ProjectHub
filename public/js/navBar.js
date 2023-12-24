@@ -5,6 +5,7 @@ document.addEventListener("scroll", () => {
     const bahasaElement = document.querySelector("#bahasa");
     const navListWhite = document.getElementById("navlistWhite");
     const navListBlue = document.getElementById("navlistBlue");
+    const flagID = document.getElementById("flagID");
     const logoWhite = document.getElementById("logoWhite");
     const logoBlue = document.getElementById("logoBlue");
     const btnLoginElement = document.getElementById("btnLogin");
@@ -19,6 +20,7 @@ document.addEventListener("scroll", () => {
         header.classList.add("scrolled");
         bahasaElement.classList.add("scroll");
         btnLoginElement.classList.add("scrollbtn");
+        flagID.classList.add("border-primary-50");
         navListBlue.style.display = "block";
         navListWhite.style.display = "none";
 
@@ -34,6 +36,7 @@ document.addEventListener("scroll", () => {
             header.classList.remove("scrolled");
             bahasaElement.classList.remove("scroll");
             btnLoginElement.classList.remove("scrollbtn");
+            flagID.classList.remove("border-primary-50");
             navListBlue.style.display = "none";
             navListWhite.style.display = "block";
 

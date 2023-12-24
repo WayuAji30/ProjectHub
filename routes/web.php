@@ -20,6 +20,8 @@ Route::get('/', function () {
     return view('landingPage');
 });
 
+Route::get('/landingPage', [HomeController::class, 'index']);
+
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/login/google', [AuthController::class, 'login_google']);
 Route::get('/login/google/callback', [AuthController::class, 'auth_google']);
@@ -37,4 +39,4 @@ Route::get('/changepassword', [AuthController::class, 'changepassword']);
 Route::get('/confirm_email_pw', [AuthController::class, 'confirm_email_pw']);
 
 Route::post('/update_password', [AuthController::class, 'update_password']);
-Route::get('/landingPage', [HomeController::class, 'landingPage']);
+
