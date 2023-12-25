@@ -14,9 +14,14 @@
 
         @if (session()->has('success'))
         <p class="mt-2 lg:ml-[0%] md:ml-[0%] -mb-6 sm:text-xs sm:ml-2">
-            <span class="text-[#8bff51]">*</span>
-            <span class="text-[#8bff51]">{{session('success')}}</span>
+            <span class="text-primary-50">*</span>
+            <span class="text-primary-50">{{session('success')}}</span>
         </p>
+        @elseif (session()->has('failed'))
+            <p class="mt-2 lg:ml-[0%] md:ml-[0%] -mb-6 sm:text-xs sm:ml-2">
+                <span class="text-[#D10B05]">*</span>
+                <span class="text-[#D10B05]">{{session('failed')}}</span>
+            </p>
         @endif
 
         <form action="/auth_login" method="post" class="lg:mt-14 mt-10 lg:ml-0 md:ml-32 mx-10">

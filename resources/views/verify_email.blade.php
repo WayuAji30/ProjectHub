@@ -24,8 +24,8 @@
         @endif
 
         <!-- Benerin target nya rol bagian action -->
-        <form action="" target="_blank" class="flex justify-center sm:mx-10">
-            <button type="submit" id="btn-verify" data-id_user="{{$user->id}}" data-email="{{$user->email}}"
+        <a href = "https://mail.google.com/mail/u/0/#inbox" target="_blank" class="flex justify-center sm:mx-10">
+            <button type="submit" id="btn-verify"
                 class="button-submit select-none gap-3 tracking-wide flex justify-center items-center text-white bg-primary-50 py-3 w-[500px] sm:w-full mt-12 text-[18px] rounded-lg font-semibold hover:bg-primary-70 transition-all duration-200 ease-linear">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                     <path
@@ -33,7 +33,7 @@
                         fill="white" />
                 </svg> Buka Gmail
             </button>
-        </form>
+        </a>
 
         <p class="text-light-90 mt-5 sm:text-sm">Tidak menerima email? <button type="button"
                 class="text-primary-50 font-medium select-none" id="kirim-ulang" data-id_user="{{$user->id}}"
@@ -45,7 +45,7 @@
             detik.</p>
         <!-- <form action="javascript:void(0);">
             <p class="text-light-90 mt-5 sm:text-sm">Tidak menerima email?
-                <button class="text-primary-50 font-medium select-none" id="kirim-ulang" data-id_user="{{$user->id}}"
+                <button class="text-primary-50 font-medium select-none" id="kirim-ulang" data-id_user=""
                     data-email="">Kirim Ulang</button>
                 dalam <span class="countdown text-primary-50 font-medium select-none">
                     <span style="--value:1;" class="select-none"></span>:

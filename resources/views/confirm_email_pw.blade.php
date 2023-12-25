@@ -13,7 +13,7 @@
         <h2 class="text-[16px] text-light-90 mt-4">Masukan alamat email anda yang telah <br
                 class="lg:hidden md:hidden block"> terdaftar di ProjectHub
         </h2>
-        <form action="/send_verify_email" target="_blank" method="post" class="sm:mx-10 mt-12 sm:mt-5">
+        <form action="/send_confirm_email_pw" method="post" class="sm:mx-10 mt-12 sm:mt-5">
             @csrf
             <input type="email" name="email" id="email" required placeholder="Masukan Email Kamu"
                 class="text-dark-90 py-3 pl-5 pr-12 border-2 border-light-50 rounded-lg w-[500px] sm:w-full mt-4 focus:outline-primary-50">

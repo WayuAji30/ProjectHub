@@ -1,10 +1,4 @@
 $(document).ready(function () {
-    var totalKlik = 0;
-
-    $("#btn-verify").on("click", function () {
-        window.open("https://mail.google.com/mail/u/0/#inbox", "_blank");
-    });
-
     $("#kirim-ulang").on("click", function () {
         // Get CSRF token from the meta tag
         var csrfToken = $('meta[name="csrf-token"]').attr("content");

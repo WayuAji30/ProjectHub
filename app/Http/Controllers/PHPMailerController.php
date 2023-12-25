@@ -38,7 +38,6 @@ class PHPMailerController extends Controller
             $user = UserModel::where('email', $request->input('email'))->first();
 
             if (session('status_halaman') == 'lupa_password') {
-                if ($user) {
                     session(['email_user_ubah_password' => $user->email]);
 
                     $mail->Subject = "Lupa Password | projecthub.id";
@@ -52,15 +51,12 @@ class PHPMailerController extends Controller
                         '<p style="margin-top:20px; color:#999; margin-top:30px; font-family:sans-serif;">Link yang terdapat pada tombol diatas akan expired setelah 1 jam. Jika kamu tidak merasa<br>' .
                         'melakukan request, silahkan abaikan email ini.</p>';
 
-
                     if (!$mail->send()) {
                         return back()->with("failed", "Email not sent.")->withErrors("Email gagal dikirim");
                     } else {
-                        return redirect()->to('https://mail.google.com/mail/u/0/#inbox');
+                        return redirect()->to('/verify_email');
                     }
-                } else {
-                    return back()->with(["failed" => "Email not found!"]);
-                }
+
             } else {
                 $mail->Subject = "Verifikasi Akun | projecthub.id";
                 $mail->Body    = '<a href = "https://mywebsite.com"><img src="https://iili.io/JRfxBYg.png" alt="Logo" style="width:200px;margin-top:30px;"/></a>' .
