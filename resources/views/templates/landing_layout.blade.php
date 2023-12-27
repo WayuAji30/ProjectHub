@@ -123,6 +123,14 @@
         animation-delay: calc(-3s * var(--delay));
     }
 
+    #modalProfile {
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .fade-out {
+        opacity: 0;
+    }
+
     @keyframes animate {
         0% {
             opacity: 0;
@@ -898,6 +906,7 @@
 <script src="{{asset('js/tnsslider.js')}}"></script>
 <script src="{{asset('js/overlay.js')}}"></script>
 <script src="{{asset('js/toggleBahasaMobile.js')}}"></script>
+<script src="{{asset('js/modalProfile.js')}}"></script>
 <script>
 var splide = new Splide(".splide", {
     type: "loop",
@@ -911,6 +920,5 @@ var splide = new Splide(".splide", {
 
 splide.mount();
 </script>
-
 
 </html>
