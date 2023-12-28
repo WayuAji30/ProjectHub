@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('landingPage');
 });
 
-Route::get('/landingPage', [HomeController::class, 'index']);
+Route::get('/index', [HomeController::class, 'index']);
 
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/login/google', [AuthController::class, 'login_google']);
@@ -40,4 +40,3 @@ Route::get('/confirm_email_pw', [AuthController::class, 'confirm_email_pw']);
 Route::post('/send_confirm_email_pw', [AuthController::class, 'send_confirm_email_pw']);
 
 Route::post('/update_password', [AuthController::class, 'update_password']);
-
