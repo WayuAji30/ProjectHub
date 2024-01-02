@@ -1317,24 +1317,4 @@
     </div>
 </section>
 
-<div id="modalProfile">
-    <div class="fixed inset-0 flex items-center justify-center z-50">
-        <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity"></div>
-        <div class="relative z-10 w-screen max-w-md mx-auto overflow-y-auto">
-            <div class="flex min-h-full items-end justify-center p-4 text-center">
-                <div class="relative transform overflow-hidden rounded-3xl bg-white drop-shadow-xl transition-all text-center w-[480px]">
-                    <h1 class="font-semibold text-4xl text-dark-70 mt-16 sm:text-3xl">Lengkapi Profilmu</h1>
-                    <img src="{{asset('assets/img_index/asset/landingPage/modalLengkapiProfil.png')}}" alt="Modal" class="mx-auto mt-9">
-                    <p class="text-base text-light-90 mt-7">Sebelum bisa mendaftar atau membuat <br> projek, kamu harus
-                        terlebih dahulu <br> melengkapi profile kamu</p>
-                    <form action="/profile" class="mx-10">
-                        <button class="text-white text-base font-semibold bg-primary-50 rounded-md py-3 mt-10 w-full hover:bg-primary-70 transition-all duration-200 ease-in-out">Lengkapi
-                            Sekarang</button>
-                    </form>
-                    <button class="text-primary-50 my-5 font-semibold hover:underline transition-all duration-200 ease-in-out" id="close">Lakukan Nanti</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

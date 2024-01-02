@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProjectHub</title>
     @vite(['resources/css/app.css'])
-    <link rel="shortcut icon" href="{{asset('assets/img_index/asset/navbar/logoTitle.svg')}}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{asset('assets/img_index/asset/logo/iconlogo.svg')}}" type="image/x-icon" />
     <meta name="description" content="Login ke ProjectHub untuk mengakses proyek. Keamanan tinggi dan pengalaman pengguna yang intuitif. Masukkan kredensial Anda dan mulai manajemen proyek yang efisien sekarang.">
     <meta name="title" content="Login ke Akun ProjectHub Anda">
     <!-- keywords diutamakan untuk yg berkaitan dengan isi konten -->
@@ -805,7 +805,6 @@
 <script src="{{asset('js/tnsslider.js')}}"></script>
 <script src="{{asset('js/overlay.js')}}"></script>
 <script src="{{asset('js/toggleBahasaMobile.js')}}"></script>
-<script src="{{asset('js/modalProfile.js')}}"></script>
 <script>
     var splide = new Splide(".splide", {
         type: "loop",
