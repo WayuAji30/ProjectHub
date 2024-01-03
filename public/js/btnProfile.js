@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Tambahkan event listener untuk menanggapi klik pada elemen dengan id "btnProfile"
     btnProfile.addEventListener("click", function (event) {
-        // Toggle kelas "overlay" pada elemen dengan id "profileOverlay"
-        profileOverlay.classList.toggle("overlay");
+        // Tampilkan kelas "overlay" pada elemen dengan id "profileOverlay"
+        profileOverlay.classList.add("overlay");
         event.stopPropagation(); // Menghentikan penyebaran ke event click dokumen
     });
 
