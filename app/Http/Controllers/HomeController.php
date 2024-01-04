@@ -11,4 +11,14 @@ class HomeController extends Controller
     {
         return view('index');
     }
+
+    public function search()
+    {
+        return view('search');
+    }
+
+    public function detail_project()
+    {
+        return view('detail_project');
+    }
 }

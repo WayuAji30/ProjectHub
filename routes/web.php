@@ -20,7 +20,13 @@ Route::get('/', function () {
     return view('landingPage');
 });
 
+Route::get('/404', function () {
+    return view('404');
+});
+
 Route::get('/index', [HomeController::class, 'index']);
+Route::get('/search', [HomeController::class, 'search']);
+Route::get('/detail_project', [HomeController::class, 'detail_project']);
 
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/login/google', [AuthController::class, 'login_google']);

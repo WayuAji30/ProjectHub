@@ -6,7 +6,7 @@
 <div id="profileOverlay"></div>
 <div class="modal-overlay"></div>
 
-<div id="modalProfile">
+<div id="modalProfile" hidden>
     <div class="fixed inset-0 flex items-center justify-center z-50">
         <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity"></div>
         <div class="relative z-10 w-screen max-w-md mx-auto overflow-y-auto">
@@ -139,47 +139,36 @@
     </div>
 </div>
 
-<main>
-    <div class="lg:pt-48 md:pt-28 pt-8">
-        <div class="container mx-auto">
-            <div class="lg:px-24 md:px-12 px-6">
-                <swiper-container class="mySwiper z-0" pagination="true" autoplay-delay="5000" centered-slides="true"
-                    loop="true" speed="2000" style="--swiper-pagination-color: #020179;">
-                    <swiper-slide><img src="{{asset('assets/img_index/asset/index/carousel1.png')}}" alt=""
-                            class="mx-auto rounded-lg mb-12 w-full sm:h-36"></swiper-slide>
-                    <swiper-slide><img src="{{asset('assets/img_index/asset/index/carousel1.png')}}" alt=""
-                            class="mx-auto rounded-lg mb-12 w-full sm:h-36"></swiper-slide>
-                    <swiper-slide><img src="{{asset('assets/img_index/asset/index/carousel1.png')}}" alt=""
-                            class="mx-auto rounded-lg mb-12 w-full sm:h-36"></swiper-slide>
-                    <swiper-slide><img src="{{asset('assets/img_index/asset/index/carousel1.png')}}" alt=""
-                            class="mx-auto rounded-lg mb-12 w-full sm:h-36"></swiper-slide>
-                </swiper-container>
-            </div>
-        </div>
+<main class="lg:mt-44 md:mt-28 mt-5 lg:px-24 md:px-12 px-6 container mx-auto">
+    <nav aria-label="breadcrumb" class="w-max">
+        <ol class="flex flex-wrap items-center w-full">
+            <li
+                class="flex items-center text-primary-50 sm:text-xs font-medium leading-normal transition-colors duration-300 cursor-pointer">
+                <a href="/index" class="opacity-50 hover:opacity-100">Beranda</a><span
+                    class="mx-2 antialiased font-semibold leading-normal pointer-events-none select-none">/</span>
+            </li>
+            <li
+                class="flex items-center text-primary-50 sm:text-xs font-medium antialiased leading-normal transition-colors duration-300 cursor-pointer">
+                <a href="" class="opacity-50 hover:opacity-100">Search</a><span
+                    class="mx-2 antialiased font-semibold leading-normal pointer-events-none select-none">/</span>
+            </li>
+        </ol>
+    </nav>
+    <div class="lg:mt-5 mt-4">
+        <h1 class="lg:text-[32px] md:text-2xl text-xl text-dark-70">Hasil Untuk <span class="font-semibold">Desain
+                UI/UX</span></h1>
+        <h1 class="lg:text-[32px] md:text-2xl text-xl text-dark-70 hidden">Temukan Projek Terbaik Untuk Kamu</h1>
+        <p class="text-light-70 lg:text-base md:text-[14px] text-xs mt-2 hidden">Cari projek yang tersedia untuk kamu
+        </p>
+        <p class="text-light-70 lg:text-base md:text-[14px] text-xs mt-2">Berikut merupakan <span
+                class="font-semibold">171
+                project</span> terkait
+            yang tersedia</p>
     </div>
 </main>
 
 <section>
-    <div class="container mx-auto lg:mt-24 mt-12 lg:px-24 md:px-12 px-6">
-        <div class="flex lg:items-center items-start justify-between">
-            <div>
-                <h1 class="font-semibold lg:text-[32px] md:text-2xl text-xl text-dark-70">Jelajahi <span
-                        class="sm:hidden">Semua</span> Projek
-                    <span class="sm:hidden">Yang Tersedia</span>
-                </h1>
-                <p class="lg:text-base text-light-70 lg:mt-3 md:mt-2 mt-0">Cari projek yang cocok dan <br
-                        class="sm:block hidden"> sesuai
-                    untuk
-                    kamu</p>
-            </div>
-            <a href="" class="flex items-center text-primary-50 lg:text-lg text-xs font-semibold hover:text-primary-70">
-                Lihat Semua <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                    fill="none">
-                    <path d="M10 17L15 12L10 7" stroke="#020179" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </a>
-        </div>
+    <div class="container mx-auto mt-12 lg:px-24 md:px-12 px-6">
         <div>
             <div class="flex sm:flex-col sm:gap-3 items-center justify-between lg:mt-12 mt-8">
                 <a href="" class="sm:w-full hover:shadow-xl transition-all duration-200 ease-in-out">
@@ -632,10 +621,50 @@
     </div>
 </section>
 
-<div class="flex justify-center mt-12">
-    <button
-        class="text-primary-50 border-2 border-primary-50 py-3 hover:bg-primary-50 hover:text-white lg:w-96 w-60 rounded-lg font-semibold transition-all duration-200 ease-in-out">Lihat
-        Selengkapnya</button>
-</div>
+<main class="pagination sm:hidden block container mx-auto">
+    <div class="lg:px-24 md:px-12 px-6  mt-12">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="font-medium lg:text-lg text-[14px] text-light-50">Menampilkan halaman <span>2</span> dari
+                    <span>247</span>
+                </p>
+            </div>
+            <div class="flex items-center lg:gap-3 gap-1">
+                <button class="flex items-center lg:text-lg text-[14px] text-primary-50 lg:gap-1 gap-0"><svg
+                        xmlns="http://www.w3.org/2000/svg" class="md:w-4" width="23" height="23" viewBox="0 0 23 23"
+                        fill="none">
+                        <path
+                            d="M12.1971 19.4665C12.2836 19.558 12.3512 19.6657 12.396 19.7833C12.4409 19.9009 12.4621 20.0262 12.4586 20.152C12.455 20.2779 12.4267 20.4018 12.3753 20.5166C12.3238 20.6315 12.2503 20.7352 12.1588 20.8216C12.0673 20.9081 11.9597 20.9757 11.842 21.0205C11.7244 21.0654 11.5991 21.0867 11.4733 21.0831C11.3475 21.0796 11.2236 21.0512 11.1087 20.9998C10.9938 20.9484 10.8902 20.8748 10.8037 20.7833L2.65786 12.1583C2.48964 11.9804 2.3959 11.7448 2.3959 11.4999C2.3959 11.2551 2.48964 11.0195 2.65786 10.8415L10.8037 2.21559C10.8896 2.1221 10.9932 2.04659 11.1085 1.99348C11.2238 1.94036 11.3485 1.91069 11.4754 1.90619C11.6023 1.90168 11.7288 1.92242 11.8476 1.96722C11.9664 2.01202 12.0751 2.07998 12.1674 2.16714C12.2597 2.2543 12.3338 2.35894 12.3853 2.47497C12.4368 2.59101 12.4648 2.71612 12.4675 2.84305C12.4703 2.96997 12.4478 3.09619 12.4014 3.21435C12.355 3.33252 12.2855 3.44028 12.1971 3.53138L4.67228 11.4999L12.1971 19.4665Z"
+                            fill="#020179" />
+                    </svg>Prev
+                </button>
+                <a href=""
+                    class="py-[1px] lg:px-3 px-2 bg-primary-50 text-white lg:text-lg text-[14px] rounded-md">1</a>
+                <a href=""
+                    class="py-[1px] lg:px-3 px-2 text-light-70 hover:bg-light-30 lg:text-lg text-[14px] rounded-md">2</a>
+                <a href=""
+                    class="py-[1px] lg:px-3 px-2 text-light-70 hover:bg-light-30 lg:text-lg text-[14px] rounded-md">3</a>
+                <a href=""
+                    class="py-[1px] lg:px-3 px-2 text-light-70 hover:bg-light-30 lg:text-lg text-[14px] rounded-md">4</a>
+                <a href=""
+                    class="py-[1px] lg:px-3 px-2 text-light-70 hover:bg-light-30 lg:text-lg text-[14px] rounded-md">5</a>
+                <a href=""
+                    class="py-[1px] lg:px-3 px-2 text-light-70 hover:bg-light-30 lg:text-lg text-[14px] rounded-md lg:block hidden">6</a>
+                <a href=""
+                    class="py-[1px] lg:px-3 px-2 text-light-70 hover:bg-light-30 lg:text-lg text-[14px] rounded-md">...</a>
+                <a href=""
+                    class="py-[1px] lg:px-3 px-2 text-light-70 hover:bg-light-30 lg:text-lg text-[14px] rounded-md">10</a>
+                <button class="flex items-center lg:text-lg text-[14px] text-primary-50 lg:gap-1 gap-0">Next<svg
+                        xmlns="http://www.w3.org/2000/svg" class="md:w-4" width="23" height="23" viewBox="0 0 23 23"
+                        fill="none">
+                        <path
+                            d="M10.8029 3.53345C10.7164 3.44196 10.6488 3.33433 10.604 3.21672C10.5591 3.0991 10.5379 2.9738 10.5414 2.84797C10.545 2.72214 10.5733 2.59824 10.6247 2.48335C10.6762 2.36846 10.7497 2.26483 10.8412 2.17837C10.9327 2.09191 11.0403 2.02432 11.158 1.97945C11.2756 1.93459 11.4009 1.91333 11.5267 1.91689C11.6525 1.92045 11.7764 1.94876 11.8913 2.0002C12.0062 2.05164 12.1098 2.12521 12.1963 2.2167L20.3421 10.8417C20.5104 11.0196 20.6041 11.2552 20.6041 11.5001C20.6041 11.7449 20.5104 11.9805 20.3421 12.1585L12.1963 20.7844C12.1104 20.8779 12.0068 20.9534 11.8915 21.0065C11.7762 21.0596 11.6515 21.0893 11.5246 21.0938C11.3977 21.0983 11.2712 21.0776 11.1524 21.0328C11.0336 20.988 10.9249 20.92 10.8326 20.8329C10.7403 20.7457 10.6662 20.6411 10.6147 20.525C10.5632 20.409 10.5352 20.2839 10.5325 20.157C10.5297 20.03 10.5522 19.9038 10.5986 19.7857C10.645 19.6675 10.7145 19.5597 10.8029 19.4686L18.3277 11.5001L10.8029 3.53345Z"
+                            fill="#020179" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
 
 @endsection

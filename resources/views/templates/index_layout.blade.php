@@ -26,6 +26,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 
     <style>
+        .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+            transition: 0.1s;
+        }
+
         #hover.overlay {
             position: fixed;
             width: 100%;
@@ -124,6 +137,12 @@
                                                         Beralih Ke Owner</button>
                                                     <button class="py-3 text-white rounded-md bg-primary-50 w-full font-medium text-[15px] hover:bg-primary-70 hidden">
                                                         Beralih Ke Freelance</button>
+                                                </form>
+                                                <form action="/register" class="mt-5 hidden">
+                                                    <button class="py-3 rounded-md bg-white border-2 border-primary-50 text-primary-50 w-full font-medium text-[15px] hover:bg-primary-50 hover:text-white">
+                                                        Masuk</button>
+                                                    <button class="py-3 text-white rounded-md border-2 border-transparent bg-primary-50 w-full font-medium text-[15px] hover:bg-primary-70 mt-2">
+                                                        Daftar</button>
                                                 </form>
                                                 <div class="border-t-2 border-light-30 mt-8"></div>
                                                 <div class="mt-5"><a href="/login" class="md:text-lg text-base text-dark-10 hover:text-primary-50 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -294,7 +313,7 @@
                                 </a>
                             </div>
                             <div class="relative sm:w-full sm:order-2 sm:mt-5">
-                                <form action="">
+                                <form action="/search">
                                     <button class="absolute mt-4 pl-5 group">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                             <g clip-path="url(#clip0_714_839)">
@@ -402,6 +421,11 @@
                                 </ul>
                             </div>
                             <a href="" class="text-light-70 font-medium text-base lg:block hidden">Projek Saya</a>
+                            <div class="hidden">
+                                <a href="" class="text-primary-50 font-medium text-base flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.084 2.75C9.35464 2.75 8.65517 3.03973 8.13944 3.55546C7.62372 4.07118 7.33398 4.77065 7.33398 5.5V6.41667H4.58398C3.85464 6.41667 3.15517 6.7064 2.63944 7.22212C2.12372 7.73785 1.83398 8.43732 1.83398 9.16667V16.5C1.83398 17.2293 2.12372 17.9288 2.63944 18.4445C3.15517 18.9603 3.85464 19.25 4.58398 19.25H17.4173C18.1467 19.25 18.8461 18.9603 19.3619 18.4445C19.8776 17.9288 20.1673 17.2293 20.1673 16.5V9.16667C20.1673 8.43732 19.8776 7.73785 19.3619 7.22212C18.8461 6.7064 18.1467 6.41667 17.4173 6.41667H14.6673V5.5C14.6673 4.77065 14.3776 4.07118 13.8619 3.55546C13.3461 3.03973 12.6467 2.75 11.9173 2.75H10.084ZM12.834 6.41667H9.16732V5.5C9.16732 5.25688 9.2639 5.02373 9.4358 4.85182C9.60771 4.67991 9.84087 4.58333 10.084 4.58333H11.9173C12.1604 4.58333 12.3936 4.67991 12.5655 4.85182C12.7374 5.02373 12.834 5.25688 12.834 5.5V6.41667Z" fill="#020179" />
+                                    </svg>Projek Saya</a>
+                            </div>
                             <a href="" class="flex items-center gap-2 text-primary-50 font-medium text-base md:hidden sm:hidden"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
                                     <path d="M11.5 1.91699C6.20713 1.91699 1.91667 6.20745 1.91667 11.5003C1.91667 16.7932 6.20713 21.0837 11.5 21.0837C16.7929 21.0837 21.0833 16.7932 21.0833 11.5003C21.0833 6.20745 16.7929 1.91699 11.5 1.91699ZM16.2917 12.4587H12.4583V16.292H10.5417V12.4587H6.70834V10.542H10.5417V6.70866H12.4583V10.542H16.2917V12.4587Z" fill="#020179" />
                                 </svg>Buat Projek</a>
@@ -409,7 +433,7 @@
                             <div class="flex items-center gap-3 sm:order-1">
                                 <div class="relative sm:block hidden">
                                     <form action="">
-                                        <button class="p-1 group transition-all duration-200 ease-in-out tooltip tooltip-bottom" data-tip="Notifikasi" onclick="toggleNotification()" id="btnNotif"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                        <button class="p-1 group transition-all duration-200 ease-in-out tooltip tooltip-bottom" data-tip="Notifikasi"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
                                                 <path class="group-hover:fill-primary-50" d="M16.25 21.1248C16.25 21.9867 15.9076 22.8134 15.2981 23.4229C14.6886 24.0324 13.862 24.3748 13 24.3748C12.138 24.3748 11.3114 24.0324 10.7019 23.4229C10.0924 22.8134 9.75 21.9867 9.75 21.1248H16.25ZM21.125 19.4998H3.4125C3.15391 19.4998 2.90592 19.3971 2.72307 19.2142C2.54022 19.0314 2.4375 18.7834 2.4375 18.5248C2.4375 18.2662 2.54022 18.0182 2.72307 17.8354C2.90592 17.6525 3.15391 17.5498 3.4125 17.5498H4.875V11.3748C4.875 7.4423 7.67 4.1598 11.3831 3.4123C11.3604 3.18635 11.3854 2.95815 11.4563 2.74243C11.5272 2.5267 11.6426 2.32824 11.7949 2.15984C11.9473 1.99144 12.1332 1.85684 12.3408 1.76472C12.5484 1.6726 12.7729 1.625 13 1.625C13.2271 1.625 13.4517 1.6726 13.6592 1.76472C13.8668 1.85684 14.0527 1.99144 14.2051 2.15984C14.3574 2.32824 14.4728 2.5267 14.5437 2.74243C14.6146 2.95815 14.6396 3.18635 14.6169 3.4123C16.4533 3.78583 18.1043 4.78246 19.2902 6.23348C20.4762 7.6845 21.1244 9.50076 21.125 11.3748V17.5498H22.5875C22.8461 17.5498 23.0941 17.6525 23.2769 17.8354C23.4598 18.0182 23.5625 18.2662 23.5625 18.5248C23.5625 18.7834 23.4598 19.0314 23.2769 19.2142C23.0941 19.3971 22.8461 19.4998 22.5875 19.4998H21.125Z" fill="#B3B3B3" />
                                             </svg>
                                             <svg class="absolute top-0 right-0" xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7" fill="none">
@@ -572,6 +596,16 @@
                                     Ke
                                     Owner</button>
                             </form>
+                            <div class="hidden">
+                                <div class="flex items-center gap-4">
+                                    <form action="/login">
+                                        <button class=" border-2 rounded-full border-primary-50 text-primary-50 px-10 py-3 font-semibold hover:bg-primary-50 hover:text-white transition-all duration-200 ease-in-out">Masuk</button>
+                                    </form>
+                                    <form action="/register">
+                                        <button class=" border-2 rounded-full border-primary-50 text-white bg-primary-50 px-10 py-3 font-semibold hover:bg-primary-70 transition-all duration-200 ease-in-out">Daftar</button>
+                                    </form>
+                                </div>
+                            </div>
                             <div class="dropdown dropdown-bottom dropdown-end lg:block hidden">
                                 <div tabindex="0" role="button" class="border-[3px] border-primary-50 rounded-full" id="btnProfile">
                                     <img src="{{asset('assets/img_index/asset/index/profile.png')}}" alt="profile">
@@ -725,7 +759,7 @@
         </nav>
     </header>
     @yield('content')
-    <footer class="mt-28">
+    <footer class="mt-28 container mx-auto">
         <div class="border-light-30 border-t-2 w-full"></div>
         <div class="sm:mx-3 sm:block hidden sm:mt-4">
             <div class="collapse collapse-arrow bg-white">
@@ -1156,7 +1190,6 @@
 <script src="{{asset('js/search.js')}}"></script>
 <script src="{{asset('js/jelajahiOverlay.js')}}"></script>
 <script src="{{asset('js/btnOpenBahasa.js')}}"></script>
-<script src="{{asset('js/btnJelajahi.js')}}"></script>
 <script src="{{asset('js/btnProfile.js')}}"></script>
 <script src="{{asset('js/drawerMobile.js')}}"></script>
 <script src="{{asset('js/modalProfile.js')}}"></script>
@@ -1180,6 +1213,9 @@
         var notification = document.getElementById("notif");
         notification.classList.toggle("hidden");
         notification.classList.toggle("visible");
+
+        var overlay = document.querySelector(".modal-overlay");
+        overlay.classList.toggle("overlay");
     }
 </script>
 
