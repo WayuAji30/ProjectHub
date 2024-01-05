@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Tambahkan event listener untuk menanggapi klik pada elemen dengan id "btnProfile"
     btnProfile.addEventListener("click", function (event) {
+        // Cek apakah ada overlay lain yang masih aktif, jika ada hilangkan
+        var activeOverlay = document.querySelector(".overlay");
+        if (activeOverlay && activeOverlay !== profileOverlay) {
+            activeOverlay.classList.remove("overlay");
+        }
+
         // Tampilkan kelas "overlay" pada elemen dengan id "profileOverlay"
         profileOverlay.classList.add("overlay");
         event.stopPropagation(); // Menghentikan penyebaran ke event click dokumen

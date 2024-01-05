@@ -21,4 +21,9 @@ class HomeController extends Controller
     {
         return view('detail_project');
     }
+
+    public function profile()
+    {
+        return view('profile.profile');
+    }
 }
