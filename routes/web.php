@@ -24,10 +24,15 @@ Route::get('/404', function () {
     return view('404');
 });
 
+Route::get('/data-succsess', function () {
+    return view('data-succsess');
+});
+
 Route::get('/index', [HomeController::class, 'index']);
 Route::get('/search', [HomeController::class, 'search']);
 Route::get('/detail_project', [HomeController::class, 'detail_project']);
 Route::get('/profile', [HomeController::class, 'profile']);
+Route::get('/profiles', [HomeController::class, 'profiles']);
 
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/login/google', [AuthController::class, 'login_google']);

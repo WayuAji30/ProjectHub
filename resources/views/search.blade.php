@@ -126,12 +126,12 @@
     <div class="lg:mt-5 mt-4">
         <h1 class="lg:text-[32px] md:text-2xl text-xl text-dark-70">Hasil Untuk <span class="font-semibold">Desain
                 UI/UX</span></h1>
-        <h1 class="lg:text-[32px] md:text-2xl text-xl text-dark-70 hidden">Temukan Projek Terbaik Untuk Kamu</h1>
-        <p class="text-light-70 lg:text-base md:text-[14px] text-xs mt-2 hidden">Cari projek yang tersedia untuk kamu
-        </p>
         <p class="text-light-70 lg:text-base md:text-[14px] text-xs mt-2">Berikut merupakan <span class="font-semibold">171
                 project</span> terkait
             yang tersedia</p>
+        <h1 class="lg:text-[32px] md:text-2xl text-xl text-dark-70 hidden">Temukan Projek Terbaik Untuk Kamu</h1>
+        <p class="text-light-70 lg:text-base md:text-[14px] text-xs mt-2 hidden">Cari projek yang tersedia untuk kamu
+        </p>
     </div>
 </main>
 
@@ -193,7 +193,7 @@
                     design UI/UX dari aplikasi yang ingin saya buat dengan bahasa dart saya memnyimpanya di FIGMA, saya
                     ingin mencari jasa yang dapat mengimplementasikan aplikasi saya serta menghubungkan dengan API web
                     saya, dengan design yang sudah saya sediakan.</h2>
-                <a href="">
+                <a href="/profiles">
                     <div class="flex items-center gap-3 lg:mt-12 mt-8">
                         <img src="{{asset('assets/img_index/asset/index/profile.png')}}" alt="profile" class="border-2 border-primary-50 rounded-full">
                         <div>
@@ -346,7 +346,7 @@
                     design UI/UX dari aplikasi yang ingin saya buat dengan bahasa dart saya memnyimpanya di FIGMA, saya
                     ingin mencari jasa yang dapat mengimplementasikan aplikasi saya serta menghubungkan dengan API web
                     saya, dengan design yang sudah saya sediakan.</h2>
-                <a href="">
+                <a href="/profiles">
                     <div class="flex items-center gap-3 lg:mt-12 mt-8">
                         <img src="{{asset('assets/img_index/asset/index/profile.png')}}" alt="profile" class="border-2 border-primary-50 rounded-full">
                         <div>
