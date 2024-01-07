@@ -31,4 +31,9 @@ class HomeController extends Controller
     {
         return view('stalker.profiles');
     }
+
+    public function setting()
+    {
+        return view('profile.setting');
+    }
 }

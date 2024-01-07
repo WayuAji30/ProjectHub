@@ -33,6 +33,7 @@ Route::get('/search', [HomeController::class, 'search']);
 Route::get('/detail_project', [HomeController::class, 'detail_project']);
 Route::get('/profile', [HomeController::class, 'profile']);
 Route::get('/profiles', [HomeController::class, 'profiles']);
+Route::get('/setting', [HomeController::class, 'setting']);
 
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/login/google', [AuthController::class, 'login_google']);

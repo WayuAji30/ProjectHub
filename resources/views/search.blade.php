@@ -5,6 +5,7 @@
 <div id="jelajahiOverlay"></div>
 <div id="profileOverlay"></div>
 <div class="modal-overlay" id="modalOverlay"></div>
+<div class="modal-overlay" id="modalOverlay-pesan"></div>
 
 <div id="modalProfile" hidden>
     <div class="fixed inset-0 flex items-center justify-center z-50">

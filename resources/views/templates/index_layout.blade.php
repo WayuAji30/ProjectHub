@@ -102,6 +102,14 @@
         .progress::-webkit-progress-value {
             background-color: #020179;
         }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M14.0009 3.33326L2.00092 3.33326C1.87943 3.33364 1.76033 3.36715 1.65647 3.43018C1.5526 3.49321 1.46789 3.58337 1.41146 3.69097C1.35502 3.79856 1.32899 3.9195 1.33618 4.04079C1.34337 4.16207 1.3835 4.27909 1.45225 4.37926L7.45225 13.0459C7.70092 13.4053 8.29959 13.4053 8.54892 13.0459L14.5489 4.37926C14.6184 4.2793 14.6591 4.16222 14.6667 4.04073C14.6743 3.91925 14.6484 3.79801 14.5919 3.69019C14.5354 3.58237 14.4505 3.49209 14.3463 3.42917C14.2421 3.36624 14.1226 3.33307 14.0009 3.33326Z" fill="%23B3B3B3"/></svg>') no-repeat right center;
+            background-position: right 20px center;
+        }
     </style>
 </head>
 
@@ -264,7 +272,7 @@
                                                     </form>
                                                 </div>
                                                 <div class="border-t-2 border-light-30 mt-5"></div>
-                                                <div class="mt-5"><a href="" class="md:text-lg text-base text-dark-10 hover:text-primary-50 flex items-center gap-[10px]"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <div class="mt-5"><a href="/setting" class="md:text-lg text-base text-dark-10 hover:text-primary-50 flex items-center gap-[10px]"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                             <path d="M9.55907 0.125C9.67816 0.125004 9.79417 0.162804 9.89041 0.232958C9.98664 0.303111 10.0581 0.401998 10.0946 0.515375L10.7133 2.438C10.9732 2.56512 11.2218 2.708 11.4592 2.86887L13.4347 2.44363C13.5512 2.41876 13.6725 2.4315 13.7813 2.48002C13.8901 2.52855 13.9806 2.61034 14.0399 2.71363L15.5992 5.4125C15.6587 5.51573 15.684 5.63519 15.6712 5.75368C15.6585 5.87216 15.6084 5.98354 15.5283 6.07175L14.1727 7.568C14.1924 7.85491 14.1924 8.14284 14.1727 8.42975L15.5283 9.92825C15.6084 10.0165 15.6585 10.1278 15.6712 10.2463C15.684 10.3648 15.6587 10.4843 15.5992 10.5875L14.0399 13.2875C13.9805 13.3906 13.8898 13.4721 13.7811 13.5205C13.6723 13.5688 13.551 13.5813 13.4347 13.5564L11.4592 13.1311C11.2229 13.2909 10.9732 13.4349 10.7144 13.562L10.0946 15.4846C10.0581 15.598 9.98664 15.6969 9.89041 15.767C9.79417 15.8372 9.67816 15.875 9.55907 15.875H6.44057C6.32148 15.875 6.20546 15.8372 6.10923 15.767C6.01299 15.6969 5.94151 15.598 5.90507 15.4846L5.28744 13.5631C5.02826 13.4364 4.77828 13.2917 4.53932 13.13L2.56494 13.5564C2.44846 13.5812 2.3271 13.5685 2.21833 13.52C2.10956 13.4715 2.019 13.3897 1.95969 13.2864L0.400442 10.5875C0.3409 10.4843 0.315681 10.3648 0.328419 10.2463C0.341157 10.1278 0.391194 10.0165 0.471317 9.92825L1.82694 8.42975C1.80731 8.14359 1.80731 7.85641 1.82694 7.57025L0.471317 6.07175C0.391194 5.98354 0.341157 5.87216 0.328419 5.75368C0.315681 5.63519 0.3409 5.51573 0.400442 5.4125L1.95969 2.7125C2.01916 2.60942 2.10979 2.52786 2.21855 2.47955C2.32731 2.43123 2.44859 2.41865 2.56494 2.44363L4.53932 2.87C4.77782 2.70913 5.02757 2.564 5.28744 2.43688L5.90619 0.515375C5.94251 0.402363 6.01366 0.303738 6.10944 0.233619C6.20523 0.163499 6.32074 0.125479 6.43944 0.125H9.55794H9.55907ZM9.14732 1.25H6.85232L6.21332 3.23787L5.78244 3.44825C5.57062 3.5519 5.36615 3.66993 5.17044 3.8015L4.77219 4.0715L2.72919 3.6305L1.58169 5.6195L2.98232 7.16975L2.94857 7.64675C2.9324 7.88197 2.9324 8.11803 2.94857 8.35325L2.98232 8.83025L1.57944 10.3805L2.72807 12.3695L4.77107 11.9296L5.16932 12.1985C5.36502 12.3301 5.5695 12.4481 5.78132 12.5517L6.21219 12.7621L6.85232 14.75H9.14957L9.79082 12.761L10.2206 12.5517C10.4322 12.4483 10.6363 12.3303 10.8314 12.1985L11.2286 11.9296L13.2727 12.3695L14.4202 10.3805L13.0184 8.83025L13.0522 8.35325C13.0684 8.11765 13.0684 7.88122 13.0522 7.64563L13.0184 7.16863L14.4213 5.6195L13.2727 3.6305L11.2286 4.06925L10.8314 3.8015C10.6363 3.66967 10.4322 3.55163 10.2206 3.44825L9.79082 3.239L9.14844 1.25H9.14732ZM7.99982 4.625C8.89492 4.625 9.75337 4.98058 10.3863 5.61351C11.0192 6.24645 11.3748 7.10489 11.3748 8C11.3748 8.89511 11.0192 9.75355 10.3863 10.3865C9.75337 11.0194 8.89492 11.375 7.99982 11.375C7.10471 11.375 6.24627 11.0194 5.61333 10.3865C4.9804 9.75355 4.62482 8.89511 4.62482 8C4.62482 7.10489 4.9804 6.24645 5.61333 5.61351C6.24627 4.98058 7.10471 4.625 7.99982 4.625ZM7.99982 5.75C7.40308 5.75 6.83078 5.98705 6.40883 6.40901C5.98687 6.83097 5.74982 7.40326 5.74982 8C5.74982 8.59674 5.98687 9.16903 6.40883 9.59099C6.83078 10.0129 7.40308 10.25 7.99982 10.25C8.59655 10.25 9.16885 10.0129 9.59081 9.59099C10.0128 9.16903 10.2498 8.59674 10.2498 8C10.2498 7.40326 10.0128 6.83097 9.59081 6.40901C9.16885 5.98705 8.59655 5.75 7.99982 5.75Z" fill="#787878" />
                                                         </svg>Pengaturan</a>
                                                 </div>
@@ -575,28 +583,173 @@
                                                     </div>
                                                 </div>
                                                 <div class="mx-5 py-3">
-                                                    <button class="w-full bg-primary-50 text-white py-3 rounded-xl">Tandai
-                                                        semua dibaca</button>
+                                                    <button class="w-full bg-primary-50 text-white py-3 rounded-xl">Telah
+                                                        Dibaca Semua</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </ul>
                                 </div>
-                                <div class="relative">
-                                    <button class="p-1 group tooltip tooltip-bottom" data-tip="Pesan"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                                            <g clip-path="url(#clip0_714_850)">
-                                                <path class="group-hover:fill-primary-50" d="M11.7975 2.74924C12.127 2.52935 12.5105 2.404 12.9062 2.38681C13.302 2.36962 13.6948 2.46125 14.0422 2.65174L14.2014 2.74924L22.8681 8.52666C23.1396 8.70759 23.3667 8.94752 23.5326 9.22852C23.6984 9.50952 23.7986 9.82434 23.8257 10.1495L23.8333 10.3293V20.5831C23.8335 21.1297 23.6271 21.6562 23.2554 22.057C22.8837 22.4578 22.3742 22.7033 21.8292 22.7443L21.6667 22.7497H4.33333C3.78671 22.7499 3.26022 22.5435 2.8594 22.1718C2.45859 21.8001 2.21308 21.2907 2.17208 20.7456L2.16666 20.5831V10.3293C2.16667 10.0031 2.24032 9.68116 2.38214 9.38741C2.52395 9.09366 2.73025 8.83572 2.98566 8.63283L3.13191 8.52666L11.7975 2.74924ZM13 4.55191L5.20325 9.74974L13 14.9476L20.7967 9.74974L13 4.55191Z" fill="#B3B3B3" />
-                                            </g>
-                                            <defs>
-                                                <clipPath id="clip0_714_850">
-                                                    <rect width="26" height="26" fill="white" />
-                                                </clipPath>
-                                            </defs>
-                                        </svg>
-                                        <svg class="absolute top-0 right-0" xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7" fill="none">
-                                            <circle cx="3.5" cy="3.5" r="3.5" fill="#FF3D00" />
-                                        </svg>
-                                    </button>
+                                <div class="relative sm:block hidden">
+                                    <form action="">
+                                        <button class="p-1 group tooltip tooltip-bottom" data-tip="Pesan"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                                <g clip-path="url(#clip0_714_850)">
+                                                    <path class="group-hover:fill-primary-50" d="M11.7975 2.74924C12.127 2.52935 12.5105 2.404 12.9062 2.38681C13.302 2.36962 13.6948 2.46125 14.0422 2.65174L14.2014 2.74924L22.8681 8.52666C23.1396 8.70759 23.3667 8.94752 23.5326 9.22852C23.6984 9.50952 23.7986 9.82434 23.8257 10.1495L23.8333 10.3293V20.5831C23.8335 21.1297 23.6271 21.6562 23.2554 22.057C22.8837 22.4578 22.3742 22.7033 21.8292 22.7443L21.6667 22.7497H4.33333C3.78671 22.7499 3.26022 22.5435 2.8594 22.1718C2.45859 21.8001 2.21308 21.2907 2.17208 20.7456L2.16666 20.5831V10.3293C2.16667 10.0031 2.24032 9.68116 2.38214 9.38741C2.52395 9.09366 2.73025 8.83572 2.98566 8.63283L3.13191 8.52666L11.7975 2.74924ZM13 4.55191L5.20325 9.74974L13 14.9476L20.7967 9.74974L13 4.55191Z" fill="#B3B3B3" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_714_850">
+                                                        <rect width="26" height="26" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg class="absolute top-0 right-0" xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7" fill="none">
+                                                <circle cx="3.5" cy="3.5" r="3.5" fill="#FF3D00" />
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                                <div id="dropdownPesan" class="dropdown dropdown-bottom dropdown-end dropdown-notif lg:block md:block hidden">
+                                    <div tabindex="0" role="button" class=""><button class="p-1 group tooltip tooltip-bottom" data-tip="Pesan"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                                <g clip-path="url(#clip0_714_850)">
+                                                    <path class="group-hover:fill-primary-50" d="M11.7975 2.74924C12.127 2.52935 12.5105 2.404 12.9062 2.38681C13.302 2.36962 13.6948 2.46125 14.0422 2.65174L14.2014 2.74924L22.8681 8.52666C23.1396 8.70759 23.3667 8.94752 23.5326 9.22852C23.6984 9.50952 23.7986 9.82434 23.8257 10.1495L23.8333 10.3293V20.5831C23.8335 21.1297 23.6271 21.6562 23.2554 22.057C22.8837 22.4578 22.3742 22.7033 21.8292 22.7443L21.6667 22.7497H4.33333C3.78671 22.7499 3.26022 22.5435 2.8594 22.1718C2.45859 21.8001 2.21308 21.2907 2.17208 20.7456L2.16666 20.5831V10.3293C2.16667 10.0031 2.24032 9.68116 2.38214 9.38741C2.52395 9.09366 2.73025 8.83572 2.98566 8.63283L3.13191 8.52666L11.7975 2.74924ZM13 4.55191L5.20325 9.74974L13 14.9476L20.7967 9.74974L13 4.55191Z" fill="#B3B3B3" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_714_850">
+                                                        <rect width="26" height="26" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <svg class="absolute top-0 right-0" xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7" fill="none">
+                                                <circle cx="3.5" cy="3.5" r="3.5" fill="#FF3D00" />
+                                            </svg>
+                                        </button></div>
+                                    <ul tabindex="0" id="dropdown-content" class="dropdown-content z-[1] menu shadow w-[370px] bg-white rounded-box md:mt-8 absolute right-0">
+                                        <div class="">
+                                            <div class="">
+                                                <div class="mx-6 pt-2">
+                                                    <p class="text-base font-semibold">Pesan Masuk (<span>12</span>)</p>
+                                                    <!-- <button tabindex="0" class="btn-close-notif"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="M16.2887 14.9617C16.4649 15.1379 16.5638 15.3767 16.5638 15.6258C16.5638 15.8749 16.4649 16.1137 16.2887 16.2899C16.1126 16.466 15.8737 16.5649 15.6247 16.5649C15.3756 16.5649 15.1367 16.466 14.9606 16.2899L10.0005 11.3281L5.03874 16.2883C4.86262 16.4644 4.62374 16.5634 4.37467 16.5634C4.1256 16.5634 3.88673 16.4644 3.71061 16.2883C3.53449 16.1122 3.43555 15.8733 3.43555 15.6242C3.43555 15.3752 3.53449 15.1363 3.71061 14.9602L8.67233 10L3.71217 5.0383C3.53605 4.86218 3.43711 4.62331 3.43711 4.37423C3.43711 4.12516 3.53605 3.88629 3.71217 3.71017C3.88829 3.53405 4.12716 3.43511 4.37624 3.43511C4.62531 3.43511 4.86418 3.53405 5.0403 3.71017L10.0005 8.67189L14.9622 3.70939C15.1383 3.53327 15.3772 3.43433 15.6262 3.43433C15.8753 3.43433 16.1142 3.53327 16.2903 3.70939C16.4664 3.88551 16.5654 4.12438 16.5654 4.37345C16.5654 4.62252 16.4664 4.86139 16.2903 5.03752L11.3286 10L16.2887 14.9617Z" fill="#2B2B2B" />
+                                                        </svg></button> -->
+                                                </div>
+                                                <div class="border-t-2 border-light-30 mt-4"></div>
+                                                <div class="h-[470px] overflow-y-auto" id="notifcontent">
+                                                    <div class="hover:bg-gray-100 pt-4 cursor-pointer">
+                                                        <a href="">
+                                                            <div class="flex mx-5 gap-3">
+                                                                <div class="relative p-1">
+                                                                    <img src="{{asset('assets/img_index/asset/index/profilenotif.png')}}" alt="" class=" w-[83px] p-1">
+                                                                    <svg class="absolute top-0 right-0" xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 5 5" fill="none">
+                                                                        <circle cx="2.5" cy="2.5" r="2.5" fill="#020179" />
+                                                                    </svg>
+                                                                </div>
+                                                                <div class="">
+                                                                    <p class="font-medium text-dark-70">[<span>Rahmadian
+                                                                            Syah</span>] Mengirimi kamu pesan di
+                                                                        workspace!</p>
+                                                                    <p class="text-xs text-light-90 mt-2">Ketuk untuk
+                                                                        membuka
+                                                                        pesan</p>
+                                                                </div>
+                                                                <p class="font-medium text-xs text-light-90 mt-1 flex gap-1">
+                                                                    <span>5</span> <span>jam</span>
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                        <button class="text-primary-50 text-xs font-medium mt-4 ml-[85px]">
+                                                            Tandai telah dibaca
+                                                        </button>
+                                                        <div class="border-t-2 border-light-30 mx-5 mt-4"></div>
+                                                    </div>
+                                                    <div class="hover:bg-gray-100 pt-4 cursor-pointer">
+                                                        <a href="">
+                                                            <div class="flex mx-5 gap-3">
+                                                                <div class="relative p-1">
+                                                                    <img src="{{asset('assets/img_index/asset/index/profilenotif.png')}}" alt="" class=" w-[83px] p-1">
+                                                                    <svg class="absolute top-0 right-0" xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 5 5" fill="none">
+                                                                        <circle cx="2.5" cy="2.5" r="2.5" fill="#020179" />
+                                                                    </svg>
+                                                                </div>
+                                                                <div class="">
+                                                                    <p class="font-medium text-dark-70">[<span>Rahmadian
+                                                                            Syah</span>] Mengirimi kamu pesan di
+                                                                        workspace!</p>
+                                                                    <p class="text-xs text-light-90 mt-2">Ketuk untuk
+                                                                        membuka
+                                                                        pesan</p>
+                                                                </div>
+                                                                <p class="font-medium text-xs text-light-90 mt-1 flex gap-1">
+                                                                    <span>5</span> <span>jam</span>
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                        <button class="text-primary-50 text-xs font-medium mt-4 ml-[85px]">
+                                                            Tandai telah dibaca
+                                                        </button>
+                                                        <div class="border-t-2 border-light-30 mx-5 mt-4"></div>
+                                                    </div>
+                                                    <div class="hover:bg-gray-100 pt-4 cursor-pointer">
+                                                        <a href="">
+                                                            <div class="flex mx-5 gap-3">
+                                                                <div class="relative p-1">
+                                                                    <img src="{{asset('assets/img_index/asset/index/profilenotif.png')}}" alt="" class=" w-[83px] p-1">
+                                                                    <svg class="absolute top-0 right-0" xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 5 5" fill="none">
+                                                                        <circle cx="2.5" cy="2.5" r="2.5" fill="#020179" />
+                                                                    </svg>
+                                                                </div>
+                                                                <div class="">
+                                                                    <p class="font-medium text-dark-70">[<span>Rahmadian
+                                                                            Syah</span>] Mengirimi kamu pesan di
+                                                                        workspace!</p>
+                                                                    <p class="text-xs text-light-90 mt-2">Ketuk untuk
+                                                                        membuka
+                                                                        pesan</p>
+                                                                </div>
+                                                                <p class="font-medium text-xs text-light-90 mt-1 flex gap-1">
+                                                                    <span>5</span> <span>jam</span>
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                        <button class="text-light-90 text-xs font-medium mt-4 ml-[85px]">
+                                                            Tandai telah dibaca
+                                                        </button>
+                                                        <div class="border-t-2 border-light-30 mx-5 mt-4"></div>
+                                                    </div>
+                                                    <div class="hover:bg-gray-100 pt-4 cursor-pointer">
+                                                        <a href="">
+                                                            <div class="flex mx-5 gap-3">
+                                                                <div class="relative p-1">
+                                                                    <img src="{{asset('assets/img_index/asset/index/profilenotif.png')}}" alt="" class=" w-[83px] p-1">
+                                                                    <svg class="absolute top-0 right-0" xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 5 5" fill="none">
+                                                                        <circle cx="2.5" cy="2.5" r="2.5" fill="#020179" />
+                                                                    </svg>
+                                                                </div>
+                                                                <div class="">
+                                                                    <p class="font-medium text-dark-70">[<span>Rahmadian
+                                                                            Syah</span>] Mengirimi kamu pesan di
+                                                                        workspace!</p>
+                                                                    <p class="text-xs text-light-90 mt-2">Ketuk untuk
+                                                                        membuka
+                                                                        pesan</p>
+                                                                </div>
+                                                                <p class="font-medium text-xs text-light-90 mt-1 flex gap-1">
+                                                                    <span>5</span> <span>jam</span>
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                        <button class="text-light-90 text-xs font-medium mt-4 ml-[85px]">
+                                                            Tandai telah dibaca
+                                                        </button>
+                                                        <div class="border-t-2 border-light-30 mx-5 mt-4"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="mx-5 py-3">
+                                                    <button class="w-full bg-primary-50 text-white py-3 rounded-xl">Telah
+                                                        Dibaca Semua</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
                                 </div>
                             </div>
                             <form action="" class="lg:block hidden">
@@ -655,7 +808,7 @@
                                     </div>
                                     <div class="border-t-[1px] border-light-30 my-5 mx-5"></div>
                                     <div class="mx-5">
-                                        <a href="" class="flex text-dark-70 items-center font-medium text-base gap-2 pl-3 py-2 hover:bg-light-30 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <a href="/setting" class="flex text-dark-70 items-center font-medium text-base gap-2 pl-3 py-2 hover:bg-light-30 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                                                 <path d="M12.9058 1.375C13.0513 1.375 13.1931 1.42121 13.3107 1.50695C13.4284 1.59269 13.5157 1.71355 13.5603 1.85212L14.3165 4.202C14.6342 4.35737 14.938 4.532 15.2282 4.72862L17.6427 4.20888C17.785 4.17848 17.9333 4.19406 18.0663 4.25336C18.1992 4.31267 18.3099 4.41264 18.3824 4.53888L20.2882 7.8375C20.3609 7.96366 20.3917 8.10968 20.3762 8.2545C20.3606 8.39931 20.2995 8.53544 20.2015 8.64325L18.5447 10.472C18.5688 10.8227 18.5688 11.1746 18.5447 11.5252L20.2015 13.3567C20.2995 13.4646 20.3606 13.6007 20.3762 13.7455C20.3917 13.8903 20.3609 14.0363 20.2882 14.1625L18.3824 17.4625C18.3097 17.5885 18.1989 17.6882 18.066 17.7472C17.9331 17.8063 17.7849 17.8216 17.6427 17.7911L15.2282 17.2714C14.9394 17.4666 14.6342 17.6426 14.3179 17.798L13.5603 20.1479C13.5157 20.2864 13.4284 20.4073 13.3107 20.4931C13.1931 20.5788 13.0513 20.625 12.9058 20.625H9.09428C8.94872 20.625 8.80692 20.5788 8.68931 20.4931C8.57169 20.4073 8.48432 20.2864 8.43978 20.1479L7.6849 17.7994C7.36813 17.6445 7.06259 17.4676 6.77053 17.27L4.3574 17.7911C4.21504 17.8215 4.06671 17.8059 3.93377 17.7466C3.80083 17.6873 3.69014 17.5874 3.61765 17.4611L1.7119 14.1625C1.63913 14.0363 1.60831 13.8903 1.62387 13.7455C1.63944 13.6007 1.7006 13.4646 1.79853 13.3567L3.4554 11.5252C3.4314 11.1755 3.4314 10.8245 3.4554 10.4748L1.79853 8.64325C1.7006 8.53544 1.63944 8.39931 1.62387 8.2545C1.60831 8.10968 1.63913 7.96366 1.7119 7.8375L3.61765 4.5375C3.69034 4.41151 3.80111 4.31183 3.93404 4.25278C4.06696 4.19373 4.21519 4.17836 4.3574 4.20888L6.77053 4.73C7.06203 4.53338 7.36728 4.356 7.6849 4.20063L8.44115 1.85212C8.48555 1.714 8.5725 1.59346 8.68957 1.50776C8.80664 1.42205 8.94782 1.37559 9.0929 1.375H12.9044H12.9058ZM12.4025 2.75H9.59753L8.81653 5.17963L8.2899 5.43675C8.03101 5.56344 7.7811 5.70769 7.5419 5.8685L7.05515 6.1985L4.55815 5.6595L3.15565 8.0905L4.86753 9.98525L4.82628 10.5682C4.80652 10.8557 4.80652 11.1443 4.82628 11.4318L4.86753 12.0147L3.1529 13.9095L4.55678 16.3405L7.05378 15.8029L7.54053 16.1315C7.77972 16.2923 8.02964 16.4366 8.28853 16.5632L8.81515 16.8204L9.59753 19.25H12.4053L13.189 16.819L13.7143 16.5632C13.9729 16.4369 14.2224 16.2926 14.4609 16.1315L14.9463 15.8029L17.4447 16.3405L18.8472 13.9095L17.1339 12.0147L17.1752 11.4318C17.195 11.1438 17.195 10.8548 17.1752 10.5669L17.1339 9.98388L18.8485 8.0905L17.4447 5.6595L14.9463 6.19575L14.4609 5.8685C14.2224 5.70737 13.9729 5.5631 13.7143 5.43675L13.189 5.181L12.4039 2.75H12.4025ZM11 6.875C12.094 6.875 13.1433 7.3096 13.9168 8.08318C14.6904 8.85677 15.125 9.90598 15.125 11C15.125 12.094 14.6904 13.1432 13.9168 13.9168C13.1433 14.6904 12.094 15.125 11 15.125C9.90601 15.125 8.8568 14.6904 8.08321 13.9168C7.30962 13.1432 6.87503 12.094 6.87503 11C6.87503 9.90598 7.30962 8.85677 8.08321 8.08318C8.8568 7.3096 9.90601 6.875 11 6.875ZM11 8.25C10.2707 8.25 9.57121 8.53973 9.05548 9.05546C8.53976 9.57118 8.25003 10.2707 8.25003 11C8.25003 11.7293 8.53976 12.4288 9.05548 12.9445C9.57121 13.4603 10.2707 13.75 11 13.75C11.7294 13.75 12.4288 13.4603 12.9446 12.9445C13.4603 12.4288 13.75 11.7293 13.75 11C13.75 10.2707 13.4603 9.57118 12.9446 9.05546C12.4288 8.53973 11.7294 8.25 11 8.25Z" fill="black" />
                                             </svg>Pengaturan</a>
                                         <div class="flex items-center justify-between hover:bg-light-30 rounded-lg pl-3 pr-2 py-2 cursor-pointer" id="btnOpenBahasa">
@@ -1208,6 +1361,7 @@
 <script src="{{asset('js/modalProfile.js')}}"></script>
 <script src="{{asset('js/modal-report.js')}}"></script>
 <script src="{{asset('js/btn-notif.js')}}"></script>
+<script src="{{asset('js/password.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 <script>
@@ -1256,6 +1410,30 @@
             elements[i].style.display = 'none';
         }
     }
+</script>
+<script>
+    document.getElementById('dropdownPesan').addEventListener('click', function(event) {
+        event
+            .stopPropagation(); // Menghentikan penyebaran event ke atas untuk mencegah penutupan overlay segera setelah dibuka
+
+        // Hapus class overlay di daerah lain
+        var allOverlays = document.querySelectorAll('.overlay');
+        allOverlays.forEach(function(overlay) {
+            overlay.classList.remove('overlay');
+        });
+
+        document.getElementById('modalOverlay-pesan').classList.add('overlay');
+    });
+
+    document.addEventListener('click', function(event) {
+        var modalOverlay = document.getElementById('modalOverlay-pesan');
+        var dropdownPesan = document.getElementById('dropdownPesan');
+
+        // Periksa apakah elemen yang diklik bukan bagian dari dropdownPesan
+        if (event.target !== dropdownPesan && !dropdownPesan.contains(event.target)) {
+            modalOverlay.classList.remove('overlay');
+        }
+    });
 </script>
 
 
