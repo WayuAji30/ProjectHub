@@ -185,7 +185,7 @@
                                                         alt="profile"
                                                         class="border-2 border-primary-50 rounded-full w-12">
                                                     <div>
-                                                        <p class="font-semibold text-lg text-dark-70">Pororo</p>
+                                                        <p class="font-semibold text-lg text-dark-70"></p>
                                                         <p class="text-[13px] text-primary-50 font-medium">Project Owner
                                                         </p>
                                                     </div>

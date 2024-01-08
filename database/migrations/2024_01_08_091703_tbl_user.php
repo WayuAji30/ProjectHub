@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tbl_user', function (Blueprint $table) {
+        Schema::create('tbl_user', function (Blueprint $table) { 
             $table->uuid('id')->primary();
             $table->string('google_id')->unique()->nullable();
             $table->string('email')->unique();
             $table->string('password')->nullable();
-            $table->string('status');
+            $table->UnsignedBigInteger('id_status');
+            $table->foreign('id_status')->references('id')->on('tbl_status');
             $table->timestamps();
         });
     }

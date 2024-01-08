@@ -14,5 +14,4 @@ class UserModel extends Model
     protected $table = "tbl_user";
 
     protected $guarded = [];
-
 }

@@ -17,15 +17,15 @@ use App\Http\Controllers\PHPMailerController;
 */
 
 Route::get('/', function () {
-    return view('landingPage');
+    return view('landing-page.landingPage');
 });
 
 Route::get('/404', function () {
-    return view('404');
+    return view('not-found.404');
 });
 
 Route::get('/data-succsess', function () {
-    return view('data-succsess');
+    return view('verification.data-succsess');
 });
 
 Route::get('/index', [HomeController::class, 'index']);

@@ -65,7 +65,7 @@ class PHPMailerController extends Controller
                     'email kamu dengan menekan tombol dibawah.</p>' .
                     '<form action="http://localhost:8000/activated_user" method = "post">' .
                     '<input type="hidden" name="id" id = "id" value="' . $request->input('id_user') . '">' .
-                    '<input type="hidden" name="status_aktivasi" id = "status_aktivasi" value="active">' .
+                    '<input type="hidden" name="status_aktivasi" id = "status_aktivasi" value="2">' .
                     '<button style="padding: 14px 0px; margin-top: 30px; width: 220px; border-radius: 10px; border: none; font-size: 18px; font-weight: 500; color: white; background-color: #020179; font-weight: 700;">Verifikasi Email</button>' .
                     '</form>' .
                     '<p style="margin-top: 20px; color: #999; margin-top: 30px; font-family: sans-serif;">Link yang terdapat pada tombol diatas akan expired setelah 1 jam. Jika kamu tidak merasa<br>' .
