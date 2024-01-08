@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('google_id')->unique()->nullable();
             $table->string('email')->unique();
             $table->string('password')->nullable();
-            $table->UnsignedBigInteger('id_status');
+            $table->UnsignedBigInteger('id_status')->nullable();
             $table->foreign('id_status')->references('id')->on('tbl_status');
             $table->timestamps();
         });

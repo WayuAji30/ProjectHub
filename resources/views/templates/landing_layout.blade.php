@@ -465,11 +465,6 @@
                     </a>
                     <a href="">
                         <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
-                            Kerja Sama
-                        </p>
-                    </a>
-                    <a href="">
-                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
                             Syarat dan Ketentuan
                         </p>
                     </a>
@@ -585,14 +580,6 @@
                                     <p
                                         class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
                                         Karir
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                        Kerja Sama
                                     </p>
                                 </a>
                             </li>

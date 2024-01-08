@@ -53,3 +53,5 @@ Route::get('/confirm_email_pw', [AuthController::class, 'confirm_email_pw']);
 Route::post('/send_confirm_email_pw', [AuthController::class, 'send_confirm_email_pw']);
 
 Route::post('/update_password', [AuthController::class, 'update_password']);
+
+Route::get('/logout',[AuthController::class,'logout']);

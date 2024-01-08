@@ -17,9 +17,8 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 use App\Models\UserModel;
+use App\Models\UserProfileModel;
 use App\Mail\VerifyEmail;
-
-
 
 
 class AuthController extends Controller
@@ -53,16 +52,38 @@ class AuthController extends Controller
                     'id_status' => 3
                 ]);
 
+                $userLogin = UserProfileModel::create([
+                    'id' => Str::uuid(),
+                    'id_user_login' => (string) $user->id,
+                    'first_name' => null,
+                    'last_name' => null,
+                    'province' => null,
+                    'city' => null,
+                    'about_me' => null,
+                    'behance' => null,
+                    'linkedin' => null,
+                    'github' => null,
+                    'dribble' => null,
+                    'cv' => null,
+                    'portfolio' => null
+                ]);
+
                 session(['id_user' => (string) $user->id]);
                 session(['id_google_user' => $user->google_id]);
+                session(['getNameUserFromGoogle' =>$userFromGoogle->getName()]);
+                session(['getAvatarUserFromGoogle' =>$userFromGoogle->getAvatar()]);
+
                 return redirect('/index');
             }catch(\Exception $e){
+                dd($e);
                 return redirect()->to('/login')->with(['failed' => 'Login or Registration Failed! Please, use another method!']);
             }
         }else{
             $userFromDatabase->update(['id_status' => 3]);
             session(['id_user' => (string) $userFromDatabase->id]);
             session(['id_google_user' => $userFromDatabase->google_id]);
+            session(['getNameUserFromGoogle' =>$userFromGoogle->getName()]);
+            session(['getAvatarUserFromGoogle' =>$userFromGoogle->getAvatar()]);
             return redirect('/index');
         }
     }
@@ -83,6 +104,8 @@ class AuthController extends Controller
                 if (Hash::check($password, $user->password)) {
                     if ($user->id_status == 1) {
                         session(['id' => (string) $user->id]);
+
+                        $mail = new PHPMailer(true);
                         
                         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
                         $mail->isSMTP();
@@ -161,6 +184,22 @@ class AuthController extends Controller
             'id_status' => 1
         ]);
 
+        $userLogin = UserProfileModel::create([
+            'id' => Str::uuid(),
+            'id_user_login' => (string) $user->id,
+            'first_name' => null,
+            'last_name' => null,
+            'province' => null,
+            'city' => null,
+            'about_me' => null,
+            'behance' => null,
+            'linkedin' => null,
+            'github' => null,
+            'dribble' => null,
+            'cv' => null,
+            'portfolio' => null
+        ]);
+
         session(['id' => (string) $user->id]);
 
         $mail = new PHPMailer(true);
@@ -211,7 +250,7 @@ class AuthController extends Controller
         $user = UserModel::find($id);
 
         if($user){
-            return view('verify_email', ['user' => $user]);
+            return view('auth.verify_email', ['user' => $user]);
         }else{
             return redirect()->to('/login');
         }
@@ -338,6 +377,9 @@ class AuthController extends Controller
 
     public function logout()
     {
-        return redirect('/index');
+        session()->forget('id_user');
+        session()->forget('id_google_user');
+
+        return redirect('/login');
     }
 }

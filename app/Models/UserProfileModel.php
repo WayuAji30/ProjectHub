@@ -5,16 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\HasMany;
-
-class UserModel extends Model
+class UserProfileModel extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id'; // Sesuaikan dengan nama kolom ID Anda
+    protected $primaryKey = 'id';
     public $incrementing = false;
-    protected $table = "tbl_user";
-
+    protected $table = "tbl_user_profile";
     protected $guarded = [];
 
 }
