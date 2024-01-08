@@ -11,11 +11,36 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<div id="hover"></div>
-<div id="jelajahiOverlay"></div>
-<div id="profileOverlay"></div>
-<div class="modal-overlay" id="modalOverlay"></div>
-<div class="modal-overlay" id="modalOverlay-pesan"></div>
+
+<div id="modalSetting">
+    <div class="fixed inset-0 flex items-center justify-center z-50">
+        <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity"></div>
+        <div class="relative z-10 w-screen max-w-md mx-auto overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center">
+                <div
+                    class="relative transform overflow-hidden rounded-3xl bg-white drop-shadow-xl transition-all text-center w-[480px]">
+                    <img src="{{asset('assets/img_index/asset/profile/modalsetting.png')}}" alt="ModalSetting"
+                        class="mx-auto mt-9">
+                    <h1 class="font-semibold text-[28px] text-primary-50 mt-6">Verifikasi Dulu Yuk</h1>
+                    <p class="text-base sm:text-sm text-light-90 mt-7">Perubahan yang kamu lakukan ngga akan kami <br>
+                        simpan
+                        sebelum
+                        kamu verifikasi. Udah dikirimin <br> email yah di <span
+                            class="font-medium text-primary-50">masterlimbad@gmail.com</span></p>
+                    <form action="/profile" target="_blank" class="mx-10">
+                        <button
+                            class="text-white text-base font-semibold bg-primary-50 rounded-md py-3 mt-10 w-full hover:bg-primary-70 transition-all duration-200 ease-in-out">Buka
+                            Gmail</button>
+                    </form>
+                    <button
+                        class="text-primary-50 my-5 font-semibold hover:underline transition-all duration-200 ease-in-out"
+                        id="closesetting">Kembali Ke Beranda</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="border-t-2 border-light-30 sm:block hidden"></div>
 
@@ -42,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="border-t-2 border-light-30 mt-4"></div>
                         <div class="mt-8 sm:mt-5 flex md:flex-wrap sm:flex-wrap items-center justify-between">
                             <p class="text-base font-medium text-dark-70 sm:text-sm">Email</p>
-                            <input type="email" name="" id=""
+                            <input required type="email" name="" id=""
                                 class="py-3 sm:text-sm border-2 border-light-50 w-[833px] md:w-full md:mt-5 sm:mt-3 rounded-lg px-5 font-medium text-base text-dark-70 focus:outline-primary-50">
                         </div>
                         <div class="flex md:flex-wrap sm:flex-wrap md:gap-5 gap-3 mt-10 sm:mt-5 lg:gap-40">
@@ -81,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="flex items-center md:flex-wrap sm:flex-wrap justify-between mt-10 sm:mt-5">
                             <p class="text-base font-medium text-dark-70">Password Baru</p>
                             <div class="relative inline-block md:w-full sm:w-full md:mt-5 sm:mt-3">
-                                <input type="password" name="password" id="password" required
+                                <input required type="password" name="password" id="password" required
                                     class="text-dark-90 py-3 px-5 border-2 border-light-50 font-medium text-base rounded-lg lg:w-[838px] w-full focus:outline-primary-50">
                                 <button class="absolute right-5 top-4 btn-eye-close" form="none"><svg
                                         xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
@@ -103,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="text-base font-medium text-dark-70 mt-3">Konfirmasi Password</p>
                             <div class="md:w-full sm:w-full md:mt-5 sm:mt-3">
                                 <div class="relative inline-block md:w-full sm:w-full">
-                                    <input type="password" name="password" id="password" required
+                                    <input required type="password" name="password" id="password" required
                                         class="text-dark-90 py-3 px-5 border-2 border-light-50 font-medium text-base rounded-lg lg:w-[837px] w-full focus:outline-primary-50">
                                     <button class="absolute right-5 top-4 btn-eye-close" form="none"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="22" height="22"
@@ -171,9 +196,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         <div class="mt-14 sm:mt-7 flex md:flex-wrap sm:flex-wrap items-center justify-between">
                             <p class="text-base font-medium text-dark-70">Alasan Saya Menghapus Akun Adalah</p>
-                            <select name="Alasan" id=""
+                            <select required name="Alasan" id=""
                                 class="border-2 sm:mt-3 font-medium text-base sm:text-sm md:mt-5 text-light-90 border-light-50 py-[14px] rounded-lg lg:w-[730px] w-full px-5">
-                                <option form="none">Pilih Alasan</option>
+                                <option value="" disabled selected>Pilih Alasan</option>
                                 <option value="dog">Cape</option>
                                 <option value="cat">Hehe</option>
                                 <option value="hamster">Hamster</option>

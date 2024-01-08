@@ -1,12 +1,6 @@
 @extends('templates.index_layout')
 @section('content')
 
-<div id="hover"></div>
-<div id="jelajahiOverlay"></div>
-<div id="profileOverlay"></div>
-<div class="modal-overlay" id="modalOverlay"></div>
-<div class="modal-overlay" id="modalOverlay-pesan"></div>
-
 <div id="modalProfile" hidden>
     <div class="fixed inset-0 flex items-center justify-center z-50">
         <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity"></div>
@@ -15,7 +9,8 @@
                 <div class="relative transform overflow-hidden rounded-3xl bg-white drop-shadow-xl transition-all text-center w-[480px]">
                     <h1 class="font-semibold text-4xl text-dark-70 mt-16 sm:text-3xl">Lengkapi Profilmu</h1>
                     <img src="{{asset('assets/img_index/asset/landingPage/modalLengkapiProfil.png')}}" alt="Modal" class="mx-auto mt-9">
-                    <p class="text-base text-light-90 mt-7">Sebelum bisa mendaftar atau membuat <br> projek, kamu harus
+                    <p class="text-base sm:text-sm text-light-90 mt-7">Sebelum bisa mendaftar atau membuat <br> projek,
+                        kamu harus
                         terlebih dahulu <br> melengkapi profile kamu</p>
                     <form action="/profile" class="mx-10">
                         <button class="text-white text-base font-semibold bg-primary-50 rounded-md py-3 mt-10 w-full hover:bg-primary-70 transition-all duration-200 ease-in-out">Lengkapi
@@ -42,7 +37,8 @@
                         </div>
                     </div>
                     <p class="text-center font-semibold text-2xl text-dark-70 mt-4">Laporkan Projek Ini</p>
-                    <p class="text-center text-light-70 text-base mt-3">Apa yang membuat kamu ingin melaporkan projek
+                    <p class="text-center sm:text-sm text-light-70 text-base mt-3">Apa yang membuat kamu ingin
+                        melaporkan projek
                         <br class="sm:hidden"> ini pada kami?
                     </p>
                     <form action="" class="mx-5 mt-4">
@@ -116,6 +112,7 @@
 <main class="lg:mt-44 md:mt-28 mt-5 lg:px-24 md:px-12 px-6 container mx-auto">
     <nav aria-label="breadcrumb" class="w-max">
         <ol class="flex flex-wrap items-center w-full">
+            <!-- BERANDA SELALU DIBAWA -->
             <li class="flex items-center text-primary-50 sm:text-xs font-medium leading-normal transition-colors duration-300 cursor-pointer">
                 <a href="/index" class="opacity-50 hover:opacity-100">Beranda</a><span class="mx-2 antialiased font-semibold leading-normal pointer-events-none select-none">/</span>
             </li>
@@ -125,14 +122,24 @@
         </ol>
     </nav>
     <div class="lg:mt-5 mt-4">
-        <h1 class="lg:text-[32px] md:text-2xl text-xl text-dark-70">Hasil Untuk <span class="font-semibold">Desain
-                UI/UX</span></h1>
-        <p class="text-light-70 lg:text-base md:text-[14px] text-xs mt-2">Berikut merupakan <span class="font-semibold">171
-                project</span> terkait
-            yang tersedia</p>
-        <h1 class="lg:text-[32px] md:text-2xl text-xl text-dark-70 hidden">Temukan Projek Terbaik Untuk Kamu</h1>
-        <p class="text-light-70 lg:text-base md:text-[14px] text-xs mt-2 hidden">Cari projek yang tersedia untuk kamu
-        </p>
+        <!-- DIPAKAI SAAT SEARCH DAN KATEGORI -->
+        <div>
+            <!-- SEARCH -->
+            <h1 class="lg:text-[32px] md:text-2xl text-xl text-dark-70">Hasil Untuk <span class="font-semibold">Desain
+                    UI/UX</span></h1>
+            <!-- KATEGORI -->
+            <h1 class="lg:text-[32px] md:text-2xl text-xl text-dark-70 hidden">Hasil Untuk <span class="font-semibold">Grafis dan Desain</span></h1>
+            <p class="text-light-70 lg:text-base md:text-[14px] text-xs mt-2">Berikut merupakan <span class="font-semibold">171
+                    project</span> terkait
+                yang tersedia</p>
+        </div>
+        <!-- DIPAKAI SAAT LIHAT SEMUA PROJEK -->
+        <div>
+            <h1 class="lg:text-[32px] md:text-2xl text-xl text-dark-70 hidden">Temukan Projek Terbaik Untuk Kamu</h1>
+            <p class="text-light-70 lg:text-base md:text-[14px] text-xs mt-2 hidden">Cari projek yang tersedia untuk
+                kamu
+            </p>
+        </div>
     </div>
 </main>
 
@@ -141,7 +148,7 @@
         <div>
             <div class="flex sm:flex-col sm:gap-3 items-center justify-between lg:mt-12 mt-8">
                 <a href="" class="sm:w-full hover:shadow-xl transition-all duration-200 ease-in-out">
-                    <div class="flex items-center lg:gap-3 md:gap-2 gap-6 border-2 rounded-lg sm:rounded-2xl bg-white border-light-90 lg:px-9 md:px-3 px-5 sm:w-full py-4">
+                    <div class="flex items-center lg:gap-3 md:gap-2 gap-6 border-2 rounded-lg sm:rounded-2xl bg-white border-light-90 lg:px-9 md:px-3 px-5 sm:w-full py-4" id="panduan">
                         <div>
                             <img src="{{asset('assets/img_index/asset/index/panduan.svg')}}" alt="" class="md:w-10">
                         </div>
@@ -153,7 +160,7 @@
                     </div>
                 </a>
                 <a href="" class="sm:w-full hover:shadow-xl transition-all duration-200 ease-in-out">
-                    <div class="flex items-center gap-3 md:gap-2 border-2 rounded-lg sm:rounded-2xl bg-white border-light-90 lg:pl-8 md:px-3 pl-5 lg:pr-14 sm:w-full py-4">
+                    <div class="flex items-center gap-3 md:gap-2 border-2 rounded-lg sm:rounded-2xl bg-white border-light-90 lg:pl-8 md:px-3 pl-5 lg:pr-14 sm:w-full py-4" id="kebijakan">
                         <div>
                             <img src="{{asset('assets/img_index/asset/index/kebijakan.svg')}}" alt="" class="md:w-12">
                         </div>
@@ -165,7 +172,7 @@
                     </div>
                 </a>
                 <a href="" class="sm:w-full hover:shadow-xl transition-all duration-200 ease-in-out">
-                    <div class="flex items-center lg:gap-3 md:gap-2 gap-4 border-2 rounded-lg sm:rounded-2xl bg-white border-light-90 lg:pr-24 lg:pl-8 md:px-4 md:pr-6 px-5 sm:w-full md:py-6 py-4">
+                    <div class="flex items-center lg:gap-3 md:gap-2 gap-4 border-2 rounded-lg sm:rounded-2xl bg-white border-light-90 lg:pr-24 lg:pl-8 md:px-4 md:pr-6 px-5 sm:w-full md:py-6 py-4" id="bantuan">
                         <div>
                             <img src="{{asset('assets/img_index/asset/index/bantuan.svg')}}" alt="" class="md:w-10">
                         </div>
@@ -213,7 +220,7 @@
                 </div>
             </div>
             <div class="col-span-6 sm:col-span-12 flex justify-end sm:mt-8">
-                <div class="bg-[#f3f3f3] bg-opacity-70 rounded-3xl lg:w-[550px] md:w-80 w-full lg:px-11 px-5">
+                <div class="bg-[#f3f3f3] bg-opacity-70 rounded-3xl lg:w-[550px] md:w-80 w-full lg:px-11 px-5" id="detail-projek">
                     <div class="flex items-center justify-between mt-9">
                         <div>
                             <p class="font-medium text-base md:text-[14px] text-dark-50">Kategori :</p>
@@ -366,7 +373,7 @@
                 </div>
             </div>
             <div class="col-span-6 sm:col-span-12 flex justify-end sm:mt-8">
-                <div class="bg-[#f3f3f3] bg-opacity-70 rounded-3xl lg:w-[550px] md:w-80 w-full lg:px-11 px-5">
+                <div class="bg-[#f3f3f3] bg-opacity-70 rounded-3xl lg:w-[550px] md:w-80 w-full lg:px-11 px-5" id="detail-projek">
                     <div class="flex items-center justify-between mt-9">
                         <div>
                             <p class="font-medium text-base md:text-[14px] text-dark-50">Kategori :</p>

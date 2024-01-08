@@ -11,12 +11,6 @@
     });
 </script>
 
-<div id="hover"></div>
-<div id="jelajahiOverlay"></div>
-<div id="profileOverlay"></div>
-<div class="modal-overlay" id="modalOverlay"></div>
-<div class="modal-overlay" id="modalOverlay-pesan"></div>
-
 <div class="lg:mt-[155px] md:mt-[75px] mt-0">
     <div class="relative">
         <img src="{{asset('assets/img_index/asset/profile/bg-profile.svg')}}" alt="" class="w-full lg:block hidden">
@@ -373,46 +367,47 @@
                                                 bernilai bagus & dikemas dengan kemasan yang luar biasa</p>
                                         </div>
                                         <div class="border-t-2 border-light-30 mt-8"></div>
-                                    </div>
-                                    <div>
-                                        <div class="flex items-center gap-3 mt-5">
-                                            <img src="{{asset('assets/img_index/asset/index/profile.png')}}" alt="" class="sm:w-10">
-                                            <div>
-                                                <p class="font-semibold text-base text-dark-70">Pororo</p>
-                                                <div class="flex items-center">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                        <path d="M4.85449 18.3333L6.20866 12.4792L1.66699 8.54167L7.66699 8.02083L10.0003 2.5L12.3337 8.02083L18.3337 8.54167L13.792 12.4792L15.1462 18.3333L10.0003 15.2292L4.85449 18.3333Z" fill="#020179" />
-                                                    </svg>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                        <path d="M4.85449 18.3333L6.20866 12.4792L1.66699 8.54167L7.66699 8.02083L10.0003 2.5L12.3337 8.02083L18.3337 8.54167L13.792 12.4792L15.1462 18.3333L10.0003 15.2292L4.85449 18.3333Z" fill="#020179" />
-                                                    </svg>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                        <path d="M4.85449 18.3333L6.20866 12.4792L1.66699 8.54167L7.66699 8.02083L10.0003 2.5L12.3337 8.02083L18.3337 8.54167L13.792 12.4792L15.1462 18.3333L10.0003 15.2292L4.85449 18.3333Z" fill="#020179" />
-                                                    </svg>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                        <path d="M4.85449 18.3333L6.20866 12.4792L1.66699 8.54167L7.66699 8.02083L10.0003 2.5L12.3337 8.02083L18.3337 8.54167L13.792 12.4792L15.1462 18.3333L10.0003 15.2292L4.85449 18.3333Z" fill="#020179" />
-                                                    </svg>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                        <path d="M4.85449 18.3333L6.20866 12.4792L1.66699 8.54167L7.66699 8.02083L10.0003 2.5L12.3337 8.02083L18.3337 8.54167L13.792 12.4792L15.1462 18.3333L10.0003 15.2292L4.85449 18.3333Z" fill="#020179" />
-                                                    </svg>
+                                        <div>
+                                            <div class="flex items-center gap-3 mt-5">
+                                                <img src="{{asset('assets/img_index/asset/index/profile.png')}}" alt="" class="sm:w-10">
+                                                <div>
+                                                    <p class="font-semibold text-base text-dark-70">Pororo</p>
+                                                    <div class="flex items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="M4.85449 18.3333L6.20866 12.4792L1.66699 8.54167L7.66699 8.02083L10.0003 2.5L12.3337 8.02083L18.3337 8.54167L13.792 12.4792L15.1462 18.3333L10.0003 15.2292L4.85449 18.3333Z" fill="#020179" />
+                                                        </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="M4.85449 18.3333L6.20866 12.4792L1.66699 8.54167L7.66699 8.02083L10.0003 2.5L12.3337 8.02083L18.3337 8.54167L13.792 12.4792L15.1462 18.3333L10.0003 15.2292L4.85449 18.3333Z" fill="#020179" />
+                                                        </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="M4.85449 18.3333L6.20866 12.4792L1.66699 8.54167L7.66699 8.02083L10.0003 2.5L12.3337 8.02083L18.3337 8.54167L13.792 12.4792L15.1462 18.3333L10.0003 15.2292L4.85449 18.3333Z" fill="#020179" />
+                                                        </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="M4.85449 18.3333L6.20866 12.4792L1.66699 8.54167L7.66699 8.02083L10.0003 2.5L12.3337 8.02083L18.3337 8.54167L13.792 12.4792L15.1462 18.3333L10.0003 15.2292L4.85449 18.3333Z" fill="#020179" />
+                                                        </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="M4.85449 18.3333L6.20866 12.4792L1.66699 8.54167L7.66699 8.02083L10.0003 2.5L12.3337 8.02083L18.3337 8.54167L13.792 12.4792L15.1462 18.3333L10.0003 15.2292L4.85449 18.3333Z" fill="#020179" />
+                                                        </svg>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <p class="leading-5 mt-4 sm:text-xs ml-16 sm:ml-0">Kain batik merupakan
+                                                produk
+                                                yang
+                                                banyak
+                                                digemari
+                                                oleh masyarakat, bagus di desa maupun di kota. Bakal namun, saat
+                                                kini
+                                                banyak kain batik yang kekurangan memperhatikan nilai bahan yang
+                                                dipakai
+                                                hanya sebab alasan untuk meraih untung lebih banyak. Untuk menjaga
+                                                citra
+                                                kain batik, hendaknya dalam proses produksinya tetap memakai bahan
+                                                yang
+                                                bernilai bagus & dikemas dengan kemasan yang luar biasa</p>
                                         </div>
-                                        <p class="leading-5 mt-4 sm:text-xs ml-16 sm:ml-0">Kain batik merupakan produk
-                                            yang
-                                            banyak
-                                            digemari
-                                            oleh masyarakat, bagus di desa maupun di kota. Bakal namun, saat
-                                            kini
-                                            banyak kain batik yang kekurangan memperhatikan nilai bahan yang
-                                            dipakai
-                                            hanya sebab alasan untuk meraih untung lebih banyak. Untuk menjaga
-                                            citra
-                                            kain batik, hendaknya dalam proses produksinya tetap memakai bahan
-                                            yang
-                                            bernilai bagus & dikemas dengan kemasan yang luar biasa</p>
+                                        <div class="border-t-2 border-light-30 mt-8"></div>
                                     </div>
-                                    <div class="border-t-2 border-light-30 mt-8"></div>
                                     <div class="flex items-center justify-between mt-7">
                                         <p class="text-base sm:text-sm font-medium text-light-50"><span>1</span> dari
                                             <span>20</span>
@@ -440,7 +435,7 @@
                         </div>
                         <div class="riwayat hidden">
                             <div class="mx-10 sm:mx-6 mt-10 pb-14 sm:border-2 sm:border-light-50 sm:rounded-2xl sm:px-3 sm:py-6">
-                                <div>
+                                <div class="riwayat-1">
                                     <div class="border-2 border-light-70 rounded-2xl p-7 sm:p-3">
                                         <div class="flex items-center justify-between">
                                             <h4 class="text-2xl sm:text-base sm:leading-5 text-dark-70">Menerjemahkan
