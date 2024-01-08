@@ -417,79 +417,27 @@
             <div class="collapse collapse-arrow bg-white">
                 <input type="checkbox" class="peer" />
                 <div class="collapse-title font-semibold text-primary-50">
-                    Kategori Bidang
+                    Komunitas
                 </div>
                 <div class="collapse-content">
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs">
-                            Web & Pemrograman
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50">
+                            Event
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
-                            Grafis dan Desain
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
+                            Forum
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
-                            Penulisan dan Penerjemah
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
+                            Kerja Sama
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
-                            Pemasaran Digital
-                        </p>
-                    </a>
-                    <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
-                            Video dan Animasi
-                        </p>
-                    </a>
-                    <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
-                            Tutor & Pengajar
-                        </p>
-                    </a>
-                    <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
-                            Bisnis & Akutansi
-                        </p>
-                    </a>
-                    <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
-                            Jasa Konsultasi
-                        </p>
-                    </a>
-                    <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
-                            Musik & Audio
-                        </p>
-                    </a>
-                    <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
-                            Data & Riset
-                        </p>
-                    </a>
-                    <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
-                            Editing Foto
-                        </p>
-                    </a>
-                    <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
-                            Pekerjaan Lainnya
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
+                            Podcast
                         </p>
                     </a>
                 </div>
@@ -501,38 +449,32 @@
                 </div>
                 <div class="collapse-content">
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50">
                             Bantuan
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
                             Kebijakan ProjectHub
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
                             Karir
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
                             Kerja Sama
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
                             Syarat dan Ketentuan
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
                             Kritik dan Saran
                         </p>
                     </a>
@@ -545,38 +487,32 @@
                 </div>
                 <div class="collapse-content">
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50">
                             Tentang ProjectHub
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
                             Blog
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
                             Leaderboard
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
                             Buat Project
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
                             Daftar Project
                         </p>
                     </a>
                     <a href="">
-                        <p
-                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 text-xs mt-3">
+                        <p class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-3">
                             ProjectHub Academy
                         </p>
                     </a>
@@ -620,112 +556,9 @@
                             <img src="{{asset('assets/img_index/asset/landingPage/instagram.svg')}}" alt="instagram">
                         </a>
                     </div>
-                    <p class="font-semibold text-light-70 mt-20 md:text-xs sm:text-[10px] sm:mt-7">&copy; ProjectHub
+                    <p class="font-semibold text-light-70 mt-14 md:text-xs sm:text-[10px] sm:mt-7">&copy; ProjectHub
                         2023. Hak Cipta Dilindungi
                     </p>
-                </div>
-                <div class="col-span-3 sm:hidden block">
-                    <h3 class="font-semibold text-base">Kategori Bidang</h3>
-                    <div class="mt-5">
-                        <ul>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50">
-                                        Web & Pemrograman
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                        Grafis dan Desain
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                        Penulisan dan Penerjemah
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                        Pemasaran Digital
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                        Video dan Animasi
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                        Tutor & Pengajar
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                        Bisnis & Akutansi
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                        Jasa Konsultasi
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                        Musik & Audio
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                        Data & Riset
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                        Editing Foto
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="inline-block">
-                                    <p
-                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                        Pekerjaan Lainnya
-                                    </p>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
                 <div class="col-span-3 md:ml-2 sm:hidden block">
                     <h3 class="font-semibold text-base">Layanan Pelanggan</h3>
@@ -781,15 +614,15 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="md:block hidden">
-                        <h3 class="font-semibold text-base mt-10">Jelajahi ProjectHub</h3>
+                    <div class="mt-5 md:block hidden">
+                        <h3 class="font-semibold text-base">Komunitas</h3>
                         <div class="mt-5">
                             <ul>
                                 <li>
                                     <a href="" class="inline-block">
                                         <p
                                             class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50">
-                                            Tentang ProjectHub
+                                            Event
                                         </p>
                                     </a>
                                 </li>
@@ -797,7 +630,7 @@
                                     <a href="" class="inline-block">
                                         <p
                                             class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                            Blog
+                                            Forum
                                         </p>
                                     </a>
                                 </li>
@@ -805,7 +638,7 @@
                                     <a href="" class="inline-block">
                                         <p
                                             class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                            Leaderboard
+                                            Kerja Sama
                                         </p>
                                     </a>
                                 </li>
@@ -813,23 +646,7 @@
                                     <a href="" class="inline-block">
                                         <p
                                             class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                            Buat Project
-                                        </p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" class="inline-block">
-                                        <p
-                                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                            Daftar Project
-                                        </p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" class="inline-block">
-                                        <p
-                                            class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
-                                            ProjectHub Academy
+                                            Podcast
                                         </p>
                                     </a>
                                 </li>
@@ -837,7 +654,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-span-2 lg:block hidden">
+                <div class="col-span-3 sm:hidden block md:ml-2">
                     <h3 class="font-semibold text-base">Jelajahi ProjectHub</h3>
                     <div class="mt-5">
                         <ul>
@@ -886,6 +703,45 @@
                                     <p
                                         class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
                                         ProjectHub Academy
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-span-2 lg:block hidden">
+                    <h3 class="font-semibold text-base">Komunitas</h3>
+                    <div class="mt-5">
+                        <ul>
+                            <li>
+                                <a href="" class="inline-block">
+                                    <p
+                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50">
+                                        Event
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="inline-block">
+                                    <p
+                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                        Forum
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="inline-block">
+                                    <p
+                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                        Kerja Sama
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="inline-block">
+                                    <p
+                                        class="text-light-90 hover:underline hover:decoration-primary-50 hover:text-primary-50 mt-2 md:mt-1">
+                                        Podcast
                                     </p>
                                 </a>
                             </li>
