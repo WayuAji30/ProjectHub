@@ -15,6 +15,8 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('google_id')->unique()->nullable();
             $table->string('email')->unique();
+            $table->string('img_google')->nullable();
+            $table->string('username_google')->nullable();
             $table->string('password')->nullable();
             $table->UnsignedBigInteger('id_status')->nullable();
             $table->foreign('id_status')->references('id')->on('tbl_status');

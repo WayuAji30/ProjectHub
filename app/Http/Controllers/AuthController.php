@@ -48,6 +48,8 @@ class AuthController extends Controller
                     'id' => Str::uuid(),
                     'google_id' => $userFromGoogle->getId(),
                     'email' => $userFromGoogle->getEmail(),
+                    'img_google' => $userFromGoogle->getAvatar(),
+                    'username_google' => $userFromGoogle->getName(),
                     'password' => null,
                     'id_status' => 3
                 ]);
@@ -65,13 +67,12 @@ class AuthController extends Controller
                     'github' => null,
                     'dribble' => null,
                     'cv' => null,
-                    'portfolio' => null
+                    'portfolio' => null,
+                    'id_status' => 5
                 ]);
 
                 session(['id_user' => (string) $user->id]);
                 session(['id_google_user' => $user->google_id]);
-                session(['getNameUserFromGoogle' =>$userFromGoogle->getName()]);
-                session(['getAvatarUserFromGoogle' =>$userFromGoogle->getAvatar()]);
 
                 return redirect('/index');
             }catch(\Exception $e){
@@ -82,8 +83,6 @@ class AuthController extends Controller
             $userFromDatabase->update(['id_status' => 3]);
             session(['id_user' => (string) $userFromDatabase->id]);
             session(['id_google_user' => $userFromDatabase->google_id]);
-            session(['getNameUserFromGoogle' =>$userFromGoogle->getName()]);
-            session(['getAvatarUserFromGoogle' =>$userFromGoogle->getAvatar()]);
             return redirect('/index');
         }
     }
@@ -180,6 +179,8 @@ class AuthController extends Controller
             'id' => Str::uuid(),
             'google_id' => null,
             'email' => $email,
+            'img_google' => null,
+            'username_google' => null,
             'password' => $hash_password,
             'id_status' => 1
         ]);
@@ -197,7 +198,8 @@ class AuthController extends Controller
             'github' => null,
             'dribble' => null,
             'cv' => null,
-            'portfolio' => null
+            'portfolio' => null,
+            'id_status' => 5
         ]);
 
         session(['id' => (string) $user->id]);
@@ -250,7 +252,11 @@ class AuthController extends Controller
         $user = UserModel::find($id);
 
         if($user){
-            return view('auth.verify_email', ['user' => $user]);
+            if(session('id')){
+                return view('auth.verify_email', ['user' => $user]);
+            }else{
+                return redirect()->to('/login');
+            }
         }else{
             return redirect()->to('/login');
         }
@@ -375,11 +381,13 @@ class AuthController extends Controller
         }
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        session()->forget('id_user');
-        session()->forget('id_google_user');
+        $id = htmlspecialchars($request->input('id_user_login'));
 
+        UserModel::where('id',$id)->update(['id_status' => 4]);
+
+        session()->flush();
         return redirect('/login');
     }
 }

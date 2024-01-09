@@ -25,9 +25,11 @@ return new class extends Migration
             $table->string('dribble')->nullable();
             $table->string('cv')->nullable();
             $table->string('portfolio')->nullable();
+            $table->UnsignedBigInteger('id_status');
             $table->timestamps();
 
             $table->foreign('id_user_login')->references('id')->on('tbl_user');
+            $table->foreign('id_status')->references('id')->on('tbl_status');
         });
     }
 

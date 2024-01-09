@@ -182,8 +182,8 @@
                                                         alt="logoProjectHub" class="mt-5 sm:w-44"></a>
                                                 <div class="flex items-center gap-3 mt-6">
                                                     <img src="
-                                                            @if(session()->has('getAvatarUserFromGoogle'))
-                                                                {{session('getAvatarUserFromGoogle')}}
+                                                            @if($user->img_google)
+                                                                {{$user->img_google}}
                                                             @else
                                                                 {{asset('assets/img_index/asset/index/default-profile.jpg')}}
                                                             @endif        
@@ -195,42 +195,57 @@
                                                                 @if($user->first_name !== null && $user->last_name !== null)
                                                                     {{$user->first_name .' '. $user->last_name }}
                                                                 @else
-                                                                    @if(session()->has('getNameUserFromGoogle'))
-                                                                        {{session('getNameUserFromGoogle');}}
+                                                                    @if($user->username_google)
+                                                                        {{$user->username_google}}
                                                                     @else
                                                                         {{'user'.rand()}}
                                                                    @endif 
                                                                 @endif
                                                         </p>
-                                                        <p class="text-[13px] text-primary-50 font-medium">Project Owner
+                                                        <p class="text-[13px] text-primary-50 font-medium">{{$user->status}}
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <!-- BUTTON MUNCUL SAAT MENJADI FREELANCER -->
-                                                <form action="" class="mt-5" hidden>
-                                                    <button
-                                                        class="py-3 text-white rounded-md bg-primary-50 w-full font-medium text-[15px] hover:bg-primary-70">
-                                                        Beralih Ke Owner</button>
-                                                </form>
-                                                <!-- BUTTON MUNCUL SAAT MENJADI OWNER -->
-                                                <form action="" class="mt-5">
-                                                    <button
-                                                        class="py-3 text-white rounded-md bg-primary-50 w-full font-medium text-[15px] hover:bg-primary-70">
-                                                        Beralih Ke Freelance</button>
-                                                </form>
+
+                                                @if ($user->status == "Freelancer")
+                                                    <form action="/change_status_profile" method = "post" class="mt-5">
+                                                        @csrf
+                                                        <input type ="hidden" name = "id_user_profile" value = "{{$user->id_user_profile}}">
+                                                        <input type ="hidden" name = "status_profile" value = "6">
+                                                        <button
+                                                            class="py-3 text-white rounded-md bg-primary-50 w-full font-medium text-[15px] hover:bg-primary-70">
+                                                            Beralih Ke Owner</button>
+                                                    </form>
+                                                    @error('status_profile')
+                                                        <script>alert('{{$message}}')</script>
+                                                    @enderror
+                                                @else
+                                                    <form action="/change_status_profile"  method = "post" class="mt-5">
+                                                        @csrf
+                                                        <input type ="hidden" name = "id_user_profile" value = "{{$user->id_user_profile}}">
+                                                        <input type ="hidden" name = "status_profile" value = "5">
+                                                        <button
+                                                            class="py-3 text-white rounded-md bg-primary-50 w-full font-medium text-[15px] hover:bg-primary-70">
+                                                            Beralih Ke Freelance</button>
+                                                    </form>
+                                                    @error('status_profile')
+                                                        <script>alert('{{$message}}')</script>
+                                                    @enderror
+                                                @endif
+                                                
                                                 <!-- INI MUNCUL SAAT DARI LANDINGPAGE CLICK KATEGORI -->
                                                 <form action="/register" class="mt-5 hidden">
                                                     <button
                                                         class="py-3 rounded-md bg-white border-2 border-primary-50 text-primary-50 w-full font-medium text-[15px] hover:bg-primary-50 hover:text-white">
                                                         Masuk</button>
                                                 </form>
-                                                <!-- INI MUNCUL SAAT DARI LANDINGPAGE CLICK KATEGORI 
+                                                <!-- INI MUNCUL SAAT DARI LANDINGPAGE CLICK KATEGORI -->
                                                 <form action="/login" class="hidden">
                                                     <button
                                                         class="py-3 text-white rounded-md border-2 border-transparent bg-primary-50 w-full font-medium text-[15px] hover:bg-primary-70 mt-2">
                                                         Daftar</button>
                                                 </form>
-                                                -->
+                                                
                                                 <div class="border-t-2 border-light-30 mt-8"></div>
                                                 <div class="mt-5"><a href="/profile"
                                                         class="md:text-lg text-base text-dark-10 hover:text-primary-50 flex items-center gap-2"><svg
@@ -357,63 +372,12 @@
                                                     </svg>
                                                 </div>
                                                 <div class="ml-8 hidden" id="kategoriMobileContent">
-                                                    <form action="">
+                                                    @foreach ($categories as $c )
+                                                    <a href="/search/{{$c->slug}}">
                                                         <button
-                                                            class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">Web
-                                                            & Pemrograman</button>
-                                                    </form>
-                                                    <form action="">
-                                                        <button
-                                                            class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">Grafis
-                                                            dan Desain</button>
-                                                    </form>
-                                                    <form action="">
-                                                        <button
-                                                            class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">Penulisan
-                                                            & Penerjemah
-                                                        </button>
-                                                    </form>
-                                                    <form action="">
-                                                        <button
-                                                            class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">Pemasaran
-                                                            Digital
-                                                        </button>
-                                                    </form>
-                                                    <form action="">
-                                                        <button
-                                                            class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">Video
-                                                            dan Animasi</button>
-                                                    </form>
-                                                    <form action="">
-                                                        <button
-                                                            class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">Tutor
-                                                            & Pengajar</button>
-                                                    </form>
-                                                    <form action="">
-                                                        <button
-                                                            class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">Bisnis
-                                                            & Akutansi</button>
-                                                    </form>
-                                                    <form action="">
-                                                        <button
-                                                            class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">Jasa
-                                                            Konsultasi</button>
-                                                    </form>
-                                                    <form action="">
-                                                        <button
-                                                            class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">Musik
-                                                            & Audio</button>
-                                                    </form>
-                                                    <form action="">
-                                                        <button
-                                                            class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">Data
-                                                            & Riset</button>
-                                                    </form>
-                                                    <form action="">
-                                                        <button
-                                                            class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">Editing
-                                                            Foto</button>
-                                                    </form>
+                                                            class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">{{$c->name}}</button>
+                                                    </a>
+                                                    @endforeach
                                                     <form action="">
                                                         <button
                                                             class="md:text-lg text-base text-dark-10 hover:text-primary-50 mt-3">Pekerjaan
@@ -481,7 +445,11 @@
                                                         </svg>Kebijakan ProjectHub</a>
                                                 </div>
                                                 <div class="border-t-2 border-light-30 mt-5"></div>
-                                                <div class="mt-5 mb-10"><a href="/logout"
+                                                <div class="mt-5 mb-10">
+                                                    <form action="/logout" method ="post">
+                                                        @csrf
+                                                        <input type="hidden" name="id_user_login" value = "{{$user->id_user_login}}">
+                                                        <button
                                                         class="md:text-lg text-base text-[#FF0000] flex items-center gap-2"><svg
                                                             xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                                             viewBox="0 0 18 18" fill="none">
@@ -491,7 +459,8 @@
                                                             <path
                                                                 d="M11.5796 11.5796L13.5968 9.5625H5.625V8.4375H13.5968L11.5796 6.42037L12.375 5.625L15.75 9L12.375 12.375L11.5796 11.5796Z"
                                                                 fill="#D30000" />
-                                                        </svg>Keluar</a>
+                                                        </svg>Keluar</button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -521,9 +490,8 @@
                                             </defs>
                                         </svg>
                                     </button>
-                                    <!-- UNTUK TAMPILAN FREELANCER JADIKAN WIDTH INPUT MENJADI 360PX -->
                                     <input type="text" placeholder="Cari Project Disini" autocomplete="off"
-                                        class="border-2 border-light-70 bg-white py-3 pl-12 text-light-50 rounded-full w-[307px] sm:w-full focus:outline-primary-50 z-20"
+                                        class="border-2 border-light-70 bg-white py-3 pl-12 text-light-50 rounded-full @if($user->status == "Freelancer") w-[360px] @else w-[307px] @endif sm:w-full focus:outline-primary-50 z-20"
                                         id="searchInput">
                                 </form>
                                 <!-- Help Search -->
@@ -648,28 +616,30 @@
                                         class="font-medium hover:bg-light-30 text-dark-70 px-3 rounded-md py-2 text-[14px] transition-all duration-100 ease-in-out">FAQ</a>
                                 </ul>
                             </div>
-                            <!-- Tampilan owner untuk tampilan tablet dan mobile memang dihilangkans -->
-                            <a href="" class="text-light-70 font-medium text-base lg:block hidden">Projek Saya</a>
-                            <!-- Tampilan freelancer untuk tampilan tablet dan mobile memang dihilangkan -->
-                            <div class="hidden md:hidden sm:hidden">
-                                <a href="" class="text-primary-50 font-medium text-base flex items-center gap-2"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
-                                        fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M10.084 2.75C9.35464 2.75 8.65517 3.03973 8.13944 3.55546C7.62372 4.07118 7.33398 4.77065 7.33398 5.5V6.41667H4.58398C3.85464 6.41667 3.15517 6.7064 2.63944 7.22212C2.12372 7.73785 1.83398 8.43732 1.83398 9.16667V16.5C1.83398 17.2293 2.12372 17.9288 2.63944 18.4445C3.15517 18.9603 3.85464 19.25 4.58398 19.25H17.4173C18.1467 19.25 18.8461 18.9603 19.3619 18.4445C19.8776 17.9288 20.1673 17.2293 20.1673 16.5V9.16667C20.1673 8.43732 19.8776 7.73785 19.3619 7.22212C18.8461 6.7064 18.1467 6.41667 17.4173 6.41667H14.6673V5.5C14.6673 4.77065 14.3776 4.07118 13.8619 3.55546C13.3461 3.03973 12.6467 2.75 11.9173 2.75H10.084ZM12.834 6.41667H9.16732V5.5C9.16732 5.25688 9.2639 5.02373 9.4358 4.85182C9.60771 4.67991 9.84087 4.58333 10.084 4.58333H11.9173C12.1604 4.58333 12.3936 4.67991 12.5655 4.85182C12.7374 5.02373 12.834 5.25688 12.834 5.5V6.41667Z"
-                                            fill="#020179" />
-                                    </svg>Projek Saya</a>
-                            </div>
-                            <!-- Tampilan owner untuk tampilan tablet dan mobile memang dihilangkan -->
-                            <div class="md:hidden sm:hidden">
-                                <a href="" class="flex items-center gap-2 text-primary-50 font-medium text-base"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
-                                        fill="none">
-                                        <path
-                                            d="M11.5 1.91699C6.20713 1.91699 1.91667 6.20745 1.91667 11.5003C1.91667 16.7932 6.20713 21.0837 11.5 21.0837C16.7929 21.0837 21.0833 16.7932 21.0833 11.5003C21.0833 6.20745 16.7929 1.91699 11.5 1.91699ZM16.2917 12.4587H12.4583V16.292H10.5417V12.4587H6.70834V10.542H10.5417V6.70866H12.4583V10.542H16.2917V12.4587Z"
-                                            fill="#020179" />
-                                    </svg>Buat Projek</a>
-                            </div>
+
+                            @if ($user->status == "Freelancer")
+                                <div class="md:hidden sm:hidden">
+                                    <a href="" class="text-primary-50 font-medium text-base flex items-center gap-2"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                            fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M10.084 2.75C9.35464 2.75 8.65517 3.03973 8.13944 3.55546C7.62372 4.07118 7.33398 4.77065 7.33398 5.5V6.41667H4.58398C3.85464 6.41667 3.15517 6.7064 2.63944 7.22212C2.12372 7.73785 1.83398 8.43732 1.83398 9.16667V16.5C1.83398 17.2293 2.12372 17.9288 2.63944 18.4445C3.15517 18.9603 3.85464 19.25 4.58398 19.25H17.4173C18.1467 19.25 18.8461 18.9603 19.3619 18.4445C19.8776 17.9288 20.1673 17.2293 20.1673 16.5V9.16667C20.1673 8.43732 19.8776 7.73785 19.3619 7.22212C18.8461 6.7064 18.1467 6.41667 17.4173 6.41667H14.6673V5.5C14.6673 4.77065 14.3776 4.07118 13.8619 3.55546C13.3461 3.03973 12.6467 2.75 11.9173 2.75H10.084ZM12.834 6.41667H9.16732V5.5C9.16732 5.25688 9.2639 5.02373 9.4358 4.85182C9.60771 4.67991 9.84087 4.58333 10.084 4.58333H11.9173C12.1604 4.58333 12.3936 4.67991 12.5655 4.85182C12.7374 5.02373 12.834 5.25688 12.834 5.5V6.41667Z"
+                                                fill="#020179" />
+                                        </svg>Projek Saya</a>
+                                </div>
+                            @else
+                                <a href="/" class="text-light-70 font-medium text-base lg:block hidden">Projek Saya</a>
+                                <div class="md:hidden sm:hidden">
+                                    <a href="" class="flex items-center gap-2 text-primary-50 font-medium text-base"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                            fill="none">
+                                            <path
+                                                d="M11.5 1.91699C6.20713 1.91699 1.91667 6.20745 1.91667 11.5003C1.91667 16.7932 6.20713 21.0837 11.5 21.0837C16.7929 21.0837 21.0833 16.7932 21.0833 11.5003C21.0833 6.20745 16.7929 1.91699 11.5 1.91699ZM16.2917 12.4587H12.4583V16.292H10.5417V12.4587H6.70834V10.542H10.5417V6.70866H12.4583V10.542H16.2917V12.4587Z"
+                                                fill="#020179" />
+                                        </svg>Buat Projek</a>
+                                </div>
+                            @endif
+                            
                             <div class="border-[1px] border-[#D9D9D9] h-8 lg:block hidden"></div>
                             <div class="flex items-center gap-3 sm:order-1">
                                 <!-- Notif Mobile -->
@@ -1059,21 +1029,32 @@
                                     </ul>
                                 </div>
                             </div>
-                            <!-- Tambilan owner untuk tampilan tablet dan mobile memang dihilangkan -->
-                            <form action="" class="lg:block hidden" id="btn-switch-dekstop1">
-                                <button
-                                    class="font-semibold text-base bg-primary-50 rounded-lg py-3 text-white px-7 hover:bg-primary-70 transition-all duration-200 ease-in-out">Beralih
-                                    Ke
-                                    Freelancer</button>
-                            </form>
-                            <!-- Tampilan freelancer untuk tampilan tablet dan mobile memang dihilangkan-->
-                            <form action="" class="hidden" id="btn-switch-dekstop2">
-                                <button
-                                    class="font-semibold text-base bg-primary-50 rounded-lg py-3 text-white px-10 hover:bg-primary-70 transition-all duration-200 ease-in-out">Beralih
-                                    Ke
-                                    Owner</button>
-                            </form>
-                            <!-- INI MUNCUL SAAT DARI LANDING PAGE CLICK KATEGORI DI FOOTER JADI DIA BLM LOGIN SAAT MASUK LANDING 
+
+                            @if ($user->status == "Freelancer")
+                                <form action="/change_status_profile" method = "post" class="lg:block hidden" id="btn-switch-dekstop2">
+                                    @csrf
+                                    <input type ="hidden" name = "id_user_profile" value = "{{$user->id_user_profile}}">
+                                    <input type ="hidden" name = "status_profile" value = "6">
+                                    
+                                    <button
+                                        class="font-semibold text-base bg-primary-50 rounded-lg py-3 text-white px-10 hover:bg-primary-70 transition-all duration-200 ease-in-out">Beralih
+                                        Ke
+                                        Owner</button>
+                                </form>
+                            @else
+                                <form action="/change_status_profile" class="lg:block hidden" method = "post" id="btn-switch-dekstop1">
+                                    @csrf
+                                    <input type ="hidden" name = "id_user_profile" value = "{{$user->id_user_profile}}">
+                                    <input type ="hidden" name = "status_profile" value = "5">
+
+                                    <button
+                                        class="font-semibold text-base bg-primary-50 rounded-lg py-3 text-white px-7 hover:bg-primary-70 transition-all duration-200 ease-in-out">Beralih
+                                        Ke
+                                        Freelancer</button>
+                                </form>
+                            @endif
+
+                            <!-- INI MUNCUL SAAT DARI LANDING PAGE CLICK KATEGORI DI FOOTER JADI DIA BLM LOGIN SAAT MASUK LANDING --> 
                             <div class="hidden">
                                 <div class="btn-login-regis flex items-center gap-4">
                                     <form action="/login">
@@ -1086,23 +1067,45 @@
                                     </form>
                                 </div>
                             </div>
-                            -->
+                            
 
                             <!-- Tampilan dekstop profile untuk tampilan tablet dan mobile memang dihilangkan -->
                             <div class="dropdown dropdown-bottom dropdown-end lg:block hidden">
                                 <div tabindex="0" role="button"
                                     class="border-[3px] border-primary-50 rounded-full select-none" id="btnProfile">
-                                    <img src="{{asset('assets/img_index/asset/index/profile.png')}}" alt="profile">
+                                    <img src="
+                                        @if($user->img_google)
+                                            {{$user->img_google}}
+                                        @else
+                                            {{asset('assets/img_index/asset/index/default-profile.jpg')}}
+                                        @endif   
+                                    " class = "w-14 rounded-full "alt="profile">
                                 </div>
                                 <div tabindex="0"
                                     class="dropdown-content z-10 menu p-2 shadow bg-white drop-shadow-lg rounded-box w-72"
                                     id="dropdownContent">
                                     <div class="flex items-center gap-3 ml-8 mt-5">
-                                        <img src="{{asset('assets/img_index/asset/index/profile.png')}}" alt="profile"
-                                            class="border-2 border-primary-50 rounded-full">
+                                        <img src="
+                                            @if($user->img_google)
+                                                {{$user->img_google}}
+                                            @else
+                                                {{asset('assets/img_index/asset/index/default-profile.jpg')}}
+                                            @endif   
+                                        " alt="profile"
+                                            class="w-14 border-2 border-primary-50 rounded-full">
                                         <div>
-                                            <p class="font-semibold text-lg text-dark-70">Pororo</p>
-                                            <p class="text-[13px] text-primary-50">Project Owner</p>
+                                            <p class="font-semibold text-lg text-dark-70">
+                                                @if($user->first_name !== null && $user->last_name !== null)
+                                                    {{$user->first_name .' '. $user->last_name }}
+                                                @else
+                                                    @if($user->username_google)
+                                                        {{$user->username_google}}
+                                                    @else
+                                                        {{'user'.rand()}}
+                                                    @endif 
+                                                @endif
+                                            </p>
+                                            <p class="text-[13px] text-primary-50">{{$user->status}}</p>
                                         </div>
                                     </div>
                                     <div class="border-t-[1px] border-light-30 my-5 mx-5"></div>
@@ -1240,72 +1243,41 @@
                             <section class="splide" aria-label="Basic Structure Example">
                                 <div class="splide__track">
                                     <ul class="splide__list">
+                                        @foreach ($categories as $c )
                                         <li
-                                            class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 w-[200px]">
-                                            <a href="" class="font-medium">
-                                                <p class="text-center">Web & Pemrograman</p>
+                                            class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 
+                                            
+                                            @if($c->name == "Web & Pemrograman")
+                                                w-[200px]
+                                            @elseif($c->name == "Grafis dan Desain")
+                                                w-[170px]
+                                            @elseif($c->name == "Penulisan & Penerjemah")
+                                                w-[220px]
+                                            @elseif($c->name == "Pemasaran Digital")
+                                                w-[170px]
+                                            @elseif($c->name == "Video dan Animasi")
+                                                w-[170px]
+                                            @elseif($c->name == "Tutor & Pengajar")
+                                                w-[170px]
+                                            @elseif($c->name == "Bisnis & Akutansi")
+                                                w-[160px]
+                                            @elseif($c->name == "Jasa Konsultasi")
+                                                w-[150px]
+                                            @elseif($c->name == "Musik & Audio")
+                                                w-[150px]
+                                            @elseif($c->name == "Data & Riset")
+                                                w-[140px]
+                                            @elseif($c->name == "Editing Foto")
+
+                                            @endif
+                                            
+                                            
+                                            ">
+                                            <a href="/search/{{$c->slug}}" class="font-medium">
+                                                <p class="text-center">{{$c->name}}</p>
                                             </a>
                                         </li>
-                                        <li
-                                            class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 w-[170px]">
-                                            <a href="" class="font-medium">
-                                                <p class="text-center">Grafis dan Desain</p>
-                                            </a>
-                                        </li>
-                                        <li
-                                            class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 w-[220px]">
-                                            <a href="" class="font-medium">
-                                                <p class="text-center">Penulisan & Penerjemah</p>
-                                            </a>
-                                        </li>
-                                        <li
-                                            class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 w-[170px]">
-                                            <a href="" class="font-medium">
-                                                <p class="text-center">Pemasaran Digital</p>
-                                            </a>
-                                        </li>
-                                        <li
-                                            class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 w-[170px]">
-                                            <a href="" class="font-medium">
-                                                <p class="text-center">Video dan Animasi</p>
-                                            </a>
-                                        </li>
-                                        <li
-                                            class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 w-[170px]">
-                                            <a href="" class="font-medium">
-                                                <p class="text-center">Tutor & Pengajar</p>
-                                            </a>
-                                        </li>
-                                        <li
-                                            class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 w-[160px]">
-                                            <a href="" class="font-medium">
-                                                <p class="text-center">Bisnis & Akutansi</p>
-                                            </a>
-                                        </li>
-                                        <li
-                                            class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 w-[150px]">
-                                            <a href="" class="font-medium">
-                                                <p class="text-center">Jasa Konsultasi</p>
-                                            </a>
-                                        </li>
-                                        <li
-                                            class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 w-[150px]">
-                                            <a href="" class="font-medium">
-                                                <p class="text-center">Musik & Audio</p>
-                                            </a>
-                                        </li>
-                                        <li
-                                            class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 w-[140px]">
-                                            <a href="" class="font-medium">
-                                                <p class="text-center">Data & Riset</p>
-                                            </a>
-                                        </li>
-                                        <li
-                                            class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 w-[140px]">
-                                            <a href="" class="font-medium">
-                                                <p class="text-center">Editing Foto</p>
-                                            </a>
-                                        </li>
+                                        @endforeach
                                         <li
                                             class="splide__slide text-dark-70 hover:border-primary-50 hover:text-primary-50 border-b-2 border-transparent transition-all duration-100 easy-in-out cursor-pointer py-3 w-[170px]">
                                             <a href="" class="font-medium">

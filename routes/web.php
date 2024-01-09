@@ -30,10 +30,12 @@ Route::get('/data-succsess', function () {
 
 Route::get('/index', [HomeController::class, 'index']);
 Route::get('/search', [HomeController::class, 'search']);
-Route::get('/detail_project', [HomeController::class, 'detail_project']);
+Route::post('/detail_project', [HomeController::class, 'detail_project']);
 Route::get('/profile', [HomeController::class, 'profile']);
 Route::get('/profiles', [HomeController::class, 'profiles']);
 Route::get('/setting', [HomeController::class, 'setting']);
+
+Route::post('/change_status_profile',[HomeController::class,'change_status_profile']);
 
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/login/google', [AuthController::class, 'login_google']);
@@ -54,4 +56,4 @@ Route::post('/send_confirm_email_pw', [AuthController::class, 'send_confirm_emai
 
 Route::post('/update_password', [AuthController::class, 'update_password']);
 
-Route::get('/logout',[AuthController::class,'logout']);
+Route::post('/logout',[AuthController::class,'logout']);
